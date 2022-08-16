@@ -7,4 +7,16 @@
 body {
   font-family: monaco, Consolas, Lucida Console, monospace;
   margin: 0;
+  color: azure;
+  background-color: rgb(34, 31, 31);
+}
+
+.navbar {
+  height: 70px;
+  display: flex;
+  align-items: center;
+}
+
+.navbar .logo {
+  margin-right: auto;
 }

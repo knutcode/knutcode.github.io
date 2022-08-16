@@ -1,7 +1,9 @@
+// import { Link } from "react-router-dom";
+
 const Projects = () => {
   return (
     <div>
-      <h2>Projects</h2>
+      <h1>projects</h1>
     </div>
   );
 };

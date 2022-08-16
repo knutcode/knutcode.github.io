@@ -1,11 +1,10 @@
-import { Link } from "react-router-dom";
-
+// import { Link, Outlet } from "react-router-dom";
+// import Navbar from "../../components/Navbar";
 const Home = () => {
   return (
-    <div>
-      <h2>Home</h2>
-      <Link to="/about">About</Link>
-    </div>
+    <>
+      <h1>home page</h1>
+    </>
   );
 };
 

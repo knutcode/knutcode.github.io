@@ -17,8 +17,25 @@ body {
   margin: 0 50px;
 }
 
+a:link,
+a:active {
+  color: #79c1ff;
+}
+
+a:visited {
+  color: #905fde;
+}
+
+a:hover {
+  color: #86de74;
+}
+
 .highlight {
   color: #f0f0f0;
+}
+
+.underline {
+  text-decoration: underline;
 }
 
 .title {
@@ -44,7 +61,7 @@ body {
 }
 
 .navbar > .logo > span {
-  color: #9f6af9;
+  color: #79c1ff;
 }
 
 main {

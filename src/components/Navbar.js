@@ -5,7 +5,7 @@ export const Navbar = () => {
     <nav className="navbar">
       <p className="logo">
         {`<`}
-        <span> portfolio v0.15</span>
+        <span> portfolio v0.15 </span>
         {`/>`}
       </p>
       <NavLink

@@ -4,19 +4,50 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 62.5%;
+}
+
 body {
   font-family: monaco, Consolas, Lucida Console, monospace;
-  margin: 0;
-  color: azure;
-  background-color: rgb(34, 31, 31);
+  font-size: 1.6rem;
+  color: #c1c1c1;
+  text-shadow: 2px 2px 4px black;
+  background-color: #141415;
+  margin: 0 50px;
+}
+
+.highlight {
+  color: #f0f0f0;
+}
+
+.title {
+  margin: 2px 0;
+  font-size: 5rem;
 }
 
 .navbar {
+  font-size: 2.25rem;
   height: 70px;
   display: flex;
   align-items: center;
+  /* justify-content: right; */
+}
+
+.navbar > * {
+  padding-right: 2em;
 }
 
 .navbar .logo {
   margin-right: auto;
+  color: #f0f0f0;
+}
+
+.navbar > .logo > span {
+  color: #9f6af9;
+}
+
+main {
+  max-width: 900px;
+  margin: 10em auto 5em;
 }

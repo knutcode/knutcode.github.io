@@ -1,10 +1,8 @@
-// import { Link } from "react-router-dom";
-
 const About = () => {
   return (
-    <div>
-      <h1>about</h1>
-    </div>
+    <main>
+      <h1 className="highlight">about</h1>
+    </main>
   );
 };
 

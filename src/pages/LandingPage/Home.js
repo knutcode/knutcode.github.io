@@ -1,10 +1,9 @@
-// import { Link, Outlet } from "react-router-dom";
-// import Navbar from "../../components/Navbar";
 const Home = () => {
   return (
-    <>
-      <h1>home page</h1>
-    </>
+    <main>
+      <h1 className="title highlight">Knut</h1>
+      <small>25 y/o front-end dev in the making.</small>
+    </main>
   );
 };
 

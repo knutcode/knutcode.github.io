@@ -3,39 +3,43 @@ import { NavLink } from "react-router-dom";
 export const Navbar = () => {
   return (
     <nav className="navbar">
-      <p className="logo">knutcode</p>
+      <p className="logo">
+        {`<`}
+        <span> portfolio </span>
+        {`/>`}
+      </p>
       <NavLink
         to="/"
         style={({ isActive }) => {
           return {
-            color: isActive ? "white" : "grey",
+            color: isActive ? "#F0F0F0" : "#C1C1C1",
             textDecorationLine: isActive ? "underline" : "none",
           };
         }}
       >
-        Home
+        home
       </NavLink>
       <NavLink
         to="/projects"
         style={({ isActive }) => {
           return {
-            color: isActive ? "white" : "grey",
+            color: isActive ? "#F0F0F0" : "#C1C1C1",
             textDecorationLine: isActive ? "underline" : "none",
           };
         }}
       >
-        Projects
+        projects
       </NavLink>
       <NavLink
         to="/about"
         style={({ isActive }) => {
           return {
-            color: isActive ? "white" : "grey",
+            color: isActive ? "#F0F0F0" : "#C1C1C1",
             textDecorationLine: isActive ? "underline" : "none",
           };
         }}
       >
-        About
+        about
       </NavLink>
     </nav>
   );

@@ -1,4 +1,4 @@
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Error from "./LandingPage/Error";
 import Home from "./LandingPage/Home";
 import About from "./LandingPage/About";

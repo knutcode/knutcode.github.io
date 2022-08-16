@@ -1,10 +1,8 @@
-// import { Link } from "react-router-dom";
-
 const Error = () => {
   return (
-    <div>
-      <h1>error 404 - page not found</h1>
-    </div>
+    <main>
+      <h1 className="highlight">error 404 - page not found</h1>
+    </main>
   );
 };
 

@@ -1,4 +1,4 @@
-portfolio v0.15
+portfolio v0.25
 
 ##
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

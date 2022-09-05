@@ -1,47 +1,45 @@
-import { NavLink } from "react-router-dom";
+import { StyledNav, Logo, NavList, NavListItem } from "../components-styled/NavbarStyles";
+import { Link } from "react-scroll";
 
 export const Navbar = () => {
   return (
-    <nav className="navbar">
-      <p className="logo">
-        {`<`}
-        <span> portfolio v0.15 </span>
-        {`/>`}
-      </p>
-      <NavLink
-        to="/"
-        style={({ isActive }) => {
-          return {
-            color: isActive ? "#F0F0F0" : "#C1C1C1",
-            textDecorationLine: isActive ? "underline" : "none",
-          };
-        }}
-      >
-        home
-      </NavLink>
-      <NavLink
-        to="/projects"
-        style={({ isActive }) => {
-          return {
-            color: isActive ? "#F0F0F0" : "#C1C1C1",
-            textDecorationLine: isActive ? "underline" : "none",
-          };
-        }}
-      >
-        projects
-      </NavLink>
-      <NavLink
-        to="/about"
-        style={({ isActive }) => {
-          return {
-            color: isActive ? "#F0F0F0" : "#C1C1C1",
-            textDecorationLine: isActive ? "underline" : "none",
-          };
-        }}
-      >
-        about
-      </NavLink>
-    </nav>
+    <header>
+      <StyledNav>
+        <Logo>
+          {`<`}
+          <Link to="hero" spy={true} smooth={true} offset={-200} duration={500} activeClass="active">
+            <span>Portfolio</span>
+          </Link>
+          {`/>`}
+        </Logo>
+
+        <NavList>
+          <NavListItem>
+            <Link to="hero" spy={true} smooth={true} offset={0} duration={500} activeClass="active">
+              Home
+            </Link>
+          </NavListItem>
+
+          <NavListItem>
+            <Link to="about" spy={true} smooth={true} offset={0} duration={500} activeClass="active">
+              About
+            </Link>
+          </NavListItem>
+
+          <NavListItem>
+            <Link to="projects" spy={true} smooth={true} offset={0} duration={500} activeClass="active">
+              Projects
+            </Link>
+          </NavListItem>
+
+          <NavListItem>
+            <Link to="contact" spy={true} smooth={true} offset={0} duration={500} activeClass="active">
+              Contact
+            </Link>
+          </NavListItem>
+        </NavList>
+      </StyledNav>
+    </header>
   );
 };
 

@@ -1,62 +1,64 @@
+import { ProjectsSection } from "../components-styled/ProjectsStyles";
+
 const Projects = () => {
   return (
-    <main>
-      <h2 className="underline">kodehode assignments</h2>
+    <ProjectsSection id="projects">
+      <h2 className="underline">Kodehode projects</h2>
       <ul className="project-list">
         <li>
           <a href="https://knutcode.github.io/kodehode/todo-assignment/" target="_blank" rel="noreferrer">
-            to-do list, @Kodehode
+            To-do list, @Kodehode
           </a>
         </li>
         <li>
           <a href="https://knutcode.github.io/kodehode/pokemon-api/" target="_blank" rel="noreferrer">
-            pokemon generator, @Kodehode
+            Pokemon generator, @Kodehode
           </a>
         </li>
         <li>
           <a href="https://knutcode.github.io/kodehode/collatz-conjencture/" target="_blank" rel="noreferrer">
-            collatz calculator, @Kodehode
+            Collatz calculator, @Kodehode
           </a>
         </li>
         <li>
           <a href="https://knutcode.github.io/kodehode/drumkit-assignment/" target="_blank" rel="noreferrer">
-            drumkit, @Kodehode
+            Drumkit, @Kodehode
           </a>
         </li>
       </ul>
 
-      <h2 className="underline">scrimba projects</h2>
+      <h2 className="underline">Scrimba projects</h2>
       <ul className="project-list">
         <li>
           <a href="https://knutcode.github.io/scrimba/invoice-creator/" target="_blank" rel="noreferrer">
-            invoice app, @Scrimba
+            Invoice app, @Scrimba
           </a>
         </li>
         <li>
           <a href="https://knutcode.github.io/scrimba/password-generator/" target="_blank" rel="noreferrer">
-            password generator, @Scrimba
+            Password generator, @Scrimba
           </a>
         </li>
         <li>
           <a href="https://knutcode.github.io/scrimba/unit-converter/" target="_blank" rel="noreferrer">
-            unit converter, @Scrimba
+            Unit converter, @Scrimba
           </a>
         </li>
         <li>
           <a href="https://knutcode.github.io/scrimba/bbq-splash-page/" target="_blank" rel="noreferrer">
-            bbq splash page, @Scrimba
+            BBQ splash page, @Scrimba
           </a>
         </li>
       </ul>
-      <h2 className="underline">personal projects</h2>
+      <h2 className="underline">Personal projects</h2>
       <ul className="project-list">
         <li>
           <a href="https://knutcode.github.io/is-it-friday/" target="_blank" rel="noreferrer">
-            is it friday?
+            Is it friday?
           </a>
         </li>
       </ul>
-    </main>
+    </ProjectsSection>
   );
 };
 

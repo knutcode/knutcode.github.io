@@ -5,8 +5,8 @@ const Hero = () => {
   const { PORTFOLIO } = TEXT_AND_CONTENT;
   return (
     <HeroSection id="hero">
-      <HeroTitle>I'm Knut</HeroTitle>
-      <HeroSmall>Frontend developer student.</HeroSmall>
+      <HeroTitle>Hi, I'm Knut.</HeroTitle>
+      <HeroSmall>Frontend dev in the making.</HeroSmall>
       <HeroText>{PORTFOLIO.HERO.TEXT}</HeroText>
     </HeroSection>
   );

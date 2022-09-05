@@ -13,7 +13,8 @@ export const StyledNav = styled.nav`
   height: 70px;
   display: flex;
   align-items: center;
-  background-color: rgba(10, 10, 10, 0.5);
+  background-color: #141415;
+  /* box-shadow: 0px -10px 30px black; */
 `;
 
 /**
@@ -44,13 +45,10 @@ export const NavList = styled.ul`
  * ~ Styled list-item
  */
 export const NavListItem = styled.li`
-  margin-right: 2em;
+  margin-left: 2em;
   cursor: pointer;
-  > .active {
-    color: #f0f0f0;
-    text-decoration: underline;
-  }
   && :hover {
-    color: #f0f0f0;
+    color: #79c1ff;
+    border-bottom: 2px solid #fff;
   }
 `;

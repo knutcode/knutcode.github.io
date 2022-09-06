@@ -13,8 +13,9 @@ export const StyledNav = styled.nav`
   height: 70px;
   display: flex;
   align-items: center;
-  background-color: #141415;
-  /* box-shadow: 0px -10px 30px black; */
+  /* background-color: #141415e0; */
+  background-color: #202020e4;
+  box-shadow: 0px -10px 25px black;
 `;
 
 /**
@@ -47,8 +48,9 @@ export const NavList = styled.ul`
 export const NavListItem = styled.li`
   margin-left: 2em;
   cursor: pointer;
-  && :hover {
+  && :hover,
+  .active {
     color: #79c1ff;
-    border-bottom: 2px solid #fff;
+    border-bottom: 2px solid #f0f0f0;
   }
 `;

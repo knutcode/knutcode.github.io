@@ -10,7 +10,9 @@ import styled from "styled-components";
  */
 export const HeroSection = styled.section`
   height: 100vh;
-  padding-top: 20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `;
 
 /**

@@ -11,7 +11,8 @@ export const StyledFooter = styled.footer`
   justify-content: center;
   align-items: center;
   width: 100%;
-  background-color: rgba(10, 10, 10, 0.9);
+  background-color: #202020e4;
+  box-shadow: 0px 10px 30px black;
   > * {
     margin: 3px;
   }

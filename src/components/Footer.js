@@ -3,7 +3,7 @@ import { StyledFooter } from "../components-styled/FooterStyles";
 const Footer = () => {
   return (
     <StyledFooter>
-      <p>This website is open source on GitHub</p>
+      <p>©2022 - Knut Johnsen</p>
     </StyledFooter>
   );
 };

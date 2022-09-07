@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const ProjectsSection = styled.section`
-  height: 100vh;
+  /* height: 100vh; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12,6 +12,7 @@ export const ProjectContainer = styled.div`
   display: flex;
   height: 250px;
   margin-bottom: 5rem;
+  background-color: #202020e4;
 `;
 
 export const ImgWrapper = styled.div`
@@ -46,7 +47,6 @@ export const ProjectText = styled.p`
 `;
 
 export const ProjectLink = styled.a`
-  padding-right: 0.7em;
-  font-size: 2rem;
+  font-size: 1.8rem;
   text-decoration: underline #f0f0f0 solid;
 `;

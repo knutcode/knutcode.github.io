@@ -10,6 +10,7 @@ const ProjectSection = () => {
         title={item.title}
         desc={item.desc}
         image={item.image}
+        alt={item.alt}
         github={item.github}
         pages={item.pages}
       />

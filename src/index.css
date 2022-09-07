@@ -9,24 +9,29 @@ html {
 }
 
 body {
-  font-family: monaco, Consolas, Lucida Console, monospace;
+  font-family: "Inter", sans-serif;
   font-size: 1.6rem;
-  color: #c1c1c1;
-  text-shadow: 2px 2px 1px black;
+  color: #f0f0f0;
+  text-shadow: 1px 1px 1px black;
   background-color: #141415;
   margin: 0;
 }
 
-.flex {
-  display: flex;
-}
-
 /* Some typography */
 
-i {
-  vertical-align: -12.5%;
-  color: #f0f0f0;
+.section-title {
+  font-size: 3.5rem;
+  color: #79c1ff;
+  text-decoration: underline 2px #f0f0f0;
+  margin-bottom: 10rem;
 }
+
+.highlight,
+.section-title {
+  font-weight: 500;
+}
+
+/* link styling  */
 
 a:link,
 a:active {
@@ -41,26 +46,22 @@ a:hover {
   color: #86de74;
 }
 
-.section-title {
-  font-size: 3.5rem;
-  color: #79c1ff;
-  text-decoration: underline 2px #f0f0f0;
-  margin-bottom: 10rem;
-}
-
-.highlight {
-  color: #f0f0f0;
-}
-
-.underline {
-  text-decoration: underline;
-}
-
-/* highlights tools used by color */
+/* highlights*/
 
 .react {
-  color: #79c1ff;
-  text-decoration: underline #fff 2px;
+  color: #61dbfb;
+}
+
+.javascript {
+  color: #f7df1e;
+}
+
+.html {
+  color: #e34c26;
+}
+
+.css {
+  color: #264de4;
 }
 
 /* Flips order of every other project element rendered by map */
@@ -73,4 +74,8 @@ a:hover {
   text-align: right;
   margin-right: 4.5rem;
   margin-left: 0;
+}
+
+.p--link:first-of-type {
+  padding-right: 0.7em;
 }

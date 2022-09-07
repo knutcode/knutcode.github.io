@@ -12,18 +12,18 @@ const Project = (props) => {
   return (
     <ProjectContainer className="projects">
       <ImgWrapper>
-        <ProjectImg src={props.image} alt="project image" />
+        <ProjectImg src={props.image} alt={props.alt} />
       </ImgWrapper>
 
       <TextWrapper>
         <ProjectTitle>{props.title}</ProjectTitle>
         <ProjectText>{props.desc}</ProjectText>
 
-        <ProjectLink href={props.github} target="_blank">
-          github
+        <ProjectLink href={props.github} target="_blank" className="p--link">
+          GitHub
         </ProjectLink>
         <ProjectLink href={props.pages} target="_blank">
-          website
+          Website
         </ProjectLink>
       </TextWrapper>
     </ProjectContainer>

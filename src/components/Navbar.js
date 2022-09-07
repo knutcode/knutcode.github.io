@@ -8,13 +8,13 @@ export const Navbar = () => {
         <Logo>
           {`<`}
           <Link to="hero" spy={true} smooth={true} offset={-80} duration={500}>
-            <span>Knut</span>
+            <span>portfolio</span>
           </Link>
           {`/>`}
         </Logo>
         <NavList>
           <NavListItem>
-            <Link to="hero" spy={true} exact={true} smooth={true} offset={-80} duration={500}>
+            <Link to="hero" spy={true} smooth={true} offset={-80} duration={500}>
               Home
             </Link>
           </NavListItem>

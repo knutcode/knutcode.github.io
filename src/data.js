@@ -2,20 +2,38 @@ const data = [
   {
     id: 1,
     title: "Cat Facts",
-    desc: "Tiny page built with React.js using Axios and styled-components. Deployed with github pages.",
+    desc: "Tiny app built with React using Axios and styled-components. Hosted with GitHub Pages.",
     github: "https://github.com/knutcode/cat-facts",
     pages: "https://knutcode.github.io/cat-facts/",
-    image:
-      "https://media.istockphoto.com/vectors/thumbnail-image-vector-graphic-vector-id1147544807?k=20&m=1147544807&s=612x612&w=0&h=pBhz1dkwsCMq37Udtp9sfxbjaMl27JUapoyYpQm0anc=",
+    image: require("./img/CatFacts.png"),
+    alt: "Cat facts",
   },
   {
     id: 2,
-    title: "Project title",
-    desc: "A longer project description containing descriptions about project, duh.",
-    github: "#",
-    pages: "#",
-    image:
-      "https://media.istockphoto.com/vectors/thumbnail-image-vector-graphic-vector-id1147544807?k=20&m=1147544807&s=612x612&w=0&h=pBhz1dkwsCMq37Udtp9sfxbjaMl27JUapoyYpQm0anc=",
+    title: "To-do List",
+    desc: "To-do list using local-storage built with JavaScript, HTML and CSS. Hosted with GitHub Pages",
+    github: "https://github.com/knutcode/kodehode/tree/main/todo-assignment",
+    pages: "https://knutcode.github.io/kodehode/todo-assignment/",
+    image: require("./img/TodoList.png"),
+    alt: "To-do list",
+  },
+  {
+    id: 3,
+    title: "Travel Journal",
+    desc: "A 'Travel Journal' built with react following a figma design. Hosted with GitHub Pages.",
+    github: "https://github.com/knutcode/travel-journal",
+    pages: "https://knutcode.github.io/travel-journal/",
+    image: require("./img/TravelJournal.png"),
+    alt: "Travel Journal",
+  },
+  {
+    id: 4,
+    title: "Simple Counter",
+    desc: "React counter using useState, useEffect and some conditional rendering. Hosted with GitHub Pages.",
+    github: "https://github.com/knutcode/react-counter",
+    pages: "https://knutcode.github.io/react-counter/",
+    image: require("./img/SimpleCounter.png"),
+    alt: "Simple Counter",
   },
 ];
 

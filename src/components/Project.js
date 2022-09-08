@@ -19,12 +19,14 @@ const Project = (props) => {
         <ProjectTitle>{props.title}</ProjectTitle>
         <ProjectText>{props.desc}</ProjectText>
 
-        <ProjectLink href={props.github} target="_blank" className="p--link">
-          GitHub
-        </ProjectLink>
-        <ProjectLink href={props.pages} target="_blank">
-          Website
-        </ProjectLink>
+        <div>
+          <ProjectLink href={props.github} target="_blank" className="p--link">
+            GitHub
+          </ProjectLink>
+          <ProjectLink href={props.pages} target="_blank">
+            website
+          </ProjectLink>
+        </div>
       </TextWrapper>
     </ProjectContainer>
   );

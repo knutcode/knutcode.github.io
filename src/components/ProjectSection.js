@@ -1,6 +1,6 @@
 import { ProjectsSection } from "../components-styled/ProjectsStyles";
 import Project from "./Project";
-import data from "../data";
+import data from "../projectData";
 
 const ProjectSection = () => {
   const projects = data.map((item) => {

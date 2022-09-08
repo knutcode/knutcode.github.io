@@ -1,7 +1,9 @@
 import styled from "styled-components";
 
 export const AboutSection = styled.section`
-  height: 100vh;
+  padding-top: 10rem;
+  height: 80vh;
+  margin-bottom: 10em;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -13,12 +15,17 @@ export const AboutContainer = styled.div`
 `;
 
 export const AboutTextWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   max-width: 450px;
   margin-right: 10rem;
   > p {
-    font-size: 2rem;
+    font-family: "Inter", sans-serif;
+    font-size: 2.1rem;
     line-height: 1.4em;
-    letter-spacing: 0.075em;
+    letter-spacing: 0.06em;
+    text-align: right;
   }
 `;
 

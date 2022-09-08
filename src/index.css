@@ -9,7 +9,8 @@ html {
 }
 
 body {
-  font-family: "Inter", sans-serif;
+  /* font-family: "Inter", sans-serif; */
+  font-family: "Roboto Mono", monospace;
   font-size: 1.6rem;
   color: #f0f0f0;
   text-shadow: 1px 1px 1px black;
@@ -20,6 +21,7 @@ body {
 /* Some typography */
 
 .section-title {
+  /* font-family: "Inter", sans-serif; */
   font-size: 3.5rem;
   color: #79c1ff;
   text-decoration: underline 2px #f0f0f0;
@@ -31,37 +33,19 @@ body {
   font-weight: 500;
 }
 
-/* link styling  */
-
 a:link,
-a:active {
-  color: #79c1ff;
-}
-
+a:active,
 a:visited {
-  color: #905fde;
+  color: #79c1ff;
 }
 
 a:hover {
   color: #86de74;
 }
 
-/* highlights*/
-
 .react {
-  color: #61dbfb;
-}
-
-.javascript {
-  color: #f7df1e;
-}
-
-.html {
-  color: #e34c26;
-}
-
-.css {
-  color: #264de4;
+  color: #79c1ff;
+  text-decoration: underline 2px #f0f0f0;
 }
 
 /* Flips order of every other project element rendered by map */
@@ -72,8 +56,6 @@ a:hover {
 
 .projects:nth-child(odd) > *:last-child {
   text-align: right;
-  margin-right: 4.5rem;
-  margin-left: 0;
 }
 
 .p--link:first-of-type {

@@ -32,7 +32,7 @@ export const Navbar = () => {
           </NavListItem>
 
           <NavListItem>
-            <Link to="contact" spy={true} smooth={true} offset={-28} duration={500}>
+            <Link to="contact" spy={true} smooth={true} offset={-5} duration={500}>
               Contact
             </Link>
           </NavListItem>

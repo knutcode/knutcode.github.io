@@ -10,4 +10,7 @@ export const StyledFooter = styled.footer`
   > * {
     margin: 3px;
   }
+  > * > span {
+    font-family: "Inter", sans-serif;
+  }
 `;

@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const ProjectsSection = styled.section`
-  /* height: 100vh; */
+  padding-top: 5rem;
+  padding-bottom: 2.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,13 +11,13 @@ export const ProjectsSection = styled.section`
 
 export const ProjectContainer = styled.div`
   display: flex;
-  height: 250px;
+  height: 350px;
   margin-bottom: 5rem;
   background-color: #202020e4;
 `;
 
 export const ImgWrapper = styled.div`
-  max-width: 350px;
+  max-width: 500px;
   background-color: gray;
 `;
 
@@ -28,9 +29,10 @@ export const ProjectImg = styled.img`
 `;
 
 export const TextWrapper = styled.div`
-  margin-left: 4.5rem;
-  max-width: 350px;
-  align-self: center;
+  display: flex;
+  flex-direction: column;
+  padding: 3rem;
+  max-width: 500px;
 `;
 
 export const ProjectTitle = styled.h3.attrs({
@@ -39,14 +41,17 @@ export const ProjectTitle = styled.h3.attrs({
   font-weight: 500;
   margin: 0;
   padding: 0;
-  font-size: 2.5rem;
+  font-size: 3rem;
 `;
 
 export const ProjectText = styled.p`
-  font-size: 2rem;
+  font-family: "Inter", sans-serif;
+  font-size: 2.1rem;
+  margin-bottom: auto;
 `;
 
 export const ProjectLink = styled.a`
-  font-size: 1.8rem;
-  text-decoration: underline #f0f0f0 solid;
+  font-size: 2.5rem;
+  font-weight: 400;
+  text-decoration: underline #f0f0f0 2px;
 `;

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const ContactSection = styled.section`
-  height: 90vh;
+  height: 85vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,10 +10,11 @@ export const ContactSection = styled.section`
 
 export const ContactContainer = styled.div`
   display: flex;
+  max-width: 800px;
 `;
 
 export const ContactTextWrapper = styled.div`
-  width: 350px;
+  width: 50%;
   display: flex;
   justify-content: center;
   flex-direction: column;

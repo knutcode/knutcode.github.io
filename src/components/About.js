@@ -8,7 +8,7 @@ const About = () => {
       <AboutContainer>
         <AboutTextWrapper>
           <p>
-            I have spent countless hours on the internet, gaming - I never imagined I would learn to build and develop
+            I have spent countless hours on the internet, gaming - and I never imagined I would learn to build and develop
             experiences for others.
           </p>
           <p>

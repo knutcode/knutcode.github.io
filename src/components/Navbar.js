@@ -1,9 +1,9 @@
-import { StyledNav, Logo, NavList, NavListItem } from "../components-styled/NavbarStyles";
+import { StyledNav, Logo, NavList, NavListItem, StyledHeader } from "../components-styled/NavbarStyles";
 import { Link } from "react-scroll";
 
 export const Navbar = () => {
   return (
-    <header>
+    <StyledHeader>
       <StyledNav>
         <Logo>
           {`<`}
@@ -38,7 +38,7 @@ export const Navbar = () => {
           </NavListItem>
         </NavList>
       </StyledNav>
-    </header>
+    </StyledHeader>
   );
 };
 

@@ -1,15 +1,21 @@
 import styled from "styled-components";
 
-export const StyledNav = styled.nav`
+export const StyledHeader = styled.header`
   position: fixed;
   top: 0;
   width: 100%;
   font-size: 2.25rem;
   padding-inline: 5rem;
   height: 70px;
+  background-color: #202020e4;
+`;
+
+export const StyledNav = styled.nav`
   display: flex;
   align-items: center;
-  background-color: #202020e4;
+  height: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
 `;
 
 export const Logo = styled.p`

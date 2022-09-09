@@ -9,7 +9,6 @@ html {
 }
 
 body {
-  /* font-family: "Inter", sans-serif; */
   font-family: "Roboto Mono", monospace;
   font-size: 1.6rem;
   color: #f0f0f0;
@@ -21,11 +20,16 @@ body {
 /* Some typography */
 
 .section-title {
-  /* font-family: "Inter", sans-serif; */
   font-size: 3.5rem;
   color: #79c1ff;
   text-decoration: underline 2px #f0f0f0;
   margin-bottom: 10rem;
+  @media (max-width: 920px) {
+    .section-title::last-child {
+      padding: 0;
+      margin-bottom: 0;
+    }
+  }
 }
 
 .highlight,

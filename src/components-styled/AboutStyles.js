@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device } from "./A-MediaQuery";
 
 export const AboutSection = styled.section`
   padding-top: 10rem;
@@ -12,6 +13,11 @@ export const AboutSection = styled.section`
 
 export const AboutContainer = styled.div`
   display: flex;
+
+  @media ${device.tabletL} {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 export const AboutTextWrapper = styled.div`
@@ -26,6 +32,14 @@ export const AboutTextWrapper = styled.div`
     line-height: 1.4em;
     letter-spacing: 0.06em;
     text-align: right;
+  }
+
+  @media ${device.tabletL} {
+    margin-right: 0;
+    order: 1;
+    > p {
+      text-align: left;
+    }
   }
 `;
 

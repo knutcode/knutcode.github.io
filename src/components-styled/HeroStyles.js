@@ -12,7 +12,7 @@ export const HeroSection = styled.section`
 export const HeroTitle = styled.h1`
   font-family: "Inter", sans-serif;
   font-weight: 600;
-  margin: 0;
+  margin: 0 0 0 -4px;
   font-size: 10rem;
   @media ${device.tabletL} {
     font-size: 8rem;

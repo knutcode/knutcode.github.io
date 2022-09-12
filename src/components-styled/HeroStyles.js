@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device } from "./A-MediaQueries";
 
 export const HeroSection = styled.section`
   height: 100vh;
@@ -13,10 +14,16 @@ export const HeroTitle = styled.h1`
   font-weight: 600;
   margin: 0;
   font-size: 10rem;
+  @media ${device.tabletL} {
+    font-size: 8rem;
+  }
 `;
 
 export const HeroSmall = styled.small`
   font-size: 2.25rem;
+  @media ${device.tabletL} {
+    font-size: 1.75rem;
+  }
 `;
 
 export const HeroText = styled.p`
@@ -24,4 +31,8 @@ export const HeroText = styled.p`
   margin: 15px 0;
   font-size: 3rem;
   max-width: 55rem;
+  @media ${device.tabletL} {
+    font-size: 2.3rem;
+    max-width: 30ch;
+  }
 `;

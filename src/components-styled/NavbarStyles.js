@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device } from "./A-MediaQueries";
 
 export const StyledHeader = styled.header`
   position: fixed;
@@ -30,6 +31,17 @@ export const Logo = styled.p`
 export const NavList = styled.ul`
   list-style: none;
   display: flex;
+  transition: 0.6s;
+  @media ${device.tabletL} {
+    position: fixed;
+    top: 47px;
+    right: 0;
+    width: 50%;
+    height: 100vh;
+    background-color: #202020e4;
+    flex-direction: column;
+    transform: translateX(${(props) => (props.active ? "0" : "100%")});
+  }
 `;
 
 export const NavListItem = styled.li`
@@ -39,5 +51,50 @@ export const NavListItem = styled.li`
   .active {
     color: #79c1ff;
     border-bottom: 2px solid #f0f0f0;
+  }
+  @media ${device.tabletL} {
+    margin: 1em;
+    margin-left: 0;
+    text-align: left;
+  }
+`;
+
+export const NavToggle = styled.div`
+  position: relative;
+  width: 3rem;
+  height: 3.5rem;
+  cursor: pointer;
+  align-self: center;
+  justify-self: center;
+  display: none;
+
+  .lines {
+    position: absolute;
+    background: #f0f0f0;
+    border-radius: 5px;
+    transition: 0.4s;
+    height: 3px;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .line--1 {
+    transform: translate(-50%, ${(props) => (props.active ? "0" : "10px")})
+      rotate(${(props) => (props.active ? "-45deg" : "0")});
+  }
+
+  .line--2 {
+    width: ${(props) => (props.active ? "0%" : "")};
+  }
+
+  .line--3 {
+    transform: translate(-50%, ${(props) => (props.active ? "0" : "-13px")})
+      rotate(${(props) => (props.active ? "45deg" : "0")});
+  }
+
+  @media ${device.tabletL} {
+    display: block;
   }
 `;

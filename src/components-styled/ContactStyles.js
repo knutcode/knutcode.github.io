@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { device } from "./A-MediaQuery";
+import { device } from "./A-MediaQueries";
 
 export const ContactSection = styled.section`
   height: 85vh;
@@ -8,7 +8,6 @@ export const ContactSection = styled.section`
   align-items: center;
   justify-content: center;
   @media ${device.tabletL} {
-    height: fit-content;
     h2 {
       margin-bottom: 5rem;
     }

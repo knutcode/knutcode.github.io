@@ -12,8 +12,8 @@ const About = () => {
             experiences for others.
           </p>
           <p>
-            Now I am studying Front-end at Kodehode Bergen and Scrimba's online course, 'The Frontend Developer Career Path'
-            since April 2022.
+            Now I am studying <strong>Front-end</strong> at <em>Kodehode Bergen</em> and Scrimba's online course,
+            <em>'The Frontend Developer Career Path'</em> since April 2022.
           </p>
         </AboutTextWrapper>
         <ImgWrapper>

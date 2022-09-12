@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device } from "./A-MediaQueries";
 
 export const ProjectsSection = styled.section`
   padding-top: 5rem;
@@ -14,6 +15,10 @@ export const ProjectContainer = styled.div`
   height: 350px;
   margin-bottom: 5rem;
   background-color: #202020e4;
+  @media ${device.tabletL} {
+    flex-direction: column;
+    height: fit-content;
+  }
 `;
 
 export const ImgWrapper = styled.div`
@@ -33,11 +38,12 @@ export const TextWrapper = styled.div`
   flex-direction: column;
   padding: 3rem;
   max-width: 500px;
+  @media ${device.tabletL} {
+    height: 300px;
+  }
 `;
 
-export const ProjectTitle = styled.h3.attrs({
-  className: "highlight",
-})`
+export const ProjectTitle = styled.h3`
   font-weight: 500;
   margin: 0;
   padding: 0;
@@ -54,4 +60,6 @@ export const ProjectLink = styled.a`
   font-size: 2.5rem;
   font-weight: 400;
   text-decoration: underline #f0f0f0 2px;
+  @media ${device.tabletL} {
+  }
 `;

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { device } from "./A-MediaQuery";
+import { device } from "./A-MediaQueries";
 
 export const AboutSection = styled.section`
   padding-top: 10rem;
@@ -9,6 +9,11 @@ export const AboutSection = styled.section`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  @media ${device.tabletL} {
+    height: fit-content;
+    padding-top: 5rem;
+    padding-inline: 1.5rem;
+  }
 `;
 
 export const AboutContainer = styled.div`
@@ -35,6 +40,7 @@ export const AboutTextWrapper = styled.div`
   }
 
   @media ${device.tabletL} {
+    padding-top: 2rem;
     margin-right: 0;
     order: 1;
     > p {

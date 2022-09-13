@@ -22,13 +22,12 @@ export const HeroTitle = styled.h1`
     font-size: 8rem;
   }
   @media ${device.mobileL} {
-    text-decoration: underline #79c1ff 4px;
+    text-decoration: underline #79c1ff 3px;
     margin-bottom: 1.75rem;
     font-size: 7.25rem;
   }
   @media ${device.mobileS} {
     font-size: 6.5rem;
-    /* color: red; */
   }
 `;
 

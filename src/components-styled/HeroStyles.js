@@ -22,7 +22,7 @@ export const HeroTitle = styled.h1`
     font-size: 8rem;
   }
   @media ${device.mobileL} {
-    text-decoration: underline skyblue 4px;
+    text-decoration: underline #79c1ff 4px;
     margin-bottom: 1.75rem;
     font-size: 7.25rem;
   }

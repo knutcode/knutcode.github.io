@@ -9,6 +9,9 @@ export const StyledHeader = styled.header`
   padding-inline: 5rem;
   height: 70px;
   background-color: #202020e4;
+  @media ${device.mobileL} {
+    padding-inline: 3rem;
+  }
 `;
 
 export const StyledNav = styled.nav`

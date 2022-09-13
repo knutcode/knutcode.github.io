@@ -1,8 +1,11 @@
 import { StyledNav, Logo, NavList, NavListItem, StyledHeader, NavToggle } from "../components-styled/NavbarStyles";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { Link } from "react-scroll";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 export const Navbar = () => {
+  //Navbar functionality
   const [active, setActive] = useState(false);
 
   const menuToggle = () => {
@@ -23,6 +26,11 @@ export const Navbar = () => {
 
   document.addEventListener("mousedown", closeMenu);
 
+  //animations
+  useEffect(() => {
+    Aos.init({});
+  }, []);
+
   return (
     <StyledHeader ref={menu}>
       <StyledNav>
@@ -34,25 +42,25 @@ export const Navbar = () => {
           {`/>`}
         </Logo>
         <NavList active={active}>
-          <NavListItem>
+          <NavListItem data-aos="fade-down" data-aos-delay="2300" data-aos-duration="1500">
             <Link to="hero" spy={true} smooth={true} offset={-80} duration={700} onClick={autoClose}>
               Home
             </Link>
           </NavListItem>
 
-          <NavListItem>
+          <NavListItem data-aos="fade-down" data-aos-delay="1800" data-aos-duration="1500">
             <Link to="about" spy={true} smooth={true} offset={-35} duration={700} onClick={autoClose}>
               About
             </Link>
           </NavListItem>
 
-          <NavListItem>
+          <NavListItem data-aos="fade-down" data-aos-delay="1400" data-aos-duration="1500">
             <Link to="projects" spy={true} smooth={true} offset={-28} duration={700} onClick={autoClose}>
               Projects
             </Link>
           </NavListItem>
 
-          <NavListItem>
+          <NavListItem data-aos="fade-down" data-aos-delay="1000" data-aos-duration="1500">
             <Link to="contact" spy={true} smooth={true} offset={-5} duration={700} onClick={autoClose}>
               Contact
             </Link>

@@ -22,6 +22,7 @@ export const ContactTextWrapper = styled.div`
   padding-right: 1.5rem;
   font-size: 2rem;
   text-align: right;
+
   > * {
     margin: 10px 15px 10px 150px;
   }
@@ -33,6 +34,13 @@ export const ContactTextWrapper = styled.div`
   }
   &:last-child > * {
     margin-inline: 0;
+  }
+  &:first-child > * {
+    transition: 0.5s;
+  }
+
+  &:first-child > *:hover {
+    cursor: pointer;
   }
 
   @media ${device.tabletL} {

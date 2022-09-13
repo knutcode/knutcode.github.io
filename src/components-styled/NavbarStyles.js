@@ -9,6 +9,7 @@ export const StyledHeader = styled.header`
   padding-inline: 5rem;
   height: 70px;
   background-color: #202020e4;
+  z-index: 1;
   @media ${device.mobileL} {
     padding-inline: 3rem;
   }
@@ -35,6 +36,7 @@ export const NavList = styled.ul`
   list-style: none;
   display: flex;
   transition: 0.6s;
+
   @media ${device.tabletL} {
     position: fixed;
     top: 47px;

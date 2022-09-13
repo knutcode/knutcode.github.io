@@ -1,9 +1,14 @@
 import { ContactSection, ContactLink, ContactTextWrapper, ContactContainer } from "../components-styled/ContactStyles";
 
 const Contact = () => {
-  function handleClick() {
+  function copyNumber() {
     navigator.clipboard.writeText("47276493");
   }
+
+  const handleClick = (e) => {
+    e.currentTarget.classList.add("wave-hand");
+  };
+
   return (
     <>
       <ContactSection id="contact">
@@ -11,12 +16,13 @@ const Contact = () => {
         <ContactContainer>
           <ContactTextWrapper>
             <img
+              onClick={handleClick}
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Emoji_u1f44b.svg/2048px-Emoji_u1f44b.svg.png"
               alt="Waving hand."
             />
           </ContactTextWrapper>
           <ContactTextWrapper>
-            <ContactLink href={void 0} onClick={handleClick}>
+            <ContactLink href={void 0} onClick={copyNumber}>
               <i className="fa-solid fa-phone footer--icon"></i>47276493
             </ContactLink>
 

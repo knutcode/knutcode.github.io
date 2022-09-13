@@ -7,6 +7,10 @@ export const HeroSection = styled.section`
   flex-direction: column;
   justify-content: center;
   padding-left: 5%;
+  @media ${device.mobileL} {
+    padding-left: 0%;
+    text-align: center;
+  }
 `;
 
 export const HeroTitle = styled.h1`
@@ -18,7 +22,13 @@ export const HeroTitle = styled.h1`
     font-size: 8rem;
   }
   @media ${device.mobileL} {
+    text-decoration: underline skyblue 4px;
+    margin-bottom: 1.75rem;
     font-size: 7.25rem;
+  }
+  @media ${device.mobileS} {
+    font-size: 6.5rem;
+    /* color: red; */
   }
 `;
 
@@ -40,5 +50,6 @@ export const HeroText = styled.p`
   }
   @media ${device.mobileL} {
     font-size: 2rem;
+    margin: 15px auto;
   }
 `;

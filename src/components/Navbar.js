@@ -13,18 +13,18 @@ export const Navbar = () => {
     setActive(false);
   };
 
-  const burgerMenu = useRef(null);
+  const menu = useRef(null);
 
-  const closeBurgerMenu = (e) => {
-    if (burgerMenu.current && active && !burgerMenu.current.contains(e.target)) {
+  const closeMenu = (e) => {
+    if (menu.current && active && !menu.current.contains(e.target)) {
       setActive(false);
     }
   };
 
-  document.addEventListener("mousedown", closeBurgerMenu);
+  document.addEventListener("mousedown", closeMenu);
 
   return (
-    <StyledHeader>
+    <StyledHeader ref={menu}>
       <StyledNav>
         <Logo>
           {`<`}
@@ -33,7 +33,7 @@ export const Navbar = () => {
           </Link>
           {`/>`}
         </Logo>
-        <NavList active={active} ref={burgerMenu}>
+        <NavList active={active}>
           <NavListItem>
             <Link to="hero" spy={true} smooth={true} offset={-80} duration={700} onClick={autoClose}>
               Home
@@ -58,7 +58,7 @@ export const Navbar = () => {
             </Link>
           </NavListItem>
         </NavList>
-        <NavToggle onClick={menuToggle} active={active}>
+        <NavToggle active={active} onClick={menuToggle}>
           <span className="lines line--1"></span>
           <span className="lines line--2"></span>
           <span className="lines line--3"></span>

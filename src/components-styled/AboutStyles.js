@@ -47,6 +47,11 @@ export const AboutTextWrapper = styled.div`
       text-align: left;
     }
   }
+  @media ${device.mobileL} {
+    > p {
+      text-align: center;
+    }
+  }
 `;
 
 export const AboutImg = styled.img`
@@ -54,4 +59,10 @@ export const AboutImg = styled.img`
   object-fit: cover;
   width: 100%;
   height: 100%;
+  @media ${device.tabletL} {
+    padding-inline: 2rem;
+  }
+  @media ${device.mobileL} {
+    padding-inline: 0;
+  }
 `;

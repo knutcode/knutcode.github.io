@@ -7,13 +7,10 @@ const About = () => {
       <h2 className="section-title">Get to know me</h2>
       <AboutContainer>
         <AboutTextWrapper>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.</p>
           <p>
-            I have spent countless hours on the internet, gaming - and I never imagined I would learn to build and develop
-            experiences for others.
-          </p>
-          <p>
-            Now I am studying <strong>Front-end</strong> at <em>Kodehode Bergen</em> and Scrimba's online course,
-            <em>'The Frontend Developer Career Path'</em> since April 2022.
+            Currently studying Front-end at Kodehode Bergen and Scrimba's online course, 'The Frontend Developer Career Path'
+            since April 2022.
           </p>
         </AboutTextWrapper>
         <ImgWrapper>

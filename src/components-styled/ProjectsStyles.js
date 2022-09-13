@@ -23,7 +23,6 @@ export const ProjectContainer = styled.div`
 
 export const ImgWrapper = styled.div`
   max-width: 500px;
-  background-color: gray;
 `;
 
 export const ProjectImg = styled.img`
@@ -48,6 +47,9 @@ export const ProjectTitle = styled.h3`
   margin: 0;
   padding: 0;
   font-size: 3rem;
+  @media ${device.mobileL} {
+    font-size: 2.75rem;
+  }
 `;
 
 export const ProjectText = styled.p`

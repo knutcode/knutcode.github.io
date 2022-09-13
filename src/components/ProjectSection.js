@@ -19,7 +19,7 @@ const ProjectSection = () => {
 
   return (
     <ProjectsSection id="projects">
-      <h2 className="section-title">Things I've worked on</h2>
+      <h2 className="section-title">Some projects</h2>
       {projects}
     </ProjectsSection>
   );

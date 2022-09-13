@@ -17,6 +17,9 @@ export const HeroTitle = styled.h1`
   @media ${device.tabletL} {
     font-size: 8rem;
   }
+  @media ${device.mobileL} {
+    font-size: 7.25rem;
+  }
 `;
 
 export const HeroSmall = styled.small`
@@ -34,5 +37,8 @@ export const HeroText = styled.p`
   @media ${device.tabletL} {
     font-size: 2.3rem;
     max-width: 30ch;
+  }
+  @media ${device.mobileL} {
+    font-size: 2rem;
   }
 `;

@@ -1,5 +1,5 @@
 import { StyledNav, Logo, NavList, NavListItem, StyledHeader, NavToggle } from "../components-styled/NavbarStyles";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Link } from "react-scroll";
 
 export const Navbar = () => {
@@ -13,6 +13,16 @@ export const Navbar = () => {
     setActive(false);
   };
 
+  const burgerMenu = useRef(null);
+
+  const closeBurgerMenu = (e) => {
+    if (burgerMenu.current && active && !burgerMenu.current.contains(e.target)) {
+      setActive(false);
+    }
+  };
+
+  document.addEventListener("mousedown", closeBurgerMenu);
+
   return (
     <StyledHeader>
       <StyledNav>
@@ -23,7 +33,7 @@ export const Navbar = () => {
           </Link>
           {`/>`}
         </Logo>
-        <NavList active={active}>
+        <NavList active={active} ref={burgerMenu}>
           <NavListItem>
             <Link to="hero" spy={true} smooth={true} offset={-80} duration={700} onClick={autoClose}>
               Home

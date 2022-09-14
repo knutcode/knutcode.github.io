@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { device } from "./A-MediaQueries";
+import { device } from "./ScreenSize";
 
 export const HeroSection = styled.section`
   height: 100vh;

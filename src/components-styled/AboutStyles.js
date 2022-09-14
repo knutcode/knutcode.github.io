@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { device } from "./A-MediaQueries";
+import { device } from "./ScreenSize";
 
 export const AboutSection = styled.section`
   padding-top: 10rem;
@@ -31,27 +31,27 @@ export const AboutTextWrapper = styled.div`
   justify-content: center;
   max-width: 450px;
   margin-right: 10rem;
-  > p {
+  /* > p {
     font-family: "Inter", sans-serif;
     font-size: 2.1rem;
     line-height: 1.4em;
     letter-spacing: 0.06em;
     text-align: right;
-  }
+  } */
 
   @media ${device.tabletL} {
     padding-top: 2rem;
     margin-right: 0;
     order: 1;
-    > p {
+    /* > p {
       text-align: left;
-    }
+    } */
   }
-  @media ${device.mobileL} {
+  /* @media ${device.mobileL} {
     > p {
       text-align: center;
     }
-  }
+  } */
 `;
 
 export const AboutImg = styled.img`
@@ -64,5 +64,19 @@ export const AboutImg = styled.img`
   }
   @media ${device.mobileL} {
     padding-inline: 0;
+  }
+`;
+
+export const AboutText = styled.p`
+  font-family: "Inter", sans-serif;
+  font-size: 2.1rem;
+  line-height: 1.4em;
+  letter-spacing: 0.06em;
+  text-align: right;
+  @media ${device.tabletL} {
+    text-align: left;
+  }
+  @media ${device.mobileL} {
+    text-align: center;
   }
 `;

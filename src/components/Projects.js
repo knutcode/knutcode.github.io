@@ -1,5 +1,6 @@
 import { ProjectsSection } from "../components-styled/ProjectsStyles";
-import Project from "./Project";
+import "./Projects.css";
+import Project from "./ProjectCard";
 import data from "../projectData";
 
 const ProjectSection = () => {

@@ -24,9 +24,11 @@ const Hero = () => {
   return (
     <HeroSection id="hero">
       <HeroTitle data-aos="fade-right">{isDesktop ? "Hi, I'm Knut!" : "I'm Knut!"}</HeroTitle>
+
       <HeroSmall data-aos="fade-up" data-aos-delay="300">
         {isDesktop ? "- Frontend developer in the making" : "Frontend dev in the making"}
       </HeroSmall>
+
       <HeroText data-aos="fade-up" data-aos-delay="800">
         Currently diving deeper in <span className="react">React</span> and discovering other technologies.
       </HeroText>

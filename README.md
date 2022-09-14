@@ -1,4 +1,6 @@
-portfolio v0.65
+portfolio v0.75
+
+designed with inspiration from [Brittany Chiang](https://github.com/bchiang7) and [nexxel](https://github.com/nexxeln/)
 
 ##
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

@@ -1,6 +1,7 @@
 .wave-hand:hover {
   animation-name: wave;
   animation-duration: 1s;
+  cursor: grab;
 }
 
 /* from brittany chiang's portfolio v3 */

@@ -39,10 +39,6 @@ export const ContactTextWrapper = styled.div`
     transition: 0.5s;
   }
 
-  &:first-child > *:hover {
-    cursor: pointer;
-  }
-
   @media ${device.tabletL} {
     width: 100%;
 

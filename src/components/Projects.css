@@ -1,22 +1,22 @@
 /* Flips order of every other project element rendered by map */
 
 .projects:nth-child(odd) > *:first-child {
-  order: 1;
+	order: 1;
 }
 
 .projects:nth-child(odd) > *:last-child {
-  text-align: right;
+	text-align: right;
 }
 
 .p--link:first-of-type {
-  padding-right: 0.7em;
+	padding-right: 0.7em;
 }
 
 @media (max-width: 960px) {
-  .projects:nth-child(odd) > *:first-child {
-    order: 0;
-  }
-  .projects:nth-child(odd) > *:last-child {
-    text-align: left;
-  }
+	.projects:nth-child(odd) > *:first-child {
+		order: 0;
+	}
+	.projects:nth-child(odd) > *:last-child {
+		text-align: left;
+	}
 }

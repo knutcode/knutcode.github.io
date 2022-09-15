@@ -1,7 +1,7 @@
 .wave-hand:hover {
-  animation-name: wave;
-  animation-duration: 1s;
-  cursor: grab;
+	animation-name: wave;
+	animation-duration: 1s;
+	cursor: grab;
 }
 
 /* from brittany chiang's portfolio v3 */
@@ -10,25 +10,25 @@
 /* v                                   */
 
 @keyframes wave {
-  from {
-    transform: none;
-  }
-  15% {
-    transform: translate3d(-20%, 0, 0) rotate3d(0, 0, 1, -10deg);
-  }
-  30% {
-    transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 7deg);
-  }
-  45% {
-    transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -10deg);
-  }
-  60% {
-    transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 5deg);
-  }
-  75% {
-    transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -2deg);
-  }
-  to {
-    transform: none;
-  }
+	from {
+		transform: none;
+	}
+	15% {
+		transform: translate3d(-20%, 0, 0) rotate3d(0, 0, 1, -10deg);
+	}
+	30% {
+		transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 7deg);
+	}
+	45% {
+		transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -10deg);
+	}
+	60% {
+		transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 5deg);
+	}
+	75% {
+		transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -2deg);
+	}
+	to {
+		transform: none;
+	}
 }

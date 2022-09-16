@@ -7,6 +7,7 @@ import {
 	ProjectContainer,
 	ProjectImg,
 	ProjectLink,
+	ProjectLinkWrapper,
 	ProjectText,
 	ProjectTitle,
 	TextWrapper,
@@ -35,7 +36,7 @@ const Project = (props) => {
 				<ProjectTitle>{props.title}</ProjectTitle>
 				<ProjectText>{props.desc}</ProjectText>
 
-				<div>
+				<ProjectLinkWrapper>
 					<ProjectLink
 						className="p--link"
 						href={props.github}
@@ -50,7 +51,7 @@ const Project = (props) => {
 					>
 						website
 					</ProjectLink>
-				</div>
+				</ProjectLinkWrapper>
 			</TextWrapper>
 		</ProjectContainer>
 	);

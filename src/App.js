@@ -5,10 +5,12 @@ import About from './components/About';
 import Projects from './components/Projects';
 import Footer from './components/Footer';
 import Contact from './components/Contact';
+import { GlobalStyles } from './components-styled/GlobalStyles';
 
 function App() {
 	return (
 		<>
+			<GlobalStyles />
 			<Navbar />
 			<StyledMain>
 				<Hero />

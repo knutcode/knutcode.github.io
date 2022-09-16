@@ -42,10 +42,9 @@ export const HeroText = styled.p`
 	font-family: 'Inter', sans-serif;
 	margin: 15px 0;
 	font-size: 3rem;
-	max-width: 55rem;
+	max-width: 30ch;
 	@media ${device.tabletL} {
 		font-size: 2.3rem;
-		max-width: 30ch;
 	}
 	@media ${device.mobileL} {
 		font-size: 2rem;

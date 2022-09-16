@@ -30,10 +30,6 @@ export const ProjectImg = styled.img`
 	object-fit: cover;
 	width: 100%;
 	height: 100%;
-	/* disabled
-    @media ${device.tabletL} {
-    object-position: top;
-  } */
 `;
 
 export const TextWrapper = styled.div`
@@ -42,7 +38,7 @@ export const TextWrapper = styled.div`
 	padding: 3rem;
 	max-width: 500px;
 	@media ${device.tabletL} {
-		height: 300px;
+		min-height: 300px;
 	}
 `;
 
@@ -66,6 +62,6 @@ export const ProjectLink = styled.a`
 	font-size: 2.5rem;
 	font-weight: 400;
 	text-decoration: underline #f0f0f0 2px;
-	@media ${device.tabletL} {
-	}
 `;
+
+export const ProjectLinkWrapper = styled.div``;

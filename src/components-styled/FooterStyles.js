@@ -18,6 +18,7 @@ export const FooterText = styled.p`
 `;
 
 export const FooterLink = styled.a`
+	text-align: center;
 	color: #f0f0f0;
 	text-decoration: none;
 	transition: 0.2s;

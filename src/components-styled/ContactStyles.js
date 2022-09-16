@@ -21,7 +21,7 @@ export const ContactTextWrapper = styled.div`
 	flex-direction: column;
 	padding-right: 1.5rem;
 	font-size: 2rem;
-	text-align: right;
+	text-align: left;
 
 	> * {
 		margin: 10px 15px 10px 150px;
@@ -29,14 +29,9 @@ export const ContactTextWrapper = styled.div`
 	&:last-child {
 		border-left: 1px solid gray;
 		padding-left: 1.5rem;
-		text-align: left;
-		flex-grow: 3;
 	}
 	&:last-child > * {
 		margin-inline: 0;
-	}
-	&:first-child > * {
-		transition: 0.5s;
 	}
 
 	@media ${device.tabletL} {
@@ -47,13 +42,7 @@ export const ContactTextWrapper = styled.div`
 		}
 		&:last-child {
 			border: none;
-			padding: none;
-		}
-	}
-	@media ${device.mobileL} {
-		padding-inline: 0;
-		&:last-child {
-			padding-left: 0;
+			padding-inline: 0;
 		}
 	}
 `;
@@ -62,7 +51,6 @@ export const ContactLink = styled.a`
 	cursor: pointer;
 	padding-inline: 10px;
 	text-decoration: none;
-	color: #f0f0f0;
 	transition: 0.2s;
 
 	&:visited,

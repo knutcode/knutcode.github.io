@@ -36,7 +36,7 @@ const Hero = () => {
 				data-aos="fade-up"
 				data-aos-delay="800"
 			>
-				Currently diving deeper in <span className="react">React</span> and discovering other technologies.
+				Currently diving deeper in <span className="highlight">React</span> and discovering other technologies.
 			</HeroText>
 		</HeroSection>
 	);

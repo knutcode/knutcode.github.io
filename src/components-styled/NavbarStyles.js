@@ -11,7 +11,7 @@ export const StyledHeader = styled.header`
 	background-color: #202020e4;
 	z-index: 1;
 	@media ${device.mobileL} {
-		padding-inline: 3rem;
+		padding: 0 3rem 0 1.75rem;
 	}
 `;
 

@@ -30,28 +30,13 @@ export const AboutTextWrapper = styled.div`
 	flex-direction: column;
 	justify-content: center;
 	max-width: 450px;
-	margin-right: 10rem;
-	/* > p {
-    font-family: "Inter", sans-serif;
-    font-size: 2.1rem;
-    line-height: 1.4em;
-    letter-spacing: 0.06em;
-    text-align: right;
-  } */
+	margin-right: 5rem;
 
 	@media ${device.tabletL} {
 		padding-top: 2rem;
 		margin-right: 0;
 		order: 1;
-		/* > p {
-      text-align: left;
-    } */
 	}
-	/* @media ${device.mobileL} {
-    > p {
-      text-align: center;
-    }
-  } */
 `;
 
 export const AboutImg = styled.img`
@@ -78,5 +63,6 @@ export const AboutText = styled.p`
 	}
 	@media ${device.mobileL} {
 		text-align: center;
+		font-size: 2rem;
 	}
 `;

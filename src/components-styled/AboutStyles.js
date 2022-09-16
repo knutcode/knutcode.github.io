@@ -3,8 +3,8 @@ import { device } from './ScreenSize';
 
 export const AboutSection = styled.section`
 	padding-top: 10rem;
-	height: 80vh;
 	margin-bottom: 10em;
+	height: 80vh;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -44,11 +44,9 @@ export const AboutImg = styled.img`
 	object-fit: cover;
 	width: 100%;
 	height: 100%;
+
 	@media ${device.tabletL} {
 		padding-inline: 2rem;
-	}
-	@media ${device.mobileL} {
-		padding-inline: 0;
 	}
 `;
 

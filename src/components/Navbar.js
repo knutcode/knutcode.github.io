@@ -1,6 +1,7 @@
-import { StyledNav, Logo, NavList, NavListItem, StyledHeader, NavToggle } from '../components-styled/NavbarStyles';
 import { useRef, useState, useEffect } from 'react';
 import { Link } from 'react-scroll';
+import { StyledNav, Logo, NavList, NavListItem, StyledHeader, NavToggle } from '../components-styled/NavbarStyles';
+import { navbar_link, navbar_logo } from '../language/en';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 
@@ -44,7 +45,7 @@ export const Navbar = () => {
 						duration={700}
 						onClick={autoClose}
 					>
-						<span>portfolio</span>
+						<span>{navbar_logo}</span>
 					</Link>
 					{`/>`}
 				</Logo>
@@ -62,7 +63,7 @@ export const Navbar = () => {
 							duration={700}
 							onClick={autoClose}
 						>
-							Home
+							{navbar_link.home}
 						</Link>
 					</NavListItem>
 
@@ -79,7 +80,7 @@ export const Navbar = () => {
 							duration={700}
 							onClick={autoClose}
 						>
-							About
+							{navbar_link.about}
 						</Link>
 					</NavListItem>
 
@@ -96,7 +97,7 @@ export const Navbar = () => {
 							duration={700}
 							onClick={autoClose}
 						>
-							Projects
+							{navbar_link.projects}
 						</Link>
 					</NavListItem>
 
@@ -113,7 +114,7 @@ export const Navbar = () => {
 							duration={700}
 							onClick={autoClose}
 						>
-							Contact
+							{navbar_link.contact}
 						</Link>
 					</NavListItem>
 				</NavList>

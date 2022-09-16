@@ -1,5 +1,6 @@
-import { HeroSection, HeroTitle, HeroSmall, HeroText } from '../components-styled/HeroStyles';
 import { useEffect, useState } from 'react';
+import { HeroSection, HeroTitle, HeroSmall, HeroText } from '../components-styled/HeroStyles';
+import { hero_greeting, hero_greeting_short, hero_small, hero_small_short, hero_text } from '../language/en';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 
@@ -23,20 +24,22 @@ const Hero = () => {
 
 	return (
 		<HeroSection id="hero">
-			<HeroTitle data-aos="fade-right">{isDesktop ? "Hi, I'm Knut!" : "I'm Knut!"}</HeroTitle>
+			<HeroTitle data-aos="fade-right">{isDesktop ? `${hero_greeting}` : `${hero_greeting_short}`}</HeroTitle>
 
 			<HeroSmall
 				data-aos="fade-up"
 				data-aos-delay="300"
 			>
-				{isDesktop ? '- Frontend developer in the making' : 'Frontend dev in the making'}
+				{isDesktop ? `${hero_small}` : `${hero_small_short}`}
 			</HeroSmall>
 
 			<HeroText
 				data-aos="fade-up"
 				data-aos-delay="800"
 			>
-				Currently diving deeper in <span className="highlight">React</span> and discovering other technologies.
+				{hero_text.leading}
+				<span className="highlight">{hero_text.span}</span>
+				{hero_text.ending}
 			</HeroText>
 		</HeroSection>
 	);

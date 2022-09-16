@@ -1,4 +1,12 @@
 import { ContactSection, ContactLink, ContactTextWrapper, ContactContainer } from '../components-styled/ContactStyles';
+import {
+	contact_img,
+	contact_link_email,
+	contact_link_github,
+	contact_link_linkedin,
+	contact_link_phone,
+	contact_title,
+} from '../language/en';
 import './Contact.css';
 
 const Contact = () => {
@@ -9,12 +17,12 @@ const Contact = () => {
 	return (
 		<>
 			<ContactSection id="contact">
-				<h2 className="section-title">Get in touch</h2>
+				<h2 className="section-title">{contact_title}</h2>
 				<ContactContainer>
 					<ContactTextWrapper>
 						<img
 							className="wave-hand"
-							src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Emoji_u1f44b.svg/2048px-Emoji_u1f44b.svg.png"
+							src={contact_img}
 							alt="Waving hand."
 						/>
 					</ContactTextWrapper>
@@ -24,25 +32,29 @@ const Contact = () => {
 							href={void 0}
 							onClick={copyNumber}
 						>
-							<i className="fa-solid fa-phone"></i>47276493
+							<i className={contact_link_phone.icon}></i>
+							{contact_link_phone.text}
 						</ContactLink>
 
-						<ContactLink href="mailto:knutc.kodehode@gmail.com">
-							<i className="fa-solid fa-envelope"></i>knutc.kodehode@gmail.com
-						</ContactLink>
-
-						<ContactLink
-							href="https://www.linkedin.com/in/knut-c-johnsen/"
-							target="_blank"
-						>
-							<i className="fa-brands fa-linkedin"></i>LinkedIn
+						<ContactLink href={contact_link_email.href}>
+							<i className={contact_link_email.icon}></i>
+							{contact_link_email.text}
 						</ContactLink>
 
 						<ContactLink
-							href="https://github.com/knutcode"
+							href={contact_link_linkedin.href}
 							target="_blank"
 						>
-							<i className="fa-brands fa-github"></i>GitHub
+							<i className={contact_link_linkedin.icon}></i>
+							{contact_link_linkedin.text}
+						</ContactLink>
+
+						<ContactLink
+							href={contact_link_github.href}
+							target="_blank"
+						>
+							<i className={contact_link_github.icon}></i>
+							{contact_link_github.text}
 						</ContactLink>
 					</ContactTextWrapper>
 				</ContactContainer>

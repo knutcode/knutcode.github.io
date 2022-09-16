@@ -1,4 +1,5 @@
 import { ProjectsSection } from '../components-styled/ProjectsStyles';
+import { projects_title } from '../language/en';
 import './Projects.css';
 import Project from './ProjectCard';
 import data from '../projectData';
@@ -20,7 +21,7 @@ const ProjectSection = () => {
 
 	return (
 		<ProjectsSection id="projects">
-			<h2 className="section-title">Some projects</h2>
+			<h2 className="section-title">{projects_title}</h2>
 			{projects}
 		</ProjectsSection>
 	);

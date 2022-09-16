@@ -1,15 +1,16 @@
 import { FooterLink, FooterText, StyledFooter } from '../components-styled/FooterStyles';
+import { footer_link, footer_text } from '../language/en';
 
 const Footer = () => {
 	return (
 		<StyledFooter>
-			<FooterText>KNUT C - 2022</FooterText>
+			<FooterText>{footer_text}</FooterText>
 
 			<FooterLink
-				href="https://github.com/knutcode/portfolio"
+				href={footer_link.href}
 				target="_blank"
 			>
-				This page is open-source on GitHub
+				{footer_link.text}
 			</FooterLink>
 		</StyledFooter>
 	);

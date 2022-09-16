@@ -1,7 +1,4 @@
 import { useEffect } from 'react';
-import Aos from 'aos';
-import 'aos/dist/aos.css';
-
 import {
 	ImgWrapper,
 	ProjectContainer,
@@ -12,6 +9,8 @@ import {
 	ProjectTitle,
 	TextWrapper,
 } from '../components-styled/ProjectsStyles';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 
 const Project = (props) => {
 	//animations

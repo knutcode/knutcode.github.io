@@ -5,7 +5,7 @@ const data = [
 		desc: 'Tiny app built with React using Axios and styled-components.',
 		github: 'https://github.com/knutcode/cat-facts',
 		pages: 'https://knutcode.github.io/cat-facts/',
-		image: require('./img/CatFacts.png'),
+		image: require('../img/CatFacts.png'),
 		alt: 'Cat facts',
 	},
 	{
@@ -14,7 +14,7 @@ const data = [
 		desc: 'To-do list using local-storage built with JavaScript, HTML and CSS.',
 		github: 'https://github.com/knutcode/kodehode/tree/main/todo-assignment',
 		pages: 'https://knutcode.github.io/kodehode/todo-assignment/',
-		image: require('./img/TodoList.png'),
+		image: require('../img/TodoList.png'),
 		alt: 'To-do list',
 	},
 	{
@@ -23,7 +23,7 @@ const data = [
 		desc: "A 'Travel Journal' built with react following a figma design.",
 		github: 'https://github.com/knutcode/travel-journal',
 		pages: 'https://knutcode.github.io/travel-journal/',
-		image: require('./img/TravelJournal.png'),
+		image: require('../img/TravelJournal.png'),
 		alt: 'Travel Journal',
 	},
 	{
@@ -32,7 +32,7 @@ const data = [
 		desc: 'React counter using useState, useEffect and some conditional rendering.',
 		github: 'https://github.com/knutcode/react-counter',
 		pages: 'https://knutcode.github.io/react-counter/',
-		image: require('./img/SimpleCounter.png'),
+		image: require('../img/SimpleCounter.png'),
 		alt: 'Simple Counter',
 	},
 ];

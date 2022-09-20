@@ -1,8 +1,9 @@
-import { ProjectsSection } from '../components-styled/ProjectsStyles';
-import { projects_title } from '../language/en';
-import './Projects.css';
+import { ProjectsSection } from './styles';
+import { projects_title } from '../../../language/en';
+import './index.css';
+
 import Project from './ProjectCard';
-import data from '../projectData';
+import data from '../../../data/projectData';
 
 const ProjectSection = () => {
 	const projects = data.map((item) => {

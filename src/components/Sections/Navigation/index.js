@@ -1,7 +1,7 @@
+import { StyledNav, Logo, NavList, NavListItem, StyledHeader, NavToggle } from './styles';
+import { navbar_link, navbar_logo } from '../../../language/en';
 import { useRef, useState, useEffect } from 'react';
 import { Link } from 'react-scroll';
-import { StyledNav, Logo, NavList, NavListItem, StyledHeader, NavToggle } from '../components-styled/NavbarStyles';
-import { navbar_link, navbar_logo } from '../language/en';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 

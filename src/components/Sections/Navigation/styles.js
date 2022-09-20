@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { device } from './ScreenSize';
+import { device } from '../../../data/devices';
 
 export const StyledHeader = styled.header`
 	position: fixed;

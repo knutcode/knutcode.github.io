@@ -1,6 +1,5 @@
-import { useEffect } from 'react';
+import { ImgWrapper } from '../../../Global/styles';
 import {
-	ImgWrapper,
 	ProjectContainer,
 	ProjectImg,
 	ProjectLink,
@@ -8,7 +7,8 @@ import {
 	ProjectText,
 	ProjectTitle,
 	TextWrapper,
-} from '../components-styled/ProjectsStyles';
+} from '../styles';
+import { useEffect } from 'react';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 

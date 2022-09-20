@@ -1,4 +1,4 @@
-import { ContactSection, ContactLink, ContactTextWrapper, ContactContainer } from '../components-styled/ContactStyles';
+import { ContactSection, ContactLink, ContactTextWrapper, ContactContainer } from './styles';
 import {
 	contact_img,
 	contact_link_email,
@@ -6,8 +6,8 @@ import {
 	contact_link_linkedin,
 	contact_link_phone,
 	contact_title,
-} from '../language/en';
-import './Contact.css';
+} from '../../../language/en';
+import './index.css';
 
 const Contact = () => {
 	function copyNumber() {

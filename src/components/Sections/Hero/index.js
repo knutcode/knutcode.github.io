@@ -1,6 +1,6 @@
+import { HeroSection, HeroTitle, HeroSmall, HeroText } from './styles.js';
+import { hero_greeting, hero_greeting_short, hero_small, hero_small_short, hero_text } from '../../../language/en';
 import { useEffect, useState } from 'react';
-import { HeroSection, HeroTitle, HeroSmall, HeroText } from '../components-styled/HeroStyles';
-import { hero_greeting, hero_greeting_short, hero_small, hero_small_short, hero_text } from '../language/en';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 

@@ -1,5 +1,5 @@
-import { FooterLink, FooterText, StyledFooter } from '../components-styled/FooterStyles';
-import { footer_link, footer_text } from '../language/en';
+import { FooterLink, FooterText, StyledFooter } from './styles';
+import { footer_link, footer_text } from '../../../language/en';
 
 const Footer = () => {
 	return (

@@ -1,4 +1,4 @@
-portfolio v0.75
+portfolio v0.8
 
 designed with inspiration from [Brittany Chiang](https://github.com/bchiang7) and [nexxel](https://github.com/nexxeln/)
 

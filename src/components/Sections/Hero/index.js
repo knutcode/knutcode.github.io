@@ -1,4 +1,4 @@
-import { HeroSection, HeroTitle, HeroSmall, HeroText } from './styles.js';
+import { HeroSection, HeroTitle, HeroSmall, HeroText, HeroScrollWrapper, HeroScroll } from './styles.js';
 import { hero_greeting, hero_greeting_short, hero_small, hero_small_short, hero_text } from '../../../language/en';
 import { useEffect, useState } from 'react';
 import Aos from 'aos';
@@ -41,6 +41,7 @@ const Hero = () => {
 				<span className="highlight">{hero_text.span}</span>
 				{hero_text.ending}
 			</HeroText>
+			<HeroScroll />
 		</HeroSection>
 	);
 };

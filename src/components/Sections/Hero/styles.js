@@ -51,3 +51,34 @@ export const HeroText = styled.p`
 		margin: 15px auto;
 	}
 `;
+
+export const HeroScroll = styled.div`
+	opacity: 0;
+	position: absolute;
+	bottom: 140px;
+	left: 50%;
+	background: #f0f0f0;
+	animation: animate 4s infinite;
+	animation-delay: 3.5s;
+	&::before {
+		content: '';
+		position: absolute;
+		width: 20px;
+		height: 20px;
+		border-bottom: 5px solid #f0f0f0;
+		border-right: 5px solid #f0f0f0;
+		transform: rotate(45deg);
+	}
+	@keyframes animate {
+		0% {
+			transform: translateY(0);
+		}
+		50% {
+			transform: translateY(50px);
+			opacity: 1;
+		}
+		100% {
+			transform: translateY(100px);
+		}
+	}
+`;

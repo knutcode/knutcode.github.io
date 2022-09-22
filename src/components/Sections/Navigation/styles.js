@@ -52,15 +52,16 @@ export const NavList = styled.ul`
 export const NavListItem = styled.li`
 	margin-left: 2em;
 	cursor: pointer;
-	&& :hover,
+	position: relative;
+	> :hover,
 	.active {
 		color: #79c1ff;
 		border-bottom: 2px solid #f0f0f0;
 	}
+
 	@media ${device.tabletL} {
-		margin: 1em;
-		margin-left: 0;
-		text-align: left;
+		margin: 1em 1em 1em 0;
+		width: fit-content;
 	}
 `;
 

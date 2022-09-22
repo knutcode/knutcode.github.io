@@ -52,8 +52,8 @@ export const Navbar = () => {
 				<NavList active={active}>
 					<NavListItem
 						data-aos="fade-down"
-						data-aos-delay="2300"
-						data-aos-duration="1500"
+						data-aos-delay="1900"
+						data-aos-duration="1250"
 					>
 						<Link
 							to="hero"
@@ -69,8 +69,8 @@ export const Navbar = () => {
 
 					<NavListItem
 						data-aos="fade-down"
-						data-aos-delay="1800"
-						data-aos-duration="1500"
+						data-aos-delay="1600"
+						data-aos-duration="1250"
 					>
 						<Link
 							to="about"
@@ -86,8 +86,8 @@ export const Navbar = () => {
 
 					<NavListItem
 						data-aos="fade-down"
-						data-aos-delay="1400"
-						data-aos-duration="1500"
+						data-aos-delay="1300"
+						data-aos-duration="1250"
 					>
 						<Link
 							to="projects"
@@ -104,7 +104,7 @@ export const Navbar = () => {
 					<NavListItem
 						data-aos="fade-down"
 						data-aos-delay="1000"
-						data-aos-duration="1500"
+						data-aos-duration="1250"
 					>
 						<Link
 							to="contact"

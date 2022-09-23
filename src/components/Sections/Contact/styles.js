@@ -53,12 +53,13 @@ export const ContactLink = styled.a`
 	text-decoration: none;
 	transition: 0.2s;
 	-webkit-tap-highlight-color: transparent;
+	white-space: nowrap;
 
 	&:visited,
 	&:link {
 		color: #f0f0f0;
 	}
-	/* &:active, */
+	&:active,
 	&:hover {
 		transform: translate(10px, 0);
 		color: #79c1ff;
@@ -71,6 +72,5 @@ export const ContactLink = styled.a`
 	@media ${device.mobileL} {
 		padding-inline: 0;
 		margin-inline: 0;
-		white-space: nowrap;
 	}
 `;

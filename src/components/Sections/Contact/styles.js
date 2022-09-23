@@ -52,12 +52,13 @@ export const ContactLink = styled.a`
 	padding-inline: 10px;
 	text-decoration: none;
 	transition: 0.2s;
+	-webkit-tap-highlight-color: transparent;
 
 	&:visited,
 	&:link {
 		color: #f0f0f0;
 	}
-	&:active,
+	/* &:active, */
 	&:hover {
 		transform: translate(10px, 0);
 		color: #79c1ff;

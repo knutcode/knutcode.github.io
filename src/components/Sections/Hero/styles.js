@@ -57,6 +57,8 @@ export const HeroScroll = styled.div`
 	position: absolute;
 	bottom: 140px;
 	left: 50%;
+	right: 50%;
+	margin-left: -20px;
 	background: #f0f0f0;
 	animation: animate 4s infinite;
 	animation-delay: 3.5s;

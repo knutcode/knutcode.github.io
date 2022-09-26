@@ -29,9 +29,9 @@ export const about_title = 'Get to know me';
 export const about_img =
 	'https://st3.depositphotos.com/6672868/13701/v/450/depositphotos_137014128-stock-illustration-user-profile-icon.jpg';
 export const about_text = {
-	paragraph1: 'Lorem AboutTextsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.',
-	paragraph2: `Currently studying Front-end at Kodehode Bergen and Scrimba's online course, 'The Frontend Developer Career Path'
+	paragraph1: `I've been studying Frontend at Kodehode Bergen and Scrimba's online course, 'The Frontend Developer Career Path'
     since April 2022.`,
+	paragraph2: `Whether it has been casual gaming or esports, my hobbies have always been driven by my ability to learn and challenge myself, so there's no surprise I've taken a liking to coding!`,
 };
 
 //

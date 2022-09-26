@@ -13,10 +13,6 @@ export const Navbar = () => {
 		setActive(!active);
 	};
 
-	const autoClose = () => {
-		setActive(false);
-	};
-
 	const menu = useRef(null);
 
 	const closeMenu = (e) => {
@@ -43,7 +39,7 @@ export const Navbar = () => {
 						smooth={true}
 						offset={-80}
 						duration={700}
-						onClick={autoClose}
+						onClick={menuToggle}
 					>
 						<span>{navbar_logo}</span>
 					</Link>
@@ -61,7 +57,7 @@ export const Navbar = () => {
 							smooth={true}
 							offset={-80}
 							duration={700}
-							onClick={autoClose}
+							onClick={menuToggle}
 						>
 							{navbar_link.home}
 						</Link>
@@ -78,7 +74,7 @@ export const Navbar = () => {
 							smooth={true}
 							offset={-35}
 							duration={700}
-							onClick={autoClose}
+							onClick={menuToggle}
 						>
 							{navbar_link.about}
 						</Link>
@@ -95,7 +91,7 @@ export const Navbar = () => {
 							smooth={true}
 							offset={-28}
 							duration={700}
-							onClick={autoClose}
+							onClick={menuToggle}
 						>
 							{navbar_link.projects}
 						</Link>
@@ -112,7 +108,7 @@ export const Navbar = () => {
 							smooth={true}
 							offset={-5}
 							duration={700}
-							onClick={autoClose}
+							onClick={menuToggle}
 						>
 							{navbar_link.contact}
 						</Link>

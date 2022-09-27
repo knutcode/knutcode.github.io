@@ -1,4 +1,4 @@
-import { ImgWrapper } from '../../../Global/styles';
+import { ImgWrapper } from '../../../global/styles';
 import {
 	ProjectContainer,
 	ProjectImg,
@@ -8,16 +8,8 @@ import {
 	ProjectTitle,
 	TextWrapper,
 } from '../styles';
-import { useEffect } from 'react';
-import Aos from 'aos';
-import 'aos/dist/aos.css';
 
 const Project = (props) => {
-	//animations
-	useEffect(() => {
-		Aos.init({ duration: 1000 });
-	}, []);
-
 	return (
 		<ProjectContainer
 			className="projects"

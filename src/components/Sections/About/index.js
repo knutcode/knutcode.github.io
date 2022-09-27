@@ -1,16 +1,8 @@
+import { ImgWrapper } from '../../global/styles';
 import { AboutContainer, AboutImg, AboutSection, AboutText, AboutTextWrapper } from './styles';
-import { ImgWrapper } from '../../Global/styles';
 import { about_title, about_img, about_text } from '../../../language/en';
-import { useEffect } from 'react';
-import Aos from 'aos';
-import 'aos/dist/aos.css';
 
 const About = () => {
-	//animations
-	useEffect(() => {
-		Aos.init({ duration: 1000 });
-	}, []);
-
 	return (
 		<AboutSection id="about">
 			<h2 className="section-title">{about_title}</h2>

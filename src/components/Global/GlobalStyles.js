@@ -1,4 +1,14 @@
+import { useEffect } from 'react';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
+
 import { createGlobalStyle } from 'styled-components';
+
+export const GlobalAOS = () => {
+	useEffect(() => {
+		Aos.init({ duration: 1000 });
+	}, []);
+};
 
 export const GlobalStyles = createGlobalStyle`
 

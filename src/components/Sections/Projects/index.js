@@ -1,9 +1,8 @@
+import './index.css';
+import Project from './project-card';
+import data from '../../../data/projectData';
 import { ProjectsSection } from './styles';
 import { projects_title } from '../../../language/en';
-import './index.css';
-
-import Project from './ProjectCard';
-import data from '../../../data/projectData';
 
 const ProjectSection = () => {
 	const projects = data.map((item) => {

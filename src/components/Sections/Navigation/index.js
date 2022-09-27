@@ -1,12 +1,9 @@
+import { useRef, useState } from 'react';
+import { Link } from 'react-scroll';
 import { StyledNav, Logo, NavList, NavListItem, StyledHeader, NavToggle } from './styles';
 import { navbar_link, navbar_logo } from '../../../language/en';
-import { useRef, useState, useEffect } from 'react';
-import { Link } from 'react-scroll';
-import Aos from 'aos';
-import 'aos/dist/aos.css';
 
 export const Navbar = () => {
-	//Navbar functionality
 	const [active, setActive] = useState(false);
 
 	const menuToggle = () => {
@@ -22,11 +19,6 @@ export const Navbar = () => {
 	};
 
 	document.addEventListener('mousedown', closeMenu);
-
-	//animations
-	useEffect(() => {
-		Aos.init({});
-	}, []);
 
 	return (
 		<StyledHeader ref={menu}>

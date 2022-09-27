@@ -1,16 +1,17 @@
-import { GlobalStyles } from './components/Global/GlobalStyles';
-import Navbar from './components/Sections/Navigation';
-import { StyledMain } from './components/Global/styles';
-import Hero from './components/Sections/Hero';
-import About from './components/Sections/About';
-import Projects from './components/Sections/Projects';
-import Contact from './components/Sections/Contact';
-import Footer from './components/Sections/Footer';
+import { GlobalStyles, GlobalAOS } from './components/global/GlobalStyles';
+import { StyledMain } from './components/global/styles';
+import Navbar from './components/sections/navigation';
+import Hero from './components/sections/hero';
+import About from './components/sections/about';
+import Projects from './components/sections/projects';
+import Contact from './components/sections/contact';
+import Footer from './components/sections/footer';
 
 function App() {
 	return (
 		<>
 			<GlobalStyles />
+			<GlobalAOS />
 			<Navbar />
 			<StyledMain>
 				<Hero />

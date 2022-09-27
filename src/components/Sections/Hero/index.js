@@ -1,8 +1,6 @@
+import { useEffect, useState } from 'react';
 import { HeroSection, HeroTitle, HeroSmall, HeroText, HeroScroll } from './styles.js';
 import { hero_greeting, hero_greeting_short, hero_small, hero_small_short, hero_text } from '../../../language/en';
-import { useEffect, useState } from 'react';
-import Aos from 'aos';
-import 'aos/dist/aos.css';
 
 const Hero = () => {
 	// conditionally render based on viewport - https://stackoverflow.com/a/60811141
@@ -16,11 +14,6 @@ const Hero = () => {
 		window.addEventListener('resize', updateMedia);
 		return () => window.removeEventListener('resize', updateMedia);
 	});
-
-	//animations
-	useEffect(() => {
-		Aos.init({ duration: 1000 });
-	}, []);
 
 	return (
 		<HeroSection id="hero">

@@ -1,3 +1,4 @@
+import './index.css';
 import { ContactSection, ContactLink, ContactTextWrapper, ContactContainer } from './styles';
 import {
 	contact_img,
@@ -7,7 +8,6 @@ import {
 	contact_link_phone,
 	contact_title,
 } from '../../../language/en';
-import './index.css';
 
 const Contact = () => {
 	function copyNumber() {

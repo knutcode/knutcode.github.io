@@ -1,15 +1,10 @@
 import './index.css';
+import { useTranslation } from 'react-i18next';
 import { ContactSection, ContactLink, ContactTextWrapper, ContactContainer } from './styles';
-import {
-	contact_img,
-	contact_link_email,
-	contact_link_github,
-	contact_link_linkedin,
-	contact_link_phone,
-	contact_title,
-} from '../../../language/en';
 
 const Contact = () => {
+	const { t } = useTranslation('contact');
+
 	function copyNumber() {
 		navigator.clipboard.writeText('47276493');
 	}
@@ -17,12 +12,12 @@ const Contact = () => {
 	return (
 		<>
 			<ContactSection id="contact">
-				<h2 className="section-title">{contact_title}</h2>
+				<h2 className="section-title">{t('title')}</h2>
 				<ContactContainer>
 					<ContactTextWrapper>
 						<img
 							className="wave-hand"
-							src={contact_img}
+							src={t('img')}
 							alt="Waving hand."
 						/>
 					</ContactTextWrapper>
@@ -32,29 +27,29 @@ const Contact = () => {
 							href={void 0}
 							onClick={copyNumber}
 						>
-							<i className={contact_link_phone.icon}></i>
-							{contact_link_phone.text}
+							<i className={t('phone_icon')}></i>
+							{t('phone_text')}
 						</ContactLink>
 
-						<ContactLink href={contact_link_email.href}>
-							<i className={contact_link_email.icon}></i>
-							{contact_link_email.text}
-						</ContactLink>
-
-						<ContactLink
-							href={contact_link_linkedin.href}
-							target="_blank"
-						>
-							<i className={contact_link_linkedin.icon}></i>
-							{contact_link_linkedin.text}
+						<ContactLink href={t('email_href')}>
+							<i className={t('email_icon')}></i>
+							{t('email_text')}
 						</ContactLink>
 
 						<ContactLink
-							href={contact_link_github.href}
+							href={t('linkedin_href')}
 							target="_blank"
 						>
-							<i className={contact_link_github.icon}></i>
-							{contact_link_github.text}
+							<i className={t('linkedin_icon')}></i>
+							{t('linkedin_text')}
+						</ContactLink>
+
+						<ContactLink
+							href={t('github_href')}
+							target="_blank"
+						>
+							<i className={t('github_icon')}></i>
+							{t('github_text')}
 						</ContactLink>
 					</ContactTextWrapper>
 				</ContactContainer>

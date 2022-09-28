@@ -1,24 +1,26 @@
+import { useTranslation } from 'react-i18next';
 import { ImgWrapper } from '../../global/styles';
 import { AboutContainer, AboutImg, AboutSection, AboutText, AboutTextWrapper } from './styles';
-import { about_title, about_img, about_text } from '../../../language/en';
 
 const About = () => {
+	const { t } = useTranslation('about');
+
 	return (
 		<AboutSection id="about">
-			<h2 className="section-title">{about_title}</h2>
+			<h2 className="section-title">{t('title')}</h2>
 			<AboutContainer>
 				<AboutTextWrapper
 					data-aos="fade-right"
 					data-aos-anchor-placement="center-bottom"
 				>
-					<AboutText>{about_text.paragraph1}</AboutText>
-					<AboutText>{about_text.paragraph2}</AboutText>
+					<AboutText>{t('introduction_1')}</AboutText>
+					<AboutText>{t('introduction_2')}</AboutText>
 				</AboutTextWrapper>
 				<ImgWrapper
 					data-aos="fade-left"
 					data-aos-anchor-placement="center-bottom"
 				>
-					<AboutImg src={about_img} />
+					<AboutImg src={t('img')} />
 				</ImgWrapper>
 			</AboutContainer>
 		</AboutSection>

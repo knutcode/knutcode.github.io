@@ -20,6 +20,7 @@ i18next
 		ns: ['navbar', 'hero', 'about', 'projects', 'contact', 'footer'],
 
 		detection: {
+			order: ['path', 'querystring', 'htmlTag'],
 			caches: [],
 		},
 

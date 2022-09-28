@@ -1,10 +1,11 @@
 import './index.css';
 import Project from './project-card';
 import data from '../../../data/projectData';
+import { useTranslation } from 'react-i18next';
 import { ProjectsSection } from './styles';
-import { projects_title } from '../../../language/en';
 
 const ProjectSection = () => {
+	const { t } = useTranslation('projects');
 	const projects = data.map((item) => {
 		return (
 			<Project
@@ -21,7 +22,7 @@ const ProjectSection = () => {
 
 	return (
 		<ProjectsSection id="projects">
-			<h2 className="section-title">{projects_title}</h2>
+			<h2 className="section-title">{t('title')}</h2>
 			{projects}
 		</ProjectsSection>
 	);

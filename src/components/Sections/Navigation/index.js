@@ -1,9 +1,11 @@
 import { useRef, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-scroll';
 import { StyledNav, Logo, NavList, NavListItem, StyledHeader, NavToggle } from './styles';
-import { navbar_link, navbar_logo } from '../../../language/en';
 
 export const Navbar = () => {
+	const { t } = useTranslation('navbar');
+
 	const [active, setActive] = useState(false);
 
 	const menuToggle = () => {
@@ -33,7 +35,7 @@ export const Navbar = () => {
 						duration={700}
 						onClick={menuToggle}
 					>
-						<span>{navbar_logo}</span>
+						<span>{t('logo')}</span>
 					</Link>
 					{`/>`}
 				</Logo>
@@ -51,7 +53,7 @@ export const Navbar = () => {
 							duration={700}
 							onClick={menuToggle}
 						>
-							{navbar_link.home}
+							{t('home')}
 						</Link>
 					</NavListItem>
 
@@ -68,7 +70,7 @@ export const Navbar = () => {
 							duration={700}
 							onClick={menuToggle}
 						>
-							{navbar_link.about}
+							{t('about')}
 						</Link>
 					</NavListItem>
 
@@ -85,7 +87,7 @@ export const Navbar = () => {
 							duration={700}
 							onClick={menuToggle}
 						>
-							{navbar_link.projects}
+							{t('projects')}
 						</Link>
 					</NavListItem>
 
@@ -102,7 +104,7 @@ export const Navbar = () => {
 							duration={700}
 							onClick={menuToggle}
 						>
-							{navbar_link.contact}
+							{t('contact')}
 						</Link>
 					</NavListItem>
 				</NavList>

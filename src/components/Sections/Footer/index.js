@@ -1,16 +1,18 @@
+import { useTranslation } from 'react-i18next';
 import { FooterLink, FooterText, StyledFooter } from './styles';
-import { footer_link, footer_text } from '../../../language/en';
 
 const Footer = () => {
+	const { t } = useTranslation('footer');
+
 	return (
 		<StyledFooter>
-			<FooterText>{footer_text}</FooterText>
+			<FooterText>{t('text')}</FooterText>
 
 			<FooterLink
-				href={footer_link.href}
+				href={t('link_href')}
 				target="_blank"
 			>
-				{footer_link.text}
+				{t('link_text')}
 			</FooterLink>
 		</StyledFooter>
 	);

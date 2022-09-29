@@ -11,8 +11,13 @@ import Footer from './components/sections/footer';
 
 function App() {
 	const [theme, setTheme] = useState();
+
 	useEffect(() => {
 		window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light');
+
+		window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (event) => {
+			event.matches ? setTheme('dark') : setTheme('light');
+		});
 	}, []);
 
 	return (

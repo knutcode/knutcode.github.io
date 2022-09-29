@@ -59,7 +59,7 @@ export const HeroScroll = styled.div`
 	left: 50%;
 	right: 50%;
 	margin-left: -20px;
-	background: #f0f0f0;
+	background: ${(props) => props.theme.color};
 	animation: animate 4s infinite;
 	animation-delay: 3.5s;
 	&::before {
@@ -67,8 +67,8 @@ export const HeroScroll = styled.div`
 		position: absolute;
 		width: 20px;
 		height: 20px;
-		border-bottom: 5px solid #f0f0f0;
-		border-right: 5px solid #f0f0f0;
+		border-bottom: 5px solid ${(props) => props.theme.color};
+		border-right: 5px solid ${(props) => props.theme.color};
 		transform: rotate(45deg);
 	}
 	@keyframes animate {

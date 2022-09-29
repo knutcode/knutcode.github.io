@@ -57,13 +57,13 @@ export const ContactLink = styled.a`
 
 	&:visited,
 	&:link {
-		color: #f0f0f0;
+		color: ${(props) => props.theme.color};
 	}
 	&:active,
 	&:hover {
 		transform: translate(10px, 0);
-		color: #79c1ff;
-		text-decoration: underline #f0f0f0 1px;
+		color: ${(props) => props.theme.contactcolor};
+		text-decoration: ${(props) => props.theme.contactunderline};
 	}
 	> * {
 		padding-right: 8px;

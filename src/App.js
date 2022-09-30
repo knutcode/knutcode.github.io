@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { ThemeProvider } from 'styled-components';
-import { GlobalStyles, GlobalAOS, darkMode, lightMode } from './components/global/GlobalStyles';
+import { GlobalStyles } from './components/global/GlobalStyles';
+import { GlobalAOS } from './components/global/aos';
+import { lightMode, darkMode } from './components/global/themes';
 import { StyledMain } from './components/global/styles';
 import Navbar from './components/sections/navigation';
 import Hero from './components/sections/hero';

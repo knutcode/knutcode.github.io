@@ -7,7 +7,7 @@ export const StyledFooter = styled.footer`
 	justify-content: space-evenly;
 	align-items: center;
 	width: 100%;
-	color: #f0f0f0;
+	color: ${(props) => props.theme.color};
 	background-color: ${(props) => props.theme.neutral};
 	> * {
 		margin: 3px;

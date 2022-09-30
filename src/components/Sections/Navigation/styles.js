@@ -2,13 +2,14 @@ import styled from 'styled-components';
 import { device } from '../../../data/devices';
 
 export const StyledHeader = styled.header`
+	color: ${(props) => props.theme.whitecolor};
 	position: fixed;
 	top: 0;
 	width: 100%;
 	font-size: 2.25rem;
 	padding-inline: 5rem;
 	height: 70px;
-	background-color: #202020e4;
+	background-color: ${(props) => props.theme.neutral};
 	z-index: 1;
 	@media ${device.mobileL} {
 		padding: 0 3rem 0 1.75rem;
@@ -28,7 +29,7 @@ export const Logo = styled.p`
 	user-select: none;
 	cursor: pointer;
 	> * {
-		color: #79c1ff;
+		color: ${(props) => props.theme.navlogo};
 	}
 `;
 
@@ -43,7 +44,7 @@ export const NavList = styled.ul`
 		right: 0;
 		width: 50%;
 		height: 100vh;
-		background-color: #202020e4;
+		background-color: ${(props) => props.theme.neutral};
 		flex-direction: column;
 		transform: translateX(${(props) => (props.active ? '0' : '100%')});
 	}
@@ -55,8 +56,8 @@ export const NavListItem = styled.li`
 	position: relative;
 	> :hover,
 	.active {
-		color: #79c1ff;
-		border-bottom: 2px solid #f0f0f0;
+		color: ${(props) => props.theme.navlink};
+		border-bottom: ${(props) => props.theme.navborderbottom};
 	}
 
 	@media ${device.tabletL} {
@@ -76,7 +77,7 @@ export const NavToggle = styled.div`
 
 	.lines {
 		position: absolute;
-		background: #f0f0f0;
+		background: ${(props) => props.theme.whitecolor};
 		border-radius: 5px;
 		transition: 0.4s;
 		height: 3px;

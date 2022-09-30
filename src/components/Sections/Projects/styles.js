@@ -8,13 +8,16 @@ export const ProjectsSection = styled.section`
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	color: ${(props) => props.theme.whitecolor};
 `;
 
 export const ProjectContainer = styled.div`
 	display: flex;
 	height: 350px;
 	margin-bottom: 5rem;
-	background-color: #202020e4;
+	background-color: ${(props) => props.theme.neutral};
+	box-shadow: ${(props) => props.theme.projectboxshadow};
+
 	@media ${device.tabletL} {
 		flex-direction: column;
 		height: fit-content;
@@ -61,7 +64,8 @@ export const ProjectText = styled.p`
 export const ProjectLink = styled.a`
 	font-size: 2.5rem;
 	font-weight: 400;
-	text-decoration: underline #f0f0f0 2px;
+	color: ${(props) => props.theme.projectlink};
+	text-decoration: ${(props) => props.theme.projectunderline};
 `;
 
 export const ProjectLinkWrapper = styled.div``;

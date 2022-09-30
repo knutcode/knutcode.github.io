@@ -1,27 +1,17 @@
-import { useEffect } from 'react';
-import Aos from 'aos';
-import 'aos/dist/aos.css';
-
 import { createGlobalStyle } from 'styled-components';
-
-export const GlobalAOS = () => {
-	useEffect(() => {
-		Aos.init({ duration: 1000 });
-	}, []);
-};
 
 export const GlobalStyles = createGlobalStyle`
 
     body {   
-        color: #f0f0f0;
-        text-shadow: 1px 1px 1px black;
-        background-color: #141415;
+        background-color: ${(props) => props.theme.background};
+        color: ${(props) => props.theme.color};
+	    text-shadow: ${(props) => props.theme.textshadow};
     }
 
     .section-title {
         font-size: 3.5rem;
-        color: #f0f0f0;
-        border-bottom: solid 3px #79c1ff;
+        color: ${(props) => props.theme.color};
+        border-bottom: ${(props) => props.theme.borderbottom};
         margin-bottom: 10rem;
         text-align: center;
     }
@@ -29,16 +19,16 @@ export const GlobalStyles = createGlobalStyle`
     a:link,
     a:active,
     a:visited {
-        color: #79c1ff;
+        color: ${(props) => props.theme.link};
     }
 
     a:hover {
-        color: #f0f0f0;
+        color: ${(props) => props.theme.color};
     }
 
     .highlight {
-        font-weight: 500;
-        text-decoration: underline 3px #79c1ff;
+        font-weight: ${(props) => props.theme.weight};
+        text-decoration: ${(props) => props.theme.herounderline};
     }
 
     @media (max-width: 600px) {

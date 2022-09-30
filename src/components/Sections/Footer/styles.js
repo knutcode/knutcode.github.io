@@ -7,7 +7,8 @@ export const StyledFooter = styled.footer`
 	justify-content: space-evenly;
 	align-items: center;
 	width: 100%;
-	background-color: #202020e4;
+	color: ${(props) => props.theme.color};
+	background-color: ${(props) => props.theme.neutral};
 	> * {
 		margin: 3px;
 	}
@@ -19,17 +20,16 @@ export const FooterText = styled.p`
 
 export const FooterLink = styled.a`
 	text-align: center;
-	color: #f0f0f0;
 	text-decoration: none;
 	transition: 0.2s;
 	&:visited,
 	&:link {
-		color: #f0f0f0;
+		color: ${(props) => props.theme.whitecolor};
 	}
 	&:hover {
 		transform: scale(1.05);
 		cursor: pointer;
-		color: #79c1ff;
-		text-decoration: underline #f0f0f0 1px;
+		color: ${(props) => props.theme.footercolor};
+		text-decoration: ${(props) => props.theme.footerunderline};
 	}
 `;

@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { ImgWrapper } from '../../global/styles';
 import { AboutContainer, AboutImg, AboutSection, AboutText, AboutTextWrapper } from './styles';
+import Portrait from '../../../img/AboutPortrait.jpg';
 
 const About = () => {
 	const { t } = useTranslation('about');
@@ -20,7 +21,7 @@ const About = () => {
 					data-aos="fade-left"
 					data-aos-anchor-placement="center-bottom"
 				>
-					<AboutImg src={t('img')} />
+					<AboutImg src={Portrait} />
 				</ImgWrapper>
 			</AboutContainer>
 		</AboutSection>

@@ -1,10 +1,11 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { GlobalAOS } from './components/global/aos';
 import { GlobalStyles } from './components/global/GlobalStyles';
 import { ThemeProvider } from 'styled-components';
 import { lightMode, darkMode } from './components/global/themes';
 import { StyledMain } from './components/global/styles';
-import Navbar from './components/sections/navigation';
+import { Skeleton } from './components/suspense';
+import Navbar from './components/sections/navbar';
 import Hero from './components/sections/hero';
 import About from './components/sections/about';
 import Projects from './components/sections/projects';
@@ -25,16 +26,18 @@ function App() {
 
 	return (
 		<ThemeProvider theme={theme === 'light' ? lightMode : darkMode}>
-			<GlobalStyles />
-			<GlobalAOS />
-			<Navbar />
-			<StyledMain>
-				<Hero />
-				<About />
-				<Projects />
-				<Contact />
-			</StyledMain>
-			<Footer />
+			<Suspense fallback={<Skeleton />}>
+				<GlobalStyles />
+				<GlobalAOS />
+				<Navbar />
+				<StyledMain>
+					<Hero />
+					<About />
+					<Projects />
+					<Contact />
+				</StyledMain>
+				<Footer />
+			</Suspense>
 		</ThemeProvider>
 	);
 }

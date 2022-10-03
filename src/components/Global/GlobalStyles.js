@@ -12,6 +12,7 @@ export const GlobalStyles = createGlobalStyle`
         font-size: 3.5rem;
         color: ${(props) => props.theme.color};
         border-bottom: ${(props) => props.theme.borderbottom};
+        box-shadow: ${(props) => props.theme.bordershadow};
         margin-bottom: 10rem;
         text-align: center;
     }

@@ -1,6 +1,15 @@
 import { useTranslation } from 'react-i18next';
 import { ImgWrapper } from '../../global/styles';
-import { AboutContainer, AboutImg, AboutSection, AboutText, AboutTextWrapper } from './styles';
+import {
+	AboutContainer,
+	AboutImg,
+	AboutSection,
+	AboutSkills,
+	AboutSkillsText,
+	AboutSkillsWrapper,
+	AboutText,
+	AboutTextWrapper,
+} from './styles';
 import Portrait from '../../../img/AboutPortrait.jpg';
 
 const About = () => {
@@ -24,6 +33,17 @@ const About = () => {
 					<AboutImg src={Portrait} />
 				</ImgWrapper>
 			</AboutContainer>
+
+			<h2 className="section-title">Skills</h2>
+			<AboutSkills>
+				<AboutSkillsWrapper>
+					<AboutSkillsText>React </AboutSkillsText>
+					<AboutSkillsText>GitHub </AboutSkillsText>
+					<AboutSkillsText>JavaScript </AboutSkillsText>
+					<AboutSkillsText>CSS </AboutSkillsText>
+					<AboutSkillsText>HTML5 </AboutSkillsText>
+				</AboutSkillsWrapper>
+			</AboutSkills>
 		</AboutSection>
 	);
 };

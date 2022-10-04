@@ -4,13 +4,13 @@ import { device } from '../../../data/devices';
 export const AboutSection = styled.section`
 	padding-top: 10rem;
 	margin-bottom: 10em;
-	height: 80vh;
+	height: fit-content;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
 	@media ${device.tabletL} {
-		height: fit-content;
+		/* height: fit-content; */
 		padding-top: 5rem;
 		padding-inline: 1.5rem;
 	}
@@ -18,6 +18,7 @@ export const AboutSection = styled.section`
 
 export const AboutContainer = styled.div`
 	display: flex;
+	margin-bottom: 8rem;
 
 	@media ${device.tabletL} {
 		flex-direction: column;
@@ -63,4 +64,31 @@ export const AboutText = styled.p`
 		text-align: center;
 		font-size: 2rem;
 	}
+`;
+
+export const AboutSkills = styled.div`
+	display: flex;
+	> h2 {
+		margin-top: 10rem;
+	}
+
+	@media ${device.tabletL} {
+		flex-direction: column;
+		align-items: center;
+		> h2 {
+			margin-top: 7rem;
+		}
+	}
+`;
+
+export const AboutSkillsWrapper = styled.div`
+	min-width: 350px;
+`;
+
+export const AboutSkillsText = styled.p`
+	font-family: 'Inter', sans-serif;
+	font-size: 2.1rem;
+	line-height: 1.4em;
+	letter-spacing: 0.06em;
+	margin: 0;
 `;

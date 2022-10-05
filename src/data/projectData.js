@@ -2,7 +2,7 @@ const data = [
 	{
 		id: 1,
 		title: 'Cat Facts',
-		desc: 'Tiny app built with React using Axios and styled-components.',
+		desc: 'Small app that shows you random facts from the catfact.ninja API. Made in React using Axios and styled-components.',
 		github: 'https://github.com/knutcode/cat-facts',
 		pages: 'https://knutcode.github.io/cat-facts/',
 		image: require('../img/CatFacts.png'),
@@ -11,7 +11,7 @@ const data = [
 	{
 		id: 2,
 		title: 'To-do List',
-		desc: 'To-do list using local-storage built with JavaScript, HTML and CSS.',
+		desc: 'To-do list to keep track of your daily dasks, local-storage saves your list locally. Made with JavaScript, HTML and CSS.',
 		github: 'https://github.com/knutcode/kodehode/tree/main/todo-assignment',
 		pages: 'https://knutcode.github.io/kodehode/todo-assignment/',
 		image: require('../img/TodoList.png'),
@@ -20,7 +20,7 @@ const data = [
 	{
 		id: 3,
 		title: 'Travel Journal',
-		desc: "A 'Travel Journal' built with react following a figma design.",
+		desc: 'A travel journal displaying information about each destination. Made in React.',
 		github: 'https://github.com/knutcode/travel-journal',
 		pages: 'https://knutcode.github.io/travel-journal/',
 		image: require('../img/TravelJournal.png'),
@@ -28,12 +28,30 @@ const data = [
 	},
 	{
 		id: 4,
-		title: 'Simple Counter',
-		desc: 'React counter using useState, useEffect and some conditional rendering.',
-		github: 'https://github.com/knutcode/react-counter',
-		pages: 'https://knutcode.github.io/react-counter/',
-		image: require('../img/SimpleCounter.png'),
-		alt: 'Simple Counter',
+		title: 'Tenzies',
+		desc: 'A quick dice-game, using array methods, tracking states and some fun confetti. Made in React.',
+		github: 'https://github.com/knutcode/tenzies-game',
+		pages: 'https://knutcode.github.io/tenzies-game/',
+		image: require('../img/Tenzies.png'),
+		alt: 'Tenzies Game',
+	},
+	{
+		id: 5,
+		title: 'PokeAPI',
+		desc: 'Fetches a random pokemon from the PokeAPI and finds relevant information. Made with Javascript, HTML and CSS. ',
+		github: 'https://github.com/knutcode/kodehode/tree/main/pokemon-api',
+		pages: 'https://knutcode.github.io/kodehode/pokemon-api/',
+		image: require('../img/PokeAPI.png'),
+		alt: 'Pokemon Generator',
+	},
+	{
+		id: 6,
+		title: 'Password Generator',
+		desc: 'Creates four randomized passwords of selected lengths for you. Made with Javascript, HTML and CSS. ',
+		github: 'https://github.com/knutcode/scrimba/tree/main/password-generator',
+		pages: 'https://knutcode.github.io/scrimba/password-generator/',
+		image: require('../img/PasswordGen.png'),
+		alt: 'Password Generator',
 	},
 ];
 

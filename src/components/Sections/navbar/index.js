@@ -32,7 +32,7 @@ export const Navbar = () => {
 						spy={true}
 						smooth={true}
 						offset={-80}
-						duration={700}
+						duration={600}
 						onClick={menuToggle}
 					>
 						<span>{t('logo')}</span>
@@ -50,7 +50,7 @@ export const Navbar = () => {
 							spy={true}
 							smooth={true}
 							offset={-80}
-							duration={700}
+							duration={600}
 							onClick={menuToggle}
 						>
 							{t('home')}
@@ -67,7 +67,7 @@ export const Navbar = () => {
 							spy={true}
 							smooth={true}
 							offset={-35}
-							duration={700}
+							duration={600}
 							onClick={menuToggle}
 						>
 							{t('about')}
@@ -84,7 +84,7 @@ export const Navbar = () => {
 							spy={true}
 							smooth={true}
 							offset={-28}
-							duration={700}
+							duration={600}
 							onClick={menuToggle}
 						>
 							{t('projects')}
@@ -101,7 +101,7 @@ export const Navbar = () => {
 							spy={true}
 							smooth={true}
 							offset={-5}
-							duration={700}
+							duration={600}
 							onClick={menuToggle}
 						>
 							{t('contact')}

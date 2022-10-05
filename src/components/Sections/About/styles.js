@@ -3,21 +3,20 @@ import { device } from '../../../data/devices';
 
 export const AboutSection = styled.section`
 	padding-top: 10rem;
-	margin-bottom: 10em;
-	height: 80vh;
+	padding-bottom: 20rem;
+	height: fit-content;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
 	@media ${device.tabletL} {
-		height: fit-content;
-		padding-top: 5rem;
-		padding-inline: 1.5rem;
+		padding: 5rem 1.5rem 10rem;
 	}
 `;
 
 export const AboutContainer = styled.div`
 	display: flex;
+	margin-bottom: 8rem;
 
 	@media ${device.tabletL} {
 		flex-direction: column;
@@ -63,4 +62,42 @@ export const AboutText = styled.p`
 		text-align: center;
 		font-size: 2rem;
 	}
+`;
+
+export const AboutSkills = styled.div`
+	margin-top: 12rem;
+	display: flex;
+	justify-content: space-evenly;
+	width: 100%;
+	flex-direction: column;
+	align-items: center;
+	> h2 {
+		margin: 5rem 0;
+	}
+	@media ${device.tabletL} {
+		margin-top: 0;
+	}
+`;
+
+export const AboutSkillsContainer = styled.div`
+	display: flex;
+	gap: 5rem;
+	@media ${device.tabletL} {
+		flex-direction: column;
+		text-align: center;
+	}
+`;
+
+export const AboutSkillsWrapper = styled.div`
+	padding-left: 15rem;
+	@media ${device.tabletL} {
+		padding-left: 0;
+	}
+`;
+
+export const AboutSkillsText = styled.p`
+	font-size: 2.6rem;
+	line-height: 1.5em;
+	letter-spacing: 0.06em;
+	margin: 0;
 `;

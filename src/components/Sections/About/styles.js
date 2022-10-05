@@ -3,16 +3,14 @@ import { device } from '../../../data/devices';
 
 export const AboutSection = styled.section`
 	padding-top: 10rem;
-	margin-bottom: 10em;
+	padding-bottom: 20rem;
 	height: fit-content;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
 	@media ${device.tabletL} {
-		/* height: fit-content; */
-		padding-top: 5rem;
-		padding-inline: 1.5rem;
+		padding: 5rem 1.5rem 10rem;
 	}
 `;
 
@@ -68,27 +66,34 @@ export const AboutText = styled.p`
 
 export const AboutSkills = styled.div`
 	display: flex;
+	justify-content: space-evenly;
+	width: 100%;
+	flex-direction: column;
+	align-items: center;
 	> h2 {
-		margin-top: 10rem;
+		margin: 5rem 0;
 	}
+`;
 
+export const AboutSkillsContainer = styled.div`
+	display: flex;
+	gap: 5rem;
 	@media ${device.tabletL} {
 		flex-direction: column;
-		align-items: center;
-		> h2 {
-			margin-top: 7rem;
-		}
+		text-align: center;
 	}
 `;
 
 export const AboutSkillsWrapper = styled.div`
-	min-width: 350px;
+	padding-left: 15rem;
+	@media ${device.tabletL} {
+		padding-left: 0;
+	}
 `;
 
 export const AboutSkillsText = styled.p`
-	font-family: 'Inter', sans-serif;
-	font-size: 2.1rem;
-	line-height: 1.4em;
+	font-size: 2.6rem;
+	line-height: 1.5em;
 	letter-spacing: 0.06em;
 	margin: 0;
 `;

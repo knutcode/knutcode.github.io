@@ -5,6 +5,7 @@ import {
 	AboutImg,
 	AboutSection,
 	AboutSkills,
+	AboutSkillsContainer,
 	AboutSkillsText,
 	AboutSkillsWrapper,
 	AboutText,
@@ -34,15 +35,32 @@ const About = () => {
 				</ImgWrapper>
 			</AboutContainer>
 
-			<h2 className="section-title">Skills</h2>
 			<AboutSkills>
-				<AboutSkillsWrapper>
-					<AboutSkillsText>React </AboutSkillsText>
-					<AboutSkillsText>GitHub </AboutSkillsText>
-					<AboutSkillsText>JavaScript </AboutSkillsText>
-					<AboutSkillsText>CSS </AboutSkillsText>
-					<AboutSkillsText>HTML5 </AboutSkillsText>
-				</AboutSkillsWrapper>
+				<h2 className="section-title">{t('title_skills')}</h2>
+				<AboutSkillsContainer>
+					<AboutSkillsWrapper
+						data-aos="fade-right"
+						data-aos-anchor-placement="bottom-bottom"
+					>
+						<AboutSkillsText>
+							React <br />
+							JavaScript <br />
+							CSS <br />
+							HTML5 <br />
+						</AboutSkillsText>
+					</AboutSkillsWrapper>
+					<AboutSkillsWrapper
+						data-aos="fade-left"
+						data-aos-anchor-placement="bottom-bottom"
+					>
+						<AboutSkillsText>
+							GitHub <br />
+							Figma <br />
+							Styled Components <br />
+							VSCode <br />
+						</AboutSkillsText>
+					</AboutSkillsWrapper>
+				</AboutSkillsContainer>
 			</AboutSkills>
 		</AboutSection>
 	);

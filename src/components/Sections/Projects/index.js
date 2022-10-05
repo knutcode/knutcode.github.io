@@ -2,7 +2,7 @@ import './index.css';
 import Project from './project-card';
 import data from '../../../data/projectData';
 import { useTranslation } from 'react-i18next';
-import { ProjectsSection } from './styles';
+import { ProjectsSection, ProjectSubLink } from './styles';
 
 const ProjectSection = () => {
 	const { t } = useTranslation('projects');
@@ -24,6 +24,7 @@ const ProjectSection = () => {
 		<ProjectsSection id="projects">
 			<h2 className="section-title">{t('title')}</h2>
 			{projects}
+			<ProjectSubLink>more of my projects</ProjectSubLink>
 		</ProjectsSection>
 	);
 };

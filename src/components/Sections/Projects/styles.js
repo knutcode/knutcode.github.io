@@ -69,3 +69,20 @@ export const ProjectLink = styled.a`
 `;
 
 export const ProjectLinkWrapper = styled.div``;
+
+export const ProjectSubLink = styled.a`
+	font-size: 2rem;
+	text-align: center;
+	text-decoration: none;
+	transition: 0.2s;
+	&:visited,
+	&:link {
+		color: ${(props) => props.theme.whitecolor};
+	}
+	&:hover {
+		transform: scale(1.05);
+		cursor: pointer;
+		color: ${(props) => props.theme.footercolor};
+		text-decoration: ${(props) => props.theme.footerunderline};
+	}
+`;

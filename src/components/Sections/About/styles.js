@@ -65,6 +65,7 @@ export const AboutText = styled.p`
 `;
 
 export const AboutSkills = styled.div`
+	margin-top: 12rem;
 	display: flex;
 	justify-content: space-evenly;
 	width: 100%;
@@ -72,6 +73,9 @@ export const AboutSkills = styled.div`
 	align-items: center;
 	> h2 {
 		margin: 5rem 0;
+	}
+	@media ${device.tabletL} {
+		margin-top: 0;
 	}
 `;
 

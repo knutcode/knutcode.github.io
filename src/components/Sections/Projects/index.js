@@ -24,7 +24,12 @@ const ProjectSection = () => {
 		<ProjectsSection id="projects">
 			<h2 className="section-title">{t('title')}</h2>
 			{projects}
-			<ProjectSubLink>more of my projects</ProjectSubLink>
+			<ProjectSubLink
+				href="https://github.com/knutcode?tab=repositories"
+				target="_blank"
+			>
+				more of my projects
+			</ProjectSubLink>
 		</ProjectsSection>
 	);
 };

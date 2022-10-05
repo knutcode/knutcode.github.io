@@ -28,7 +28,7 @@ const ProjectSection = () => {
 				href="https://github.com/knutcode?tab=repositories"
 				target="_blank"
 			>
-				more of my projects
+				{t('link')}
 			</ProjectSubLink>
 		</ProjectsSection>
 	);

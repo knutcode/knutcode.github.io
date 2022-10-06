@@ -32,6 +32,8 @@ const Project = (props) => {
 						className="p--link"
 						href={props.github}
 						target="_blank"
+						alt={props.title}
+						aria-label={props.desc}
 					>
 						GitHub
 					</ProjectLink>
@@ -39,6 +41,8 @@ const Project = (props) => {
 						className="p--link"
 						href={props.pages}
 						target="_blank"
+						alt={`${props.title} website`}
+						aria-label={`Visit ${props.title} website`}
 					>
 						website
 					</ProjectLink>

@@ -31,7 +31,10 @@ const About = () => {
 					data-aos="fade-left"
 					data-aos-anchor-placement="center-bottom"
 				>
-					<AboutImg src={Portrait} />
+					<AboutImg
+						src={Portrait}
+						alt="Portrait of Knut"
+					/>
 				</ImgWrapper>
 			</AboutContainer>
 

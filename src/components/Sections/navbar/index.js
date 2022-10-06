@@ -52,6 +52,7 @@ export const Navbar = () => {
 							offset={-80}
 							duration={600}
 							onClick={menuToggle}
+							tabIndex="0"
 						>
 							{t('home')}
 						</Link>
@@ -69,6 +70,7 @@ export const Navbar = () => {
 							offset={-35}
 							duration={600}
 							onClick={menuToggle}
+							tabIndex="0"
 						>
 							{t('about')}
 						</Link>
@@ -86,6 +88,7 @@ export const Navbar = () => {
 							offset={-28}
 							duration={600}
 							onClick={menuToggle}
+							tabIndex="0"
 						>
 							{t('projects')}
 						</Link>
@@ -103,6 +106,7 @@ export const Navbar = () => {
 							offset={-5}
 							duration={600}
 							onClick={menuToggle}
+							tabIndex="0"
 						>
 							{t('contact')}
 						</Link>
@@ -111,6 +115,7 @@ export const Navbar = () => {
 				<NavToggle
 					active={active}
 					onClick={menuToggle}
+					tabIndex="0"
 				>
 					<span className="lines line--1"></span>
 					<span className="lines line--2"></span>

@@ -66,7 +66,8 @@ export const ContactLink = styled.a`
 		text-decoration: ${(props) => props.theme.contactunderline};
 	}
 	> * {
-		padding-right: 8px;
+		margin-right: 8px;
+		vertical-align: -3px;
 	}
 
 	@media ${device.mobileL} {

@@ -1,6 +1,7 @@
 import './index.css';
 import { useTranslation } from 'react-i18next';
 import { ContactSection, ContactLink, ContactTextWrapper, ContactContainer } from './styles';
+import { FaPhoneAlt, FaEnvelope, FaLinkedin, FaGithub } from 'react-icons/fa';
 
 const Contact = () => {
 	const { t } = useTranslation('contact');
@@ -27,12 +28,12 @@ const Contact = () => {
 							href={void 0}
 							onClick={copyNumber}
 						>
-							<i className={t('phone_icon')}></i>
+							<FaPhoneAlt />
 							{t('phone_text')}
 						</ContactLink>
 
 						<ContactLink href={t('email_href')}>
-							<i className={t('email_icon')}></i>
+							<FaEnvelope />
 							{t('email_text')}
 						</ContactLink>
 
@@ -40,7 +41,7 @@ const Contact = () => {
 							href={t('linkedin_href')}
 							target="_blank"
 						>
-							<i className={t('linkedin_icon')}></i>
+							<FaLinkedin />
 							{t('linkedin_text')}
 						</ContactLink>
 
@@ -48,7 +49,7 @@ const Contact = () => {
 							href={t('github_href')}
 							target="_blank"
 						>
-							<i className={t('github_icon')}></i>
+							<FaGithub />
 							{t('github_text')}
 						</ContactLink>
 					</ContactTextWrapper>

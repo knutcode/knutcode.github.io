@@ -11,6 +11,8 @@ import {
 	AboutText,
 	AboutTextWrapper,
 } from './styles';
+import { FaReact, FaJsSquare, FaCss3Alt, FaHtml5, FaGithub, FaFigma, FaPaintBrush } from 'react-icons/fa';
+import { SiVisualstudiocode } from 'react-icons/si';
 import Portrait from '../../../img/AboutPortrait.jpg';
 
 const About = () => {
@@ -46,10 +48,10 @@ const About = () => {
 						data-aos-anchor-placement="bottom-bottom"
 					>
 						<AboutSkillsText>
-							React <br />
-							JavaScript <br />
-							CSS <br />
-							HTML5 <br />
+							<FaReact /> React <br />
+							<FaJsSquare /> JavaScript <br />
+							<FaCss3Alt /> CSS <br />
+							<FaHtml5 /> HTML5 <br />
 						</AboutSkillsText>
 					</AboutSkillsWrapper>
 					<AboutSkillsWrapper
@@ -57,10 +59,10 @@ const About = () => {
 						data-aos-anchor-placement="bottom-bottom"
 					>
 						<AboutSkillsText>
-							GitHub <br />
-							Figma <br />
-							Styled Components <br />
-							VSCode <br />
+							<FaGithub /> GitHub <br />
+							<FaFigma /> Figma <br />
+							<FaPaintBrush /> Styled Components <br />
+							<SiVisualstudiocode /> VSCode <br />
 						</AboutSkillsText>
 					</AboutSkillsWrapper>
 				</AboutSkillsContainer>

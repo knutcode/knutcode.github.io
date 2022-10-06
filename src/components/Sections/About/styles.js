@@ -84,7 +84,6 @@ export const AboutSkillsContainer = styled.div`
 	gap: 5rem;
 	@media ${device.tabletL} {
 		flex-direction: column;
-		text-align: center;
 	}
 `;
 
@@ -96,8 +95,12 @@ export const AboutSkillsWrapper = styled.div`
 `;
 
 export const AboutSkillsText = styled.p`
+	white-space: nowrap;
 	font-size: 2.6rem;
 	line-height: 1.5em;
 	letter-spacing: 0.06em;
 	margin: 0;
+	> * {
+		vertical-align: -3px;
+	}
 `;

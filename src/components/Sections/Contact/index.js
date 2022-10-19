@@ -1,13 +1,20 @@
 import './index.css';
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { ContactSection, ContactLink, ContactTextWrapper, ContactContainer } from './styles';
+import { ContactSection, ContactLink, ContactTextWrapper, ContactContainer, PhoneCopied } from './styles';
 import { FaPhoneAlt, FaEnvelope, FaLinkedin, FaGithub } from 'react-icons/fa';
 
 const Contact = () => {
+	const [activeCopied, setActiveCopied] = useState('');
+
 	const { t } = useTranslation('contact');
 
 	function copyNumber() {
 		navigator.clipboard.writeText('47276493');
+		setActiveCopied('copied');
+		setTimeout(() => {
+			setActiveCopied('');
+		}, 1500);
 	}
 
 	return (
@@ -30,6 +37,7 @@ const Contact = () => {
 						>
 							<FaPhoneAlt />
 							{t('phone_text')}
+							<PhoneCopied className={activeCopied === 'copied' ? 'active' : ''}>{t('phone_copied')}</PhoneCopied>
 						</ContactLink>
 
 						<ContactLink href={t('email_href')}>

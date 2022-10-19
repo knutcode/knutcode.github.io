@@ -22,6 +22,7 @@ export const ContactTextWrapper = styled.div`
 	padding-right: 1.5rem;
 	font-size: 2rem;
 	text-align: left;
+	position: relative;
 
 	> * {
 		margin: 10px 15px 10px 150px;
@@ -54,6 +55,7 @@ export const ContactLink = styled.a`
 	transition: 0.2s;
 	-webkit-tap-highlight-color: transparent;
 	white-space: nowrap;
+	position: relative;
 
 	&:visited,
 	&:link {
@@ -70,8 +72,25 @@ export const ContactLink = styled.a`
 		vertical-align: -3px;
 	}
 
+	& p {
+	}
+
 	@media ${device.mobileL} {
 		padding-inline: 0;
 		margin-inline: 0;
+	}
+`;
+
+export const PhoneCopied = styled.p`
+	color: ${(props) => props.theme.neutral};
+	background-color: ${(props) => props.theme.color};
+	padding: 0 0.2em 0.1em 0.3em;
+	position: absolute;
+	top: -2rem;
+	left: 15rem;
+	opacity: 0;
+	transition: 0.15s;
+	&.active {
+		opacity: 1;
 	}
 `;

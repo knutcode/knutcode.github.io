@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.4d2ea638.css",
-    "main.js": "/static/js/main.e781aa20.js",
+    "main.js": "/static/js/main.5bfef14d.js",
     "static/media/AboutPortrait.jpg": "/static/media/AboutPortrait.bda0623937770ddc5b2f.jpg",
     "static/media/TravelJournal.png": "/static/media/TravelJournal.7ba8dd200d0f2ed6a0d9.png",
     "static/media/PokeAPI.png": "/static/media/PokeAPI.1ed3d486d2a5515de7a1.png",
@@ -12,10 +12,10 @@
     "index.html": "/index.html",
     "static/media/getFetch.cjs": "/static/media/getFetch.40f37ddea2378391108f.cjs",
     "main.4d2ea638.css.map": "/static/css/main.4d2ea638.css.map",
-    "main.e781aa20.js.map": "/static/js/main.e781aa20.js.map"
+    "main.5bfef14d.js.map": "/static/js/main.5bfef14d.js.map"
   },
   "entrypoints": [
     "static/css/main.4d2ea638.css",
-    "static/js/main.e781aa20.js"
+    "static/js/main.5bfef14d.js"
   ]
 }

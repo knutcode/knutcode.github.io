@@ -21,12 +21,13 @@ const data = [
 	},
 	{
 		id: 3,
-		title: 'Travel Journal',
-		desc: 'A travel journal displaying information about each destination. Made in React.',
-		github: 'https://github.com/knutcode/travel-journal',
-		pages: 'https://knutcode.github.io/travel-journal/',
-		image: require('../img/TravelJournal.png'),
-		alt: 'Travel Journal',
+		title: 'Color scheme Generator',
+		desc:
+			'Generate a color schemes using TheColorAPI based on your own selections, Built in React using Axios and styled-components',
+		github: 'https://github.com/knutcode/color-scheme-generator',
+		pages: 'https://knutcode.github.io/color-scheme-generator/',
+		image: require('../img/ColorschemeGenerator.png'),
+		alt: 'Color scheme Generator',
 	},
 	{
 		id: 4,

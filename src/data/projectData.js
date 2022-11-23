@@ -23,7 +23,7 @@ const data = [
 		id: 3,
 		title: 'Color scheme Generator',
 		desc:
-			'Generate a color schemes using TheColorAPI based on your own selections, Built in React using Axios and styled-components',
+			'Generate color schemes using TheColorAPI based on your own selections, Built in React using Axios and styled-components',
 		github: 'https://github.com/knutcode/color-scheme-generator',
 		pages: 'https://knutcode.github.io/color-scheme-generator/',
 		image: require('../img/ColorschemeGenerator.png'),

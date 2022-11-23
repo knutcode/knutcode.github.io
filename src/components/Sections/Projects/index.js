@@ -25,7 +25,7 @@ const ProjectSection = () => {
 			<h2 className="section-title">{t('title')}</h2>
 			{projects}
 			<ProjectSubLink
-				href="https://github.com/knutcode/projects-overview#overview"
+				href="https://github.com/knutcode/projects-overview/blob/main/README.md#overview"
 				target="_blank"
 			>
 				{t('link')}

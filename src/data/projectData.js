@@ -3,7 +3,7 @@ const data = [
 		id: 1,
 		title: 'Movie Watchlist',
 		desc:
-			'Find and save movies locally to your watchlist using the OMDb API, Made in React using Axios, useContext, useReducer and Tailwind.css',
+			'Find and save movies locally to your watchlist using the OMDb API, Made in React using Axios, useContext with useReducer and Tailwind.css',
 		github: 'https://github.com/knutcode/movie-watchlist',
 		pages: 'https://knutcode.github.io/movie-watchlist/',
 		image: require('../img/MovieWatchlist.png'),
@@ -49,12 +49,13 @@ const data = [
 	},
 	{
 		id: 6,
-		title: 'Password Generator',
-		desc: 'Creates four randomized passwords of selected lengths for you. Made with Javascript, HTML and CSS. ',
-		github: 'https://github.com/knutcode/scrimba/tree/main/password-generator',
-		pages: 'https://knutcode.github.io/scrimba/password-generator/',
-		image: require('../img/PasswordGen.png'),
-		alt: 'Password Generator',
+		title: 'Quizzical',
+		desc:
+			'Generate a quizz from a selected category using the OTDB API and get scored based on your answers, Built in React using Axios and styled-components.',
+		github: 'https://github.com/knutcode/quizzical',
+		pages: 'https://knutcode.github.io/quizzical/',
+		image: require('../img/Quizzical.png'),
+		alt: 'Quizzical',
 	},
 ];
 

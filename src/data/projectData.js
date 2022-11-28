@@ -11,14 +11,15 @@ const data = [
 	},
 	{
 		id: 2,
-		title: 'To-do List',
+		title: 'Quizzical',
 		desc:
-			'To-do list to keep track of your daily dasks, local-storage saves your list locally. Made with JavaScript, HTML and CSS.',
-		github: 'https://github.com/knutcode/kodehode/tree/main/todo-assignment',
-		pages: 'https://knutcode.github.io/kodehode/todo-assignment/',
-		image: require('../img/TodoList.png'),
-		alt: 'To-do list',
+			'Generate a quizz from a selected category using the OTDB API and get scored based on your answers, Built in React using Axios and styled-components.',
+		github: 'https://github.com/knutcode/quizzical',
+		pages: 'https://knutcode.github.io/quizzical/',
+		image: require('../img/Quizzical.png'),
+		alt: 'Quizzical',
 	},
+
 	{
 		id: 3,
 		title: 'Color scheme Generator',
@@ -49,13 +50,13 @@ const data = [
 	},
 	{
 		id: 6,
-		title: 'Quizzical',
+		title: 'To-do List',
 		desc:
-			'Generate a quizz from a selected category using the OTDB API and get scored based on your answers, Built in React using Axios and styled-components.',
-		github: 'https://github.com/knutcode/quizzical',
-		pages: 'https://knutcode.github.io/quizzical/',
-		image: require('../img/Quizzical.png'),
-		alt: 'Quizzical',
+			'To-do list to keep track of your daily dasks, local-storage saves your list locally. Made with JavaScript, HTML and CSS.',
+		github: 'https://github.com/knutcode/kodehode/tree/main/todo-assignment',
+		pages: 'https://knutcode.github.io/kodehode/todo-assignment/',
+		image: require('../img/TodoList.png'),
+		alt: 'To-do list',
 	},
 ];
 

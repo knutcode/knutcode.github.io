@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.4d2ea638.css",
-    "main.js": "/static/js/main.d5c22f08.js",
+    "main.js": "/static/js/main.ce56d70b.js",
     "static/media/AboutPortrait.jpg": "/static/media/AboutPortrait.bda0623937770ddc5b2f.jpg",
     "static/media/MovieWatchlist.png": "/static/media/MovieWatchlist.8ff2e98bac08a8960794.png",
     "static/media/PokeAPI.png": "/static/media/PokeAPI.1ed3d486d2a5515de7a1.png",
@@ -12,10 +12,10 @@
     "index.html": "/index.html",
     "static/media/getFetch.cjs": "/static/media/getFetch.40f37ddea2378391108f.cjs",
     "main.4d2ea638.css.map": "/static/css/main.4d2ea638.css.map",
-    "main.d5c22f08.js.map": "/static/js/main.d5c22f08.js.map"
+    "main.ce56d70b.js.map": "/static/js/main.ce56d70b.js.map"
   },
   "entrypoints": [
     "static/css/main.4d2ea638.css",
-    "static/js/main.d5c22f08.js"
+    "static/js/main.ce56d70b.js"
   ]
 }

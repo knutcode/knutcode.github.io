@@ -24,6 +24,8 @@
   --grey:  #5A5F68;
   --pen:   #1B3BD1;
   --hl:    #FFEC5C;
+  --red:   #D8322A;
+  --green: #1F8F4E;
   --rule:  #D3D6DC;
   color-scheme: light;
 }
@@ -60,40 +62,34 @@ svg.ink path { fill: none; stroke: var(--pen); stroke-width: clamp(1.9px, .22vw 
 /* hidden until reviewed (only when scripting works) */
 html.js .pen.mark { clip-path: inset(-40% 100% -40% -3%); }
 html.js svg.mark path { stroke-dashoffset: 1.05; }
-html.js del.mark::before, html.js del.mark::after { scale: 0 1; }
 html.js .hl.mark, html.js .cut.mark { background-size: 0% var(--bh); }
 html.js .tape.mark, html.js .sketch.mark text { opacity: 0; }
 html:not(.js) .switch, html:not(.js) #replay { display: none; }
 
-body.reviewed .seen .pen.mark  { animation: write .55s var(--delay) cubic-bezier(.3,.1,.3,1) both; }
-body.reviewed .seen svg.mark path { animation: draw .5s calc(var(--delay) + var(--k, 0s)) cubic-bezier(.4,0,.2,1) both; }
-body.reviewed .seen del.mark, body.reviewed .seen .cut.mark { animation: fade .35s calc(var(--delay) + .15s) both, line .45s var(--delay) ease-out both; }
-body.reviewed .seen del.mark::before { animation: strike .28s var(--delay) cubic-bezier(.4,0,.2,1) both; }
-body.reviewed .seen del.mark::after  { animation: strike .24s calc(var(--delay) + .1s) cubic-bezier(.4,0,.2,1) both; }
-body.reviewed .seen .hl.mark { animation: line .5s var(--delay) ease-out both; }
+body.reviewed .seen .pen.mark  { animation: write .75s var(--delay) cubic-bezier(.3,.1,.3,1) both; }
+body.reviewed .seen svg.mark path { animation: draw .7s calc(var(--delay) + var(--k, 0s)) cubic-bezier(.4,0,.2,1) both; }
+body.reviewed .seen del.mark, body.reviewed .seen .cut.mark { animation: fade .45s calc(var(--delay) + .3s) both; }
+body.reviewed .seen .hl.mark { animation: line .7s var(--delay) ease-out both; }
 body.reviewed .seen .tape.mark { animation: show .3s var(--delay) both; }
 body.reviewed .seen .sketch.mark text { animation: show .35s calc(var(--delay) + var(--k, 0s)) both; }
 
 @keyframes write  { to { clip-path: inset(-40% -6% -40% -3%); } }
 @keyframes draw   { to { stroke-dashoffset: 0; } }
-@keyframes strike { to { scale: 1 1; } }
 @keyframes fade   { to { color: var(--faded); } }
 @keyframes line   { to { background-size: 100% var(--bh); } }
 @keyframes show   { to { opacity: 1; } }
 
 /* the agent types the draft */
 html.js .ch { opacity: 0; }
-body.go .ch { animation: show 1ms calc(var(--i) * 12ms) both; }
+body.go .ch { animation: show 1ms calc(var(--i) * 18ms) both; }
 
 /* ---------- edits ---------- */
 .edit { position: relative; display: inline-block; white-space: nowrap; }
 .edit del { position: relative; text-decoration: none; }
-.edit del::before, .edit del::after {
-  content: ""; position: absolute; left: -.06em; right: -.08em; top: 54%; height: .065em; min-height: 2px;
-  background: var(--pen); border-radius: 2px; transform-origin: left center; mix-blend-mode: multiply;
-  rotate: -1.6deg; filter: url(#rough);
-}
-.edit del::after { top: 62%; rotate: .9deg; left: .1em; right: -.02em; opacity: .85; }
+.edit del svg { left: -.1em; top: 30%; width: calc(100% + .2em); height: 60%; }
+.bar svg.ink.red path { stroke-width: 1.8px; }
+svg.ink.red path { stroke: var(--red); stroke-width: clamp(2.3px, .3vw + 1.3px, 4.6px); }
+svg.ink.green path, .doodle .green { stroke: var(--green); }
 .edit ins { position: absolute; left: .04em; bottom: 74%; font-size: .86em; line-height: 1; rotate: -2.2deg; transform-origin: left bottom; white-space: nowrap; }
 
 .hl, .cut { background-repeat: no-repeat; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
@@ -129,6 +125,20 @@ body.go .ch { animation: show 1ms calc(var(--i) * 12ms) both; }
 .photo .pen { position: absolute; left: 0; right: 0; bottom: .3rem; text-align: center; font-size: 1.9rem; line-height: 1; }
 
 .intro { max-width: 39rem; margin-top: clamp(1.75rem, 4vw, 3rem); }
+
+/* ---------- doodles in the margins (wide screens) ---------- */
+.doodle { position: absolute; overflow: visible; pointer-events: none; mix-blend-mode: multiply; }
+.doodle path { fill: none; stroke: var(--pen); stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1 2; }
+.doodle .red { stroke: var(--red); }
+.smiley { left: calc(100% + .7em); top: -.05em; width: 1.05em; height: 1.05em; rotate: 8deg; }
+.cup { right: 16%; bottom: -1.5rem; width: 5.2rem; height: 5.2rem; rotate: -6deg; }
+.star { right: 0; top: 10.5rem; width: 3.6rem; height: 3.6rem; rotate: 10deg; }
+.robot { left: 1rem; top: 7.5rem; width: 6.5rem; height: 6.5rem; rotate: -5deg; }
+.ttt { left: 2.5rem; top: 7.5rem; width: 7.5rem; height: 7.5rem; rotate: 4deg; }
+.plane { left: 8rem; top: 5.5rem; width: 5.5rem; height: 5.5rem; rotate: -4deg; }
+.photo .smiley { display: none; }
+.okcheck { position: relative; display: inline-block; width: 1.1em; height: 1em; align-self: center; }
+.okcheck svg { inset: 0; width: 100%; height: 100%; }
 
 /* ---------- sections ---------- */
 .sec { display: grid; grid-template-columns: minmax(0, 39rem) minmax(0, 1fr); column-gap: clamp(2rem, 6vw, 6rem); padding-top: clamp(3.5rem, 8vw, 6.5rem); --t0: 0s; }
@@ -179,7 +189,8 @@ body.go .ch { animation: show 1ms calc(var(--i) * 12ms) both; }
 .reach { display: flex; flex-wrap: wrap; gap: .25rem 2rem; margin-top: 1.1rem; list-style: none; padding: 0; }
 .reach a { display: inline-block; padding-block: .45rem; }
 .answer { display: flex; align-items: flex-start; gap: .5rem; }
-.answer svg { position: static; flex: none; width: 2.6rem; height: 1.7rem; margin-top: .5rem; }
+.margin { min-height: 1px; }
+.answer svg.ink { position: static; flex: none; width: 2.6rem; height: 1.7rem; margin-top: .5rem; }
 
 footer { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: .5rem 2rem; margin-top: clamp(4rem, 9vw, 7rem); padding-block: 1.25rem 3rem; border-top: 1px solid var(--rule); color: var(--grey); font-size: 1rem; }
 footer button { font: inherit; color: inherit; background: none; border: 0; padding: .6rem 0; cursor: pointer; text-decoration: underline; text-decoration-color: var(--pen); text-decoration-thickness: .09em; text-underline-offset: .18em; }
@@ -195,7 +206,9 @@ footer button:hover { background: var(--hl); color: var(--print); }
   .bar .edit ins { font-size: 2em; left: 108%; }
   .works li { grid-template-columns: minmax(0, 1fr); }
   .works nav { grid-column: 1; grid-row: auto; margin: .1rem 0 0 -.35rem; }
-  .answer svg { scale: 1 -1; rotate: 90deg; margin-top: 0; }
+  .answer svg.ink { scale: 1 -1; rotate: 90deg; margin-top: 0; }
+  .doodle { display: none; }
+  .photo .smiley { display: block; left: calc(100% + 2rem); top: 30%; width: 4.2rem; height: 4.2rem; }
 }
 @media (max-width: 26rem) {
   .bar { font-size: .95rem; }
@@ -219,7 +232,7 @@ footer button:hover { background: var(--hl); color: var(--print); }
 
   <header class="hero">
     <div class="bar">
-      <p><span class="edit"><ins class="mark pen" style="--d:3.75s"><span class="sr">Draft 1, now marked </span>final</ins><del class="mark" style="--d:3.55s" aria-hidden="true">Draft 1</del></span></p>
+      <p><span class="edit"><ins class="mark pen" style="--d:5.5s"><span class="sr">Draft 1, now marked </span>final</ins><del class="mark" style="--d:5.3s" aria-hidden="true">Draft 1<svg class="ink red mark" style="--d:5.3s" viewBox="0 0 300 40" preserveAspectRatio="none"><path pathLength="1" d="M4 22 C70 12 150 28 296 16 M290 28 C200 34 110 22 8 30"/></svg></del></span></p>
       <div class="switch" role="group" aria-label="Which version of this page to show">
         <button type="button" data-mode="draft" aria-pressed="true">Agent's draft</button>
         <button type="button" data-mode="reviewed" aria-pressed="false">Knut's review</button>
@@ -230,24 +243,27 @@ footer button:hover { background: var(--hl); color: var(--print); }
       <span class="sr">Knut Johnsen works in Customer Success. His agents do the groundwork. He makes the calls.</span>
       <span aria-hidden="true">
         <span class="line type">Knut Johnsen</span>
-        <span class="line type"><span class="edit"><ins class="mark pen" style="--d:.3s">works in Customer Success</ins><del class="mark" style="--d:0s">is an AI visionary</del></span>.</span>
-        <span class="line type">His agents <span class="edit"><ins class="mark pen" style="--d:1.1s">do the groundwork</ins><del class="mark" style="--d:.8s">run everything</del></span>.</span>
-        <span class="line add"><span class="ring"><ins class="mark pen" style="--d:1.75s">He makes the calls.</ins><svg class="ink loop mark" style="--d:2.35s" viewBox="0 0 300 100" preserveAspectRatio="none"><path pathLength="1" d="M62 24 C128 3 256 3 287 40 C312 80 196 100 112 95 C40 92 -8 72 8 44 C16 30 36 30 76 20"/></svg></span></span>
+        <span class="line type"><span class="edit"><ins class="mark pen" style="--d:.5s">works in Customer Success</ins><del class="mark" style="--d:0s">is an AI visionary<svg class="ink red mark" style="--d:0s" viewBox="0 0 300 40" preserveAspectRatio="none"><path pathLength="1" d="M3 27 C30 9 58 31 92 16 C124 3 152 33 188 14 C216 1 252 29 297 7 M295 23 C262 39 236 13 200 30 C166 41 138 15 100 32 C70 41 40 19 5 37"/></svg></del></span>.</span>
+        <span class="line type">His agents <span class="edit"><ins class="mark pen" style="--d:1.8s">do the groundwork</ins><del class="mark" style="--d:1.3s">run everything<svg class="ink red mark" style="--d:1.3s" viewBox="0 0 300 40" preserveAspectRatio="none"><path pathLength="1" d="M4 12 C34 30 66 6 104 24 C140 38 178 8 222 26 C252 36 280 12 297 20 M292 34 C256 16 220 40 180 22 C144 8 104 38 64 20 C40 10 20 32 4 26"/></svg></del></span>.</span>
+        <span class="line add"><span class="ring"><ins class="mark pen" style="--d:2.7s">He makes the calls.</ins><svg class="ink loop mark" style="--d:3.5s" viewBox="0 0 300 100" preserveAspectRatio="none"><path pathLength="1" d="M62 24 C128 3 256 3 287 40 C312 80 196 100 112 95 C40 92 -8 72 8 44 C16 30 36 30 76 20"/></svg><svg class="doodle smiley mark" style="--d:6.2s" viewBox="0 0 100 100"><path pathLength="1" d="M52 8 C78 6 94 28 92 52 C90 78 70 94 48 92 C24 90 8 72 9 48 C10 26 26 10 56 9"/><path pathLength="1" style="--k:.5s" d="M36 34 L37 46 M62 33 L63 45"/><path pathLength="1" style="--k:.8s" d="M29 60 C38 77 62 78 73 58"/></svg></span></span>
       </span>
     </h1>
 
     <p class="signoff" aria-hidden="true">
-      <span class="mark pen" style="--d:2.85s">ok to publish.</span>
-      <span class="sig mark pen" style="--d:3.15s">Knut<svg class="ink mark" style="--d:3.5s" viewBox="0 0 160 20" preserveAspectRatio="none"><path pathLength="1" d="M4 12 C42 2 96 18 156 5"/></svg></span>
+      <span class="okcheck"><svg class="ink green mark" style="--d:4.1s" viewBox="0 0 26 22"><path pathLength="1" d="M3 12 L10 19 L24 3"/></svg></span>
+      <span class="mark pen" style="--d:4.3s">ok to publish.</span>
+      <span class="sig mark pen" style="--d:4.7s">Knut<svg class="ink mark" style="--d:5.1s" viewBox="0 0 160 20" preserveAspectRatio="none"><path pathLength="1" d="M4 12 C42 2 96 18 156 5"/></svg></span>
     </p>
 
     <p class="lead intro">At <a href="https://www.quantfol.io/">Quantfolio</a> in Bergen, I build the tools and workflows that help our team support banks and wealth managers.</p>
 
     <figure class="photo">
-      <span class="tape mark" style="--d:3.9s"></span>
+      <span class="tape mark" style="--d:5.8s"></span>
       <img src="img/knut.jpg" alt="Portrait of Knut Johnsen" width="480" height="480">
-      <figcaption class="mark pen" style="--d:4.05s">me</figcaption>
+      <figcaption class="mark pen" style="--d:5.95s">me</figcaption>
+      <svg class="doodle smiley mark" style="--d:6.2s" viewBox="0 0 100 100" aria-hidden="true"><path pathLength="1" d="M52 8 C78 6 94 28 92 52 C90 78 70 94 48 92 C24 90 8 72 9 48 C10 26 26 10 56 9"/><path pathLength="1" style="--k:.5s" d="M36 34 L37 46 M62 33 L63 45"/><path pathLength="1" style="--k:.8s" d="M29 60 C38 77 62 78 73 58"/></svg>
     </figure>
+    <svg class="doodle cup mark" style="--d:6.6s" viewBox="0 0 100 100" aria-hidden="true"><path pathLength="1" d="M22 42 L29 87 L67 86 L74 41 Z"/><path pathLength="1" style="--k:.4s" d="M73 50 C93 47 92 73 70 70"/><path pathLength="1" style="--k:.8s" d="M38 32 C31 24 45 20 38 9 M55 32 C48 24 62 20 55 9"/></svg>
   </header>
 
   <section class="sec" id="how">
@@ -269,24 +285,10 @@ footer button:hover { background: var(--hl); color: var(--print); }
         <text x="236" y="144" style="--k:.6s">I review</text>
         <text x="147" y="236" text-anchor="middle" style="--k:1.05s">then it goes out</text>
       </svg>
+      <svg class="doodle star mark" style="--d:2.2s" viewBox="0 0 100 100" aria-hidden="true"><path pathLength="1" class="red" d="M50 6 L76 90 L8 36 L94 38 L22 88 L51 7"/></svg>
     </div>
   </section>
 
-  <section class="sec eg" aria-label="An example">
-      <p>For example: a customer reply an agent drafted, and the changes I made before it went out.</p>
-      <div class="slip">
-        <p>Hi, and thanks for reporting this.</p>
-        <p><del class="cut mark" style="--d:.3s"><span class="sr">Struck out: </span>We sincerely apologise for any inconvenience this may have caused.</del></p>
-        <span class="pen mark" style="--d:1.4s"><span class="sr">Written in by hand: </span>The fix is in testing now. I'll tell you the day it's live.</span>
-        <p><del class="cut mark" style="--d:1s"><span class="sr">Struck out: </span>The fix will be available soon.</del></p>
-        <p>Best regards, Knut</p>
-        <span class="pen mark send" style="--d:2.2s"><span class="sr">Written in by hand: </span>send.</span>
-      </div>
-      <div class="margin">
-        <span class="note mark pen" style="--d:.7s">say what's true,</span>
-        <span class="note mark pen" style="--d:1.1s">not what sounds nice.</span>
-      </div>
-  </section>
 
   <section class="sec" id="kit">
     <h2>What I work with</h2>
@@ -301,6 +303,7 @@ footer button:hover { background: var(--hl); color: var(--print); }
     <div class="margin">
       <span class="note mark pen" style="--d:.3s">the tools change.</span>
       <span class="note mark pen" style="--d:.8s">the way of working doesn't.</span>
+      <svg class="doodle robot mark" style="--d:1.6s" viewBox="0 0 100 100" aria-hidden="true"><path pathLength="1" d="M24 35 L78 33 L80 78 L22 80 Z"/><path pathLength="1" style="--k:.4s" d="M50 33 L51 17 M51 17 m-5 -4 a5 5 0 1 0 10 0 a5 5 0 1 0 -10 0 M22 54 L13 55 M80 52 L89 51"/><path pathLength="1" style="--k:.8s" d="M38 48 L38 57 M62 47 L62 56 M37 68 C45 72 56 72 64 67"/></svg>
     </div>
   </section>
 
@@ -316,13 +319,14 @@ footer button:hover { background: var(--hl); color: var(--print); }
       <p class="more">The rest is on <a href="https://github.com/knutcode?tab=repositories">GitHub</a>.</p>
       <p class="courses">Courses I completed:</p>
       <ul class="done">
-        <li><svg class="ink mark" style="--d:.5s" viewBox="0 0 26 22" aria-hidden="true"><path pathLength="1" d="M3 12 L10 19 L24 3"/></svg><a href="https://scrimba.com/certificate/uM7P24tG/gfrontend">The Frontend Developer Career Path</a><small>Scrimba</small></li>
-        <li><svg class="ink mark" style="--d:.8s" viewBox="0 0 26 22" aria-hidden="true"><path pathLength="1" d="M3 11 L9 19 L24 4"/></svg><a href="https://nsm.muniolms.com/no/pdf/diploma/9273b3cf-b6ac-47d3-9bea-06aedeac6117.pdf">NSM grunnprinsipper for IKT-sikkerhet</a><small>Norwegian National Security Authority</small></li>
+        <li><svg class="ink green mark" style="--d:.5s" viewBox="0 0 26 22" aria-hidden="true"><path pathLength="1" d="M3 12 L10 19 L24 3"/></svg><a href="https://scrimba.com/certificate/uM7P24tG/gfrontend">The Frontend Developer Career Path</a><small>Scrimba</small></li>
+        <li><svg class="ink green mark" style="--d:.8s" viewBox="0 0 26 22" aria-hidden="true"><path pathLength="1" d="M3 11 L9 19 L24 4"/></svg><a href="https://nsm.muniolms.com/no/pdf/diploma/9273b3cf-b6ac-47d3-9bea-06aedeac6117.pdf">NSM grunnprinsipper for IKT-sikkerhet</a><small>Norwegian National Security Authority</small></li>
       </ul>
     </div>
     <div class="margin">
       <span class="note mark pen" style="--d:.3s">written by hand,</span>
       <span class="note mark pen" style="--d:.7s">before the agents.</span>
+      <svg class="doodle ttt mark" style="--d:1.4s" viewBox="0 0 100 100" aria-hidden="true"><path pathLength="1" d="M38 10 L36 90 M66 10 L64 90 M10 38 L90 36 M10 64 L90 62"/><path pathLength="1" class="red" style="--k:.6s" d="M15 15 L30 30 M30 15 L15 30 M44 44 L58 57 M58 44 L44 57 M72 71 L86 85 M86 71 L72 85"/><path pathLength="1" class="green" style="--k:1.1s" d="M70 23 m-8 0 a8 8 0 1 0 16 0 a8 8 0 1 0 -16 0 M22 76 m-8 0 a8 8 0 1 0 16 0 a8 8 0 1 0 -16 0"/></svg>
     </div>
   </section>
 
@@ -339,6 +343,7 @@ footer button:hover { background: var(--hl); color: var(--print); }
     <div class="margin answer">
       <svg class="ink mark" style="--d:.7s" viewBox="0 0 52 34" aria-hidden="true"><path pathLength="1" d="M50 8 C36 2 16 8 4 24 M4 24 L6 10 M4 24 L18 21"/></svg>
       <span class="note mark pen" style="--d:.3s">I answer these myself.</span>
+      <svg class="doodle plane mark" style="--d:1.2s" viewBox="0 0 100 100" aria-hidden="true"><path pathLength="1" d="M10 50 L92 12 L62 88 L46 58 Z M46 58 L92 12"/><path pathLength="1" class="red" style="--k:.6s; stroke-dasharray: none" d="M6 82 C16 92 30 86 36 72"/></svg>
     </div>
   </section>
 
@@ -423,7 +428,7 @@ footer button:hover { background: var(--hl); color: var(--print); }
     body.classList.add('go');
     if (chosen) return;
     if (location.hash === '#draft') return draft();
-    review(still ? 0 : n * .012 + .35);
+    review(still ? 0 : n * .018 + .5);
   };
   const fonts = document.fonts ? document.fonts.ready : Promise.resolve();
   Promise.race([fonts, new Promise(r => setTimeout(r, 1800))]).then(start);

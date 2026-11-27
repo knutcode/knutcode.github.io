@@ -4,245 +4,430 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Knut Johnsen</title>
-<meta name="description" content="Knut Johnsen works in Customer Success at Quantfolio in Bergen, with AI agents and automations kept human-in-the-loop.">
+<meta name="description" content="I'm Knut Johnsen. I work in Customer Success at Quantfolio in Bergen. AI agents do the groundwork, I make the calls.">
 <meta property="og:title" content="Knut Johnsen">
-<meta property="og:description" content="Customer Success at Quantfolio, Bergen. Human-in-the-loop AI.">
+<meta property="og:description" content="Agents do the groundwork. I make the calls.">
 <meta property="og:image" content="https://knutcode.github.io/img/knut.jpg">
-<meta name="theme-color" content="#E9EDEC" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0F1825" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#F3F4F6">
 <link rel="icon" href="favicon.ico">
+<script>document.documentElement.classList.add('js')</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&family=Reenie+Beanie&display=swap" rel="stylesheet">
 <style>
+/* The page is a document an agent drafted and a person marked up.
+   Black print is the machine. Blue ballpoint is the human. Yellow is what got approved. */
 :root {
-  --fog: #E9EDEC;      /* Bergen overcast: the page */
-  --ink: #142033;      /* fjord at dusk: text */
-  --slate: #56667A;    /* secondary text */
-  --rain: #BFCBD3;     /* rules and the loop */
-  --paper: #F6F8F7;    /* raised surfaces */
-  --green: #1E8042;    /* Skynet green: only for "approved" */
-  color-scheme: light dark;
-}
-@media (prefers-color-scheme: dark) {
-  :root { --fog:#0F1825; --ink:#E4EAEC; --slate:#8E9DAC; --rain:#2B3B4E; --paper:#16212F; --green:#77CD97; }
+  --paper: #F3F4F6;
+  --print: #15161A;
+  --faded: #8B909A;
+  --grey:  #5A5F68;
+  --pen:   #1B3BD1;
+  --hl:    #FFEC5C;
+  --rule:  #D3D6DC;
+  color-scheme: light;
 }
 * { box-sizing: border-box; margin: 0; }
-html { -webkit-text-size-adjust: 100%; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
 body {
-  background: var(--fog); color: var(--ink);
-  font: 400 1.0625rem/1.6 "Schibsted Grotesk", system-ui, sans-serif;
-  font-feature-settings: "ss01";
+  background: var(--paper); color: var(--print);
+  font: 400 1.1875rem/1.62 "Newsreader", "Iowan Old Style", Georgia, serif;
+  font-optical-sizing: auto; overflow-x: clip;
+  --t0: 0s;
 }
-a { color: inherit; text-decoration-color: var(--rain); text-underline-offset: .2em; text-decoration-thickness: 2px; }
-a:hover { text-decoration-color: var(--green); }
-:focus-visible { outline: 3px solid var(--green); outline-offset: 3px; border-radius: 2px; }
-
-.wrap { max-width: 68rem; margin: 0 auto; padding: 0 clamp(1.25rem, 4vw, 3rem); }
-
-/* Hero: name on the left, the loop on the right */
-.hero {
-  display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-  align-items: center; gap: clamp(1.5rem, 5vw, 4rem);
-  min-height: min(100svh, 44rem); padding-block: 3rem;
+body::before { /* paper grain */
+  content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 5; opacity: .5; mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .4 0 0 0 0 .4 0 0 0 0 .45 0 0 0 .09 0'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)'/%3E%3C/svg%3E");
 }
-.hero h1 {
-  font-weight: 900; font-size: clamp(3.4rem, 9.5vw, 7.25rem);
-  line-height: .88; letter-spacing: -.045em;
+::selection { background: var(--hl); color: var(--print); }
+a { color: inherit; text-decoration: underline; text-decoration-color: var(--pen); text-decoration-thickness: .09em; text-underline-offset: .18em; }
+a:hover { background: var(--hl); }
+:focus-visible { outline: 3px solid var(--pen); outline-offset: 3px; border-radius: 2px; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+svg.ink { position: absolute; overflow: visible; pointer-events: none; }
+svg.ink path { fill: none; stroke: var(--pen); stroke-width: clamp(1.9px, .22vw + 1.2px, 3.2px); stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1 2; }
+
+.sheet { max-width: 74rem; margin: 0 auto; padding: 0 clamp(1.25rem, 5vw, 4rem); }
+
+/* ---------- pen ---------- */
+.pen {
+  font-family: "Reenie Beanie", "Bradley Hand", cursive; font-weight: 400; font-style: normal;
+  color: var(--pen); letter-spacing: 0; text-decoration: none; mix-blend-mode: multiply;
+  -webkit-text-stroke: .018em var(--pen);
 }
-.hero h1 span { display: block; }
-.hero p { margin-top: 1.75rem; max-width: 34ch; font-size: clamp(1.15rem, 1.8vw, 1.35rem); line-height: 1.45; color: var(--slate); }
-.hero p strong { color: var(--ink); font-weight: 600; }
+.mark { --delay: calc(var(--t0, 0s) + var(--d, 0s)); }
 
-.loop { width: 100%; max-width: 30rem; justify-self: end; }
-.stage { position: relative; }
-.face { position: absolute; left: calc(24 / 440 * 100%); top: calc(154 / 400 * 100%); width: calc(92 / 440 * 100%); height: auto; border-radius: 50%; z-index: 1; }
-.loop svg { width: 100%; height: auto; display: block; overflow: visible; }
-.loop figcaption { margin-top: .75rem; color: var(--slate); font-size: .95rem; text-align: center; }
-.ring { fill: none; stroke: var(--rain); stroke-width: 2; }
-.arc-label { fill: var(--slate); font-size: 13px; font-weight: 500; }
-.node-label { fill: var(--ink); font-size: 14px; font-weight: 700; }
-.skynet { fill: var(--green); }
-.skynet-text { fill: var(--fog); font-size: 12px; font-weight: 800; letter-spacing: .01em; }
-.halo { fill: none; stroke: var(--green); stroke-width: 3; opacity: 0; transition: opacity .25s; }
-.halo.on { opacity: 1; }
-.dot { stroke: var(--ink); stroke-width: 2; fill: var(--fog); transition: fill .3s, stroke .3s; }
-.dot.ok { fill: var(--green); stroke: var(--green); }
+/* hidden until reviewed (only when scripting works) */
+html.js .pen.mark { clip-path: inset(-40% 100% -40% -3%); }
+html.js svg.mark path { stroke-dashoffset: 1.05; }
+html.js del.mark::before, html.js del.mark::after { scale: 0 1; }
+html.js .hl.mark, html.js .cut.mark { background-size: 0% var(--bh); }
+html.js .tape.mark, html.js .sketch.mark text { opacity: 0; }
+html:not(.js) .switch, html:not(.js) #replay { display: none; }
 
-/* Sections: heading in a gutter, content beside it */
-section.row {
-  display: grid; grid-template-columns: 13rem minmax(0, 1fr); gap: 1rem 3rem;
-  padding-block: 3rem; border-top: 2px solid var(--rain);
+body.reviewed .seen .pen.mark  { animation: write .55s var(--delay) cubic-bezier(.3,.1,.3,1) both; }
+body.reviewed .seen svg.mark path { animation: draw .5s calc(var(--delay) + var(--k, 0s)) cubic-bezier(.4,0,.2,1) both; }
+body.reviewed .seen del.mark, body.reviewed .seen .cut.mark { animation: fade .35s calc(var(--delay) + .15s) both, line .45s var(--delay) ease-out both; }
+body.reviewed .seen del.mark::before { animation: strike .28s var(--delay) cubic-bezier(.4,0,.2,1) both; }
+body.reviewed .seen del.mark::after  { animation: strike .24s calc(var(--delay) + .1s) cubic-bezier(.4,0,.2,1) both; }
+body.reviewed .seen .hl.mark { animation: line .5s var(--delay) ease-out both; }
+body.reviewed .seen .tape.mark { animation: show .3s var(--delay) both; }
+body.reviewed .seen .sketch.mark text { animation: show .35s calc(var(--delay) + var(--k, 0s)) both; }
+
+@keyframes write  { to { clip-path: inset(-40% -6% -40% -3%); } }
+@keyframes draw   { to { stroke-dashoffset: 0; } }
+@keyframes strike { to { scale: 1 1; } }
+@keyframes fade   { to { color: var(--faded); } }
+@keyframes line   { to { background-size: 100% var(--bh); } }
+@keyframes show   { to { opacity: 1; } }
+
+/* the agent types the draft */
+html.js .ch { opacity: 0; }
+body.go .ch { animation: show 1ms calc(var(--i) * 12ms) both; }
+
+/* ---------- edits ---------- */
+.edit { position: relative; display: inline-block; white-space: nowrap; }
+.edit del { position: relative; text-decoration: none; }
+.edit del::before, .edit del::after {
+  content: ""; position: absolute; left: -.06em; right: -.08em; top: 54%; height: .065em; min-height: 2px;
+  background: var(--pen); border-radius: 2px; transform-origin: left center; mix-blend-mode: multiply;
+  rotate: -1.6deg; filter: url(#rough);
 }
-section.row h2 { font-size: 1.05rem; font-weight: 800; letter-spacing: -.01em; padding-top: .2rem; }
-.body { max-width: 40rem; }
-.body p + p { margin-top: 1rem; }
-.lead { font-size: 1.3rem; line-height: 1.45; font-weight: 500; letter-spacing: -.01em; }
+.edit del::after { top: 62%; rotate: .9deg; left: .1em; right: -.02em; opacity: .85; }
+.edit ins { position: absolute; left: .04em; bottom: 74%; font-size: .86em; line-height: 1; rotate: -2.2deg; transform-origin: left bottom; white-space: nowrap; }
 
-.tools { display: flex; flex-wrap: wrap; gap: .5rem; list-style: none; padding: 0; }
-.tools li { padding: .35rem .8rem; border: 2px solid var(--rain); border-radius: 999px; font-weight: 500; }
-.tools li.sky { background: var(--green); border-color: var(--green); color: var(--fog); font-weight: 700; }
-.note { margin-top: 1rem; color: var(--slate); }
+.hl, .cut { background-repeat: no-repeat; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+.hl { --bh: 82%; background-image: linear-gradient(var(--hl), var(--hl)); background-position: 0 62%; background-size: 100% var(--bh); padding-inline: .12em; margin-inline: -.12em; border-radius: .2em .5em .25em .6em; }
+.cut { --bh: .11em; background-image: linear-gradient(var(--pen), var(--pen)); background-position: 0 58%; background-size: 100% var(--bh); text-decoration: none; }
 
-.projects { list-style: none; padding: 0; }
-.projects li { display: grid; grid-template-columns: 12rem minmax(0, 1fr) auto; gap: .25rem 1.5rem; padding-block: .8rem; border-bottom: 1px solid var(--rain); align-items: baseline; }
-.projects li:first-child { padding-top: 0; }
-.projects b { font-weight: 700; }
-.projects span { color: var(--slate); font-size: .95rem; }
-.projects nav { display: flex; gap: 1rem; font-size: .95rem; white-space: nowrap; }
+/* ---------- hero ---------- */
+.hero { position: relative; padding-block: 1.25rem 0; }
+.bar { display: flex; justify-content: space-between; align-items: center; gap: 1rem; font-size: 1rem; color: var(--grey); }
+.bar .edit ins { font-size: 2.3em; bottom: 5%; left: 112%; rotate: -5deg; }
+.switch { display: flex; gap: .4rem; }
+.switch button { font: inherit; color: var(--grey); background: none; border: 1px solid var(--rule); padding: .45rem .8rem; min-height: 2.75rem; cursor: pointer; border-radius: .3em .6em .35em .7em; }
+.switch button[aria-pressed="true"] { color: var(--print); background: var(--hl); border-color: var(--hl); }
+.switch button:hover { color: var(--print); border-color: var(--grey); }
 
-.plain { list-style: none; padding: 0; }
-.plain li + li { margin-top: .5rem; }
+.proof {
+  margin-top: clamp(2rem, 4.5vw, 3.25rem);
+  font-weight: 600; font-size: clamp(2.3rem, 6.6vw, 5.4rem); line-height: 1.5; letter-spacing: -.022em;
+}
+.proof .line { display: block; }
+.proof .add { margin-top: .16em; padding-left: .3em; }
+.ring { position: relative; display: inline-block; }
+.ring ins { font-size: 1.06em; line-height: 1; display: inline-block; rotate: -1.5deg; }
+.loop { inset: -.14em -.32em -.2em -.3em; width: calc(100% + .62em); height: calc(100% + .34em); }
 
-.contact { display: grid; grid-template-columns: repeat(2, minmax(0, max-content)); gap: .6rem 2.5rem; font-size: 1.15rem; font-weight: 500; }
-.contact a { font-weight: 600; }
-.contact dt { color: var(--slate); font-weight: 400; }
+.signoff { display: flex; justify-content: flex-end; align-items: baseline; gap: 1.2rem; margin-top: clamp(.5rem, 2vw, 1.25rem); padding-right: .75rem; font-size: clamp(1.7rem, 3.2vw, 2.5rem); line-height: 1; }
+.sig { position: relative; font-size: 1.9em; rotate: -5deg; padding-inline: .1em .2em; }
+.sig svg { left: -2%; bottom: -.08em; width: 104%; height: .3em; }
 
-footer { padding-block: 2rem 3rem; color: var(--slate); font-size: .9rem; border-top: 2px solid var(--rain); }
+.photo { position: absolute; right: 0; top: clamp(5.9rem, 7.5vw, 6.75rem); width: clamp(8rem, 13vw, 11.75rem); rotate: 3deg; margin: 0; }
+.photo img { display: block; width: 100%; height: auto; border: .45rem solid #fff; border-bottom-width: 2.3rem; box-shadow: 0 1px 2px rgb(20 22 30 / .18), 0 12px 26px -12px rgb(20 22 30 / .4); }
+.photo .tape { position: absolute; top: -.8rem; left: 50%; width: 5rem; height: 1.6rem; margin-left: -2.5rem; rotate: -5deg; background: rgb(255 236 92 / .75); mix-blend-mode: multiply; }
+.photo .pen { position: absolute; left: 0; right: 0; bottom: .3rem; text-align: center; font-size: 1.9rem; line-height: 1; }
 
-@media (max-width: 52rem) {
-  .hero { grid-template-columns: 1fr; min-height: auto; padding-top: 3rem; }
-  .loop { justify-self: center; max-width: 24rem; }
-  section.row { grid-template-columns: 1fr; padding-block: 2.25rem; }
-  .projects li { grid-template-columns: 1fr; }
-  .contact { grid-template-columns: 1fr; gap: .1rem; }
-  .contact dd { margin-bottom: .6rem; }
+.intro { max-width: 39rem; margin-top: clamp(1.75rem, 4vw, 3rem); }
+
+/* ---------- sections ---------- */
+.sec { display: grid; grid-template-columns: minmax(0, 39rem) minmax(0, 1fr); column-gap: clamp(2rem, 6vw, 6rem); padding-top: clamp(3.5rem, 8vw, 6.5rem); --t0: 0s; }
+.sec h2 { grid-column: 1 / -1; font-weight: 600; font-size: clamp(1.7rem, 3.4vw, 2.5rem); line-height: 1.15; letter-spacing: -.02em; margin-bottom: 1.1rem; }
+.main p + p { margin-top: 1rem; }
+.lead { font-size: clamp(1.35rem, 2.3vw, 1.7rem); line-height: 1.42; letter-spacing: -.012em; }
+.margin { position: relative; }
+.note { display: block; font-size: clamp(2.1rem, 3vw, 2.6rem); line-height: .95; rotate: -2.5deg; max-width: 13em; }
+
+.sketch { position: relative; width: min(23rem, 100%); height: auto; display: block; overflow: visible; margin-top: -1.5rem; }
+.sketch g { filter: url(#rough); }
+.sketch path { fill: none; stroke: var(--pen); stroke-width: 2.3; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1 2; }
+.sketch text { font-family: "Reenie Beanie", cursive; font-size: 27px; fill: var(--pen); }
+
+/* a reply an agent drafted, as it left my desk */
+.sec.eg { padding-top: 2.25rem; align-items: center; }
+.eg > p { grid-column: 1 / -1; color: var(--grey); font-style: italic; margin-bottom: 1rem; }
+.slip { position: relative; background: #fff; padding: 1.4rem 1.6rem 1.5rem; rotate: -.7deg; font-size: 1.08rem; line-height: 1.55; box-shadow: 0 1px 2px rgb(20 22 30 / .14), 0 14px 28px -16px rgb(20 22 30 / .35); max-width: 34rem; }
+.slip { --faded: #6F747D; }
+.slip p + p { margin-top: .7rem; }
+.slip .pen { display: block; font-size: 1.85rem; line-height: 1; rotate: -1.2deg; margin: .9rem 0 .35rem .2rem; }
+.slip .pen + p { margin-top: 0; }
+.slip .send { margin: .4rem 0 0; text-align: right; rotate: -3deg; font-size: 2.1rem; }
+.eg .note { margin-top: 1rem; }
+
+.kit { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: .55rem 1.75rem; margin-top: 1.4rem; }
+.kit dt { color: var(--grey); font-style: italic; }
+.kit dd { font-weight: 500; }
+
+.works { list-style: none; padding: 0; margin-top: 1.2rem; border-top: 1px solid var(--rule); }
+.works li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 0 1.5rem; padding-block: .7rem; border-bottom: 1px solid var(--rule); align-items: baseline; }
+.works b { font-weight: 600; justify-self: start; background-image: linear-gradient(var(--hl), var(--hl)); background-repeat: no-repeat; background-position: 0 62%; background-size: 0% 82%; transition: background-size .35s ease-out; padding-inline: .12em; margin-inline: -.12em; border-radius: .2em .5em .25em .6em; }
+.works li:hover b, .works li:focus-within b { background-size: 100% 82%; }
+.works span { grid-column: 1; color: var(--grey); font-size: 1.02rem; line-height: 1.45; }
+.works nav { grid-column: 2; grid-row: 1 / span 2; align-self: center; display: flex; gap: .5rem; font-size: 1.05rem; }
+.works nav a { padding: .55rem .35rem; }
+.more { margin-top: 1rem; }
+
+.courses { margin-top: 2rem !important; }
+.done { list-style: none; padding: 0; margin-top: .7rem; }
+.done li { position: relative; padding-left: 2.2rem; }
+.done li + li { margin-top: .6rem; }
+.done svg { left: 0; top: .1em; width: 1.5rem; height: 1.35rem; }
+.done small { display: block; color: var(--grey); font-size: 1rem; font-style: italic; }
+
+.mail { font-weight: 600; font-size: clamp(1.45rem, 4.4vw, 2.9rem); line-height: 1.2; letter-spacing: -.02em; overflow-wrap: anywhere; }
+.mail a { text-decoration-thickness: .06em; }
+.reach { display: flex; flex-wrap: wrap; gap: .25rem 2rem; margin-top: 1.1rem; list-style: none; padding: 0; }
+.reach a { display: inline-block; padding-block: .45rem; }
+.answer { display: flex; align-items: flex-start; gap: .5rem; }
+.answer svg { position: static; flex: none; width: 2.6rem; height: 1.7rem; margin-top: .5rem; }
+
+footer { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: .5rem 2rem; margin-top: clamp(4rem, 9vw, 7rem); padding-block: 1.25rem 3rem; border-top: 1px solid var(--rule); color: var(--grey); font-size: 1rem; }
+footer button { font: inherit; color: inherit; background: none; border: 0; padding: .6rem 0; cursor: pointer; text-decoration: underline; text-decoration-color: var(--pen); text-decoration-thickness: .09em; text-underline-offset: .18em; }
+footer button:hover { background: var(--hl); color: var(--print); }
+
+@media (max-width: 58rem) {
+  .sec { grid-template-columns: minmax(0, 1fr); }
+  .margin { margin-top: 1.6rem; }
+  .sketch { margin-top: 0; }
+  .proof { line-height: 1.62; }
+  .photo { position: relative; right: auto; top: auto; width: min(12rem, 60vw); margin: 2.5rem 0 0 .5rem; }
+  .intro { margin-top: 2rem; }
+  .bar .edit ins { font-size: 2em; left: 108%; }
+  .works li { grid-template-columns: minmax(0, 1fr); }
+  .works nav { grid-column: 1; grid-row: auto; margin: .1rem 0 0 -.35rem; }
+  .answer svg { scale: 1 -1; rotate: 90deg; margin-top: 0; }
+}
+@media (max-width: 26rem) {
+  .bar { font-size: .95rem; }
+  .switch button { padding-inline: .6rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 1ms !important; animation-delay: 0s !important; transition-duration: 1ms !important; }
 }
 </style>
 </head>
 <body>
-<main class="wrap">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <filter id="rough" x="-5%" y="-200%" width="110%" height="500%">
+    <feTurbulence type="fractalNoise" baseFrequency=".03" numOctaves="2" seed="4" result="n"/>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="1.8"/>
+  </filter>
+</svg>
+
+<div class="sheet">
 
   <header class="hero">
-    <div>
-      <h1><span>Knut</span><span>Johnsen</span></h1>
-      <p><strong>Customer Success at <a href="https://www.quantfol.io/">Quantfolio</a></strong> in Bergen. I build the tools and workflows that help our team support banks and wealth managers.</p>
+    <div class="bar">
+      <p><span class="edit"><ins class="mark pen" style="--d:3.75s"><span class="sr">Draft 1, now marked </span>final</ins><del class="mark" style="--d:3.55s" aria-hidden="true">Draft 1</del></span></p>
+      <div class="switch" role="group" aria-label="Which version of this page to show">
+        <button type="button" data-mode="draft" aria-pressed="true">Agent's draft</button>
+        <button type="button" data-mode="reviewed" aria-pressed="false">Knut's review</button>
+      </div>
     </div>
 
-    <figure class="loop">
-      <div class="stage">
-      <img class="face" src="img/knut.jpg" alt="" width="92" height="92">
-      <svg viewBox="0 0 440 400" role="img" aria-labelledby="loop-title">
-        <title id="loop-title">Work moves round a loop: agents in Skynet prepare it, Knut reviews each piece, and only then does it go out.</title>
-        <circle class="ring" cx="220" cy="200" r="150"/>
-        <text class="arc-label" x="220" y="30" text-anchor="middle">agents prepare</text>
-        <text class="arc-label" x="220" y="382" text-anchor="middle">reviewed, then sent</text>
-        <g id="dots"></g>
-        <circle cx="70" cy="200" r="50" fill="var(--fog)"/>
-        <circle class="halo" id="halo" cx="70" cy="200" r="53"/>
-        <text class="node-label" x="70" y="275" text-anchor="middle">me</text>
-        <rect class="skynet" x="326" y="184" width="88" height="32" rx="16"/>
-        <text class="skynet-text" x="370" y="204.5" text-anchor="middle">Skynet</text>
-      </svg>
-      </div>
-      <figcaption>Human in the loop, literally.</figcaption>
+    <h1 class="proof">
+      <span class="sr">Knut Johnsen works in Customer Success. His agents do the groundwork. He makes the calls.</span>
+      <span aria-hidden="true">
+        <span class="line type">Knut Johnsen</span>
+        <span class="line type"><span class="edit"><ins class="mark pen" style="--d:.3s">works in Customer Success</ins><del class="mark" style="--d:0s">is an AI visionary</del></span>.</span>
+        <span class="line type">His agents <span class="edit"><ins class="mark pen" style="--d:1.1s">do the groundwork</ins><del class="mark" style="--d:.8s">run everything</del></span>.</span>
+        <span class="line add"><span class="ring"><ins class="mark pen" style="--d:1.75s">He makes the calls.</ins><svg class="ink loop mark" style="--d:2.35s" viewBox="0 0 300 100" preserveAspectRatio="none"><path pathLength="1" d="M62 24 C128 3 256 3 287 40 C312 80 196 100 112 95 C40 92 -8 72 8 44 C16 30 36 30 76 20"/></svg></span></span>
+      </span>
+    </h1>
+
+    <p class="signoff" aria-hidden="true">
+      <span class="mark pen" style="--d:2.85s">ok to publish.</span>
+      <span class="sig mark pen" style="--d:3.15s">Knut<svg class="ink mark" style="--d:3.5s" viewBox="0 0 160 20" preserveAspectRatio="none"><path pathLength="1" d="M4 12 C42 2 96 18 156 5"/></svg></span>
+    </p>
+
+    <p class="lead intro">At <a href="https://www.quantfol.io/">Quantfolio</a> in Bergen, I build the tools and workflows that help our team support banks and wealth managers.</p>
+
+    <figure class="photo">
+      <span class="tape mark" style="--d:3.9s"></span>
+      <img src="img/knut.jpg" alt="Portrait of Knut Johnsen" width="480" height="480">
+      <figcaption class="mark pen" style="--d:4.05s">me</figcaption>
     </figure>
   </header>
 
-  <section class="row" id="work">
+  <section class="sec" id="how">
     <h2>How I work</h2>
-    <div class="body">
-      <p class="lead">I use Skynet as the harness for my AI agents and automations, set up around how our team works.</p>
+    <div class="main">
+      <p class="lead">I work with AI agents and automations, set up around how our team works.</p>
       <p>They take care of repetitive groundwork, which frees up my time for customers, priorities and decisions.</p>
-      <p>The setup is human-in-the-loop: I stay in charge, results get checked, and I automate the routine work where it pays off.</p>
+      <p>The setup is human-in-the-loop: <span class="hl mark" style="--d:.5s">I stay in charge</span>, results get checked, and I automate the routine work where it pays off.</p>
+    </div>
+    <div class="margin">
+      <svg class="sketch mark" style="--d:.2s" viewBox="0 0 330 250" role="img" aria-label="A hand-drawn loop: agents prepare the work, I review it, then it goes out.">
+        <g>
+          <path pathLength="1" d="M176 57 A76 76 0 0 1 225 115 M229 103 L225 115 L217 105"/>
+          <path pathLength="1" style="--k:.45s" d="M219 160 A76 76 0 0 1 170 201 M183 204 L170 201 L180 192"/>
+          <path pathLength="1" style="--k:.9s" d="M124 199 A76 76 0 0 1 124 57 M111 55 L124 57 L115 67"/>
+          <path pathLength="1" style="--k:1.5s" d="M236 153 C256 149 286 157 310 150 M240 160 C262 157 288 163 306 158"/>
+        </g>
+        <text x="150" y="36" text-anchor="middle" style="--k:.1s">agents prepare</text>
+        <text x="236" y="144" style="--k:.6s">I review</text>
+        <text x="147" y="236" text-anchor="middle" style="--k:1.05s">then it goes out</text>
+      </svg>
     </div>
   </section>
 
-  <section class="row" id="tools">
+  <section class="sec eg" aria-label="An example">
+      <p>For example: a customer reply an agent drafted, and the changes I made before it went out.</p>
+      <div class="slip">
+        <p>Hi, and thanks for reporting this.</p>
+        <p><del class="cut mark" style="--d:.3s"><span class="sr">Struck out: </span>We sincerely apologise for any inconvenience this may have caused.</del></p>
+        <span class="pen mark" style="--d:1.4s"><span class="sr">Written in by hand: </span>The fix is in testing now. I'll tell you the day it's live.</span>
+        <p><del class="cut mark" style="--d:1s"><span class="sr">Struck out: </span>The fix will be available soon.</del></p>
+        <p>Best regards, Knut</p>
+        <span class="pen mark send" style="--d:2.2s"><span class="sr">Written in by hand: </span>send.</span>
+      </div>
+      <div class="margin">
+        <span class="note mark pen" style="--d:.7s">say what's true,</span>
+        <span class="note mark pen" style="--d:1.1s">not what sounds nice.</span>
+      </div>
+  </section>
+
+  <section class="sec" id="kit">
     <h2>What I work with</h2>
-    <div class="body">
-      <ul class="tools">
-        <li class="sky">Skynet</li>
-        <li>Claude</li>
-        <li>Claude Code</li>
-        <li>MCP</li>
-        <li>Git and GitHub</li>
-        <li>Notion</li>
-        <li>Slack</li>
-        <li>Microsoft 365</li>
-        <li>Figma</li>
-      </ul>
-      <p class="note">Skynet is the macOS app where I run my AI agents, each one with its own area of work.</p>
+    <div class="main">
+      <p class="lead">Agents where they help, then whatever the job needs.</p>
+      <dl class="kit">
+        <dt>Agents</dt><dd>Claude and Claude Code, run in harnesses like Skynet</dd>
+        <dt>Connections</dt><dd>MCP</dd>
+        <dt>Around them</dt><dd>GitHub, Notion, Slack, Microsoft 365, Figma</dd>
+      </dl>
+    </div>
+    <div class="margin">
+      <span class="note mark pen" style="--d:.3s">the tools change.</span>
+      <span class="note mark pen" style="--d:.8s">the way of working doesn't.</span>
     </div>
   </section>
 
-  <section class="row" id="projects">
+  <section class="sec" id="started">
     <h2>Where I started</h2>
-    <div class="body">
-      <p class="note" style="margin:0 0 1.25rem">Frontend projects from 2022, built while I learned JavaScript and React.</p>
-      <ul class="projects">
-        <li><b>Movie Watchlist</b><span>Search films and keep a watchlist, using the OMDb API.</span><nav><a href="https://knutcode.github.io/movie-watchlist/">Open</a><a href="https://github.com/knutcode/movie-watchlist">Code</a></nav></li>
-        <li><b>Quizzical</b><span>A quiz from a chosen category, scored on your answers.</span><nav><a href="https://knutcode.github.io/quizzical/">Open</a><a href="https://github.com/knutcode/quizzical">Code</a></nav></li>
-        <li><b>Color scheme generator</b><span>Colour schemes from your own picks, using TheColorAPI.</span><nav><a href="https://knutcode.github.io/color-scheme-generator/">Open</a><a href="https://github.com/knutcode/color-scheme-generator">Code</a></nav></li>
-        <li><b>Tenzies</b><span>A quick dice game, with confetti.</span><nav><a href="https://knutcode.github.io/tenzies-game/">Open</a><a href="https://github.com/knutcode/tenzies-game">Code</a></nav></li>
-        <li><b>PokeAPI</b><span>A random Pokémon and its details, in plain JavaScript.</span><nav><a href="https://knutcode.github.io/kodehode/pokemon-api/">Open</a><a href="https://github.com/knutcode/kodehode/tree/main/pokemon-api">Code</a></nav></li>
-        <li><b>To-do list</b><span>Daily tasks, saved in your browser.</span><nav><a href="https://knutcode.github.io/kodehode/todo-assignment/">Open</a><a href="https://github.com/knutcode/kodehode/tree/main/todo-assignment">Code</a></nav></li>
+    <div class="main">
+      <p>I learned to build for the web in 2022. A few things from then:</p>
+      <ul class="works">
+        <li><b>Movie Watchlist</b><span>Search films and keep a watchlist.</span><nav><a href="https://knutcode.github.io/movie-watchlist/" aria-label="Open Movie Watchlist">Open</a><a href="https://github.com/knutcode/movie-watchlist" aria-label="Code for Movie Watchlist">Code</a></nav></li>
+        <li><b>Quizzical</b><span>A quiz from a chosen category, scored on your answers.</span><nav><a href="https://knutcode.github.io/quizzical/" aria-label="Open Quizzical">Open</a><a href="https://github.com/knutcode/quizzical" aria-label="Code for Quizzical">Code</a></nav></li>
+        <li><b>Tenzies</b><span>A quick dice game, with confetti.</span><nav><a href="https://knutcode.github.io/tenzies-game/" aria-label="Open Tenzies">Open</a><a href="https://github.com/knutcode/tenzies-game" aria-label="Code for Tenzies">Code</a></nav></li>
       </ul>
+      <p class="more">The rest is on <a href="https://github.com/knutcode?tab=repositories">GitHub</a>.</p>
+      <p class="courses">Courses I completed:</p>
+      <ul class="done">
+        <li><svg class="ink mark" style="--d:.5s" viewBox="0 0 26 22" aria-hidden="true"><path pathLength="1" d="M3 12 L10 19 L24 3"/></svg><a href="https://scrimba.com/certificate/uM7P24tG/gfrontend">The Frontend Developer Career Path</a><small>Scrimba</small></li>
+        <li><svg class="ink mark" style="--d:.8s" viewBox="0 0 26 22" aria-hidden="true"><path pathLength="1" d="M3 11 L9 19 L24 4"/></svg><a href="https://nsm.muniolms.com/no/pdf/diploma/9273b3cf-b6ac-47d3-9bea-06aedeac6117.pdf">NSM grunnprinsipper for IKT-sikkerhet</a><small>Norwegian National Security Authority</small></li>
+      </ul>
+    </div>
+    <div class="margin">
+      <span class="note mark pen" style="--d:.3s">written by hand,</span>
+      <span class="note mark pen" style="--d:.7s">before the agents.</span>
     </div>
   </section>
 
-  <section class="row" id="courses">
-    <h2>Completed courses</h2>
-    <ul class="body plain">
-      <li><a href="https://scrimba.com/certificate/uM7P24tG/gfrontend">The Frontend Developer Career Path</a>, Scrimba</li>
-      <li><a href="https://nsm.muniolms.com/no/pdf/diploma/9273b3cf-b6ac-47d3-9bea-06aedeac6117.pdf">NSM grunnprinsipper for IKT-sikkerhet</a>, Norwegian National Security Authority</li>
-    </ul>
-  </section>
-
-  <section class="row" id="contact">
+  <section class="sec" id="contact">
     <h2>Get in touch</h2>
-    <dl class="body contact">
-      <dt>Email</dt><dd><a href="mailto:knut.c.johnsen@gmail.com">knut.c.johnsen@gmail.com</a></dd>
-      <dt>Phone</dt><dd><a href="tel:+4747276493">+47 472 76 493</a></dd>
-      <dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/knut-c-johnsen/">knut-c-johnsen</a></dd>
-      <dt>GitHub</dt><dd><a href="https://github.com/knutcode">knutcode</a></dd>
-    </dl>
+    <div class="main">
+      <p class="mail"><a href="mailto:knut.c.johnsen@gmail.com">knut.c.johnsen@gmail.com</a></p>
+      <ul class="reach">
+        <li><a href="tel:+4747276493">+47 472 76 493</a></li>
+        <li><a href="https://www.linkedin.com/in/knut-c-johnsen/">LinkedIn</a></li>
+        <li><a href="https://github.com/knutcode">GitHub</a></li>
+      </ul>
+    </div>
+    <div class="margin answer">
+      <svg class="ink mark" style="--d:.7s" viewBox="0 0 52 34" aria-hidden="true"><path pathLength="1" d="M50 8 C36 2 16 8 4 24 M4 24 L6 10 M4 24 L18 21"/></svg>
+      <span class="note mark pen" style="--d:.3s">I answer these myself.</span>
+    </div>
   </section>
 
-  <footer>Knut Johnsen, Bergen, 2026</footer>
-</main>
+  <footer>
+    <span>Drafted by an agent, reviewed by Knut. Bergen, 2026.</span>
+    <button type="button" id="replay">Watch the review again</button>
+  </footer>
+</div>
 
 <script>
 (() => {
-  const NS = 'http://www.w3.org/2000/svg';
-  const cx = 220, cy = 200, r = 150, N = 5, SPEED = 0.07, HOLD = 1100;
-  const g = document.getElementById('dots'), halo = document.getElementById('halo');
-  // s: 0 at Skynet (right), 0.5 at me (left) over the top, back along the bottom.
-  const pos = s => [cx + r * Math.cos(2 * Math.PI * s), cy - r * Math.sin(2 * Math.PI * s)];
-  const dots = Array.from({ length: N }, (_, i) => {
-    const el = document.createElementNS(NS, 'circle');
-    el.setAttribute('r', 9); el.setAttribute('class', 'dot');
-    g.appendChild(el);
-    return { el, s: 0.06 + i / N, hold: 0, ok: false };
-  });
-  const draw = d => {
-    const [x, y] = pos(d.s);
-    d.el.setAttribute('cx', x.toFixed(1)); d.el.setAttribute('cy', y.toFixed(1));
-    d.el.classList.toggle('ok', d.ok);
-  };
-  const still = matchMedia('(prefers-reduced-motion: reduce)');
-  const settle = () => dots.forEach(d => { d.ok = d.s > 0.44; draw(d); });
-  if (still.matches) return settle();
-  settle();
+  const body = document.body;
+  const hero = document.querySelector('.hero');
+  const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  let last = performance.now();
-  const tick = now => {
-    const dt = Math.min(now - last, 50) / 1000; last = now;
-    let holding = false;
-    for (const d of dots) {
-      if (d.hold > 0) { d.hold -= dt * 1000; holding = true; if (d.hold <= 0) d.ok = true; }
-      else {
-        const before = d.s;
-        d.s += SPEED * dt;
-        if (before < 0.44 && d.s >= 0.44 && !d.ok) { d.s = 0.44; d.hold = HOLD; holding = true; }
-        if (d.s >= 1) { d.s -= 1; d.ok = false; }
+  // Split the printed draft into characters so it can be typed out.
+  let n = 0;
+  document.querySelectorAll('.type').forEach(line => {
+    const walker = document.createTreeWalker(line, NodeFilter.SHOW_TEXT);
+    const nodes = [];
+    while (walker.nextNode()) if (!walker.currentNode.parentElement.closest('ins')) nodes.push(walker.currentNode);
+    nodes.forEach(node => {
+      const frag = document.createDocumentFragment();
+      for (const c of node.textContent) {
+        if (c === ' ') { frag.append(' '); continue; }
+        const s = document.createElement('span');
+        s.className = 'ch'; s.style.setProperty('--i', n++); s.textContent = c;
+        frag.append(s);
       }
-      draw(d);
-    }
-    halo.classList.toggle('on', holding);
-    requestAnimationFrame(tick);
+      node.replaceWith(frag);
+    });
+  });
+
+  // Pen strokes are drawn in real pixels so the line keeps one weight at any size.
+  const inks = [...document.querySelectorAll('svg.ink')].map(svg => {
+    const [, , bw, bh] = svg.getAttribute('viewBox').split(' ').map(Number);
+    return { svg, bw, bh, paths: [...svg.querySelectorAll('path')].map(p => [p, p.getAttribute('d')]) };
+  });
+  const fit = () => inks.forEach(({ svg, bw, bh, paths }) => {
+    const box = svg.getBoundingClientRect();
+    const w = svg.clientWidth || box.width, h = svg.clientHeight || box.height;
+    if (!w || !h) return;
+    svg.setAttribute('viewBox', `0 0 ${w} ${h}`);
+    paths.forEach(([p, d]) => { let k = 0; p.setAttribute('d', d.replace(/-?\d+(\.\d+)?/g, v => (+v * (k++ % 2 ? h / bh : w / bw)).toFixed(1))); });
+  });
+  let rt; addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(fit, 120); });
+
+  const buttons = document.querySelectorAll('.switch button');
+  const press = mode => buttons.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.mode === mode)));
+
+  let pending, chosen = false;
+  const review = lead => {
+    clearTimeout(pending);
+    body.style.setProperty('--t0', lead + 's');
+    body.classList.remove('reviewed');
+    void body.offsetWidth;            // restart the pen
+    body.classList.add('reviewed');
+    // the switch shows the draft while the agent is still typing
+    pending = setTimeout(() => press('reviewed'), Math.max(0, lead * 1000 - 150));
   };
-  requestAnimationFrame(tick);
+  const draft = () => { clearTimeout(pending); body.classList.remove('reviewed'); press('draft'); };
+
+  buttons.forEach(b => b.addEventListener('click', () => {
+    chosen = true;
+    b.dataset.mode === 'draft' ? draft() : review(.1);
+  }));
+  document.getElementById('replay').addEventListener('click', () => {
+    chosen = true;
+    scrollTo({ top: 0, behavior: still ? 'auto' : 'smooth' });
+    draft(); pending = setTimeout(() => review(.2), still ? 0 : 700);
+  });
+
+  // Pen marks further down are drawn when the reader actually reaches them.
+  const io = new IntersectionObserver(entries => entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('seen'); io.unobserve(e.target); }
+  }), { rootMargin: '0px 0px -28% 0px', threshold: 0 });
+  document.querySelectorAll('.sec').forEach(s => io.observe(s));
+
+  const start = () => {
+    fit();
+    hero.classList.add('seen');
+    body.classList.add('go');
+    if (chosen) return;
+    if (location.hash === '#draft') return draft();
+    review(still ? 0 : n * .012 + .35);
+  };
+  const fonts = document.fonts ? document.fonts.ready : Promise.resolve();
+  Promise.race([fonts, new Promise(r => setTimeout(r, 1800))]).then(start);
+  fonts.then(fit);
 })();
 </script>
 </body>

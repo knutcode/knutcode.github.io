@@ -154,8 +154,10 @@ body.reviewed .seen .doodle.mark text { animation: show .35s calc(var(--delay) +
 .margin { position: relative; }
 .note { display: block; font-size: clamp(2.1rem, 3vw, 2.6rem); line-height: .95; rotate: -2.5deg; max-width: 13em; }
 
-.sketch { position: relative; width: min(23rem, 100%); height: auto; display: block; overflow: visible; margin-top: -1.5rem; }
-.sketch g { filter: url(#rough); }
+.sketch { position: relative; width: min(25rem, 100%); height: auto; display: block; overflow: visible; margin-top: -1.5rem; }
+.sketch g { filter: url(#wobble); }
+.sketch path.r { stroke: var(--red); } .sketch path.g { stroke: var(--green); }
+.sketch text.r { fill: var(--red); } .sketch text.g { fill: var(--green); }
 .sketch path { fill: none; stroke: var(--pen); stroke-width: 2.3; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1 2; }
 .sketch text { font-family: "Reenie Beanie", cursive; font-size: 27px; fill: var(--pen); }
 
@@ -283,16 +285,22 @@ footer button:hover { background: var(--hl); color: var(--print); }
       <p>The setup is human-in-the-loop: <span class="hl mark" style="--d:.5s">I stay in charge</span>, results get checked, and I automate the routine work where it pays off.</p>
     </div>
     <div class="margin">
-      <svg class="sketch mark" style="--d:.2s" viewBox="0 0 330 250" role="img" aria-label="A hand-drawn loop: agents prepare the work, I review it, then it goes out.">
+      <svg class="sketch mark" style="--d:.2s" viewBox="0 0 350 250" role="img" aria-label="A hand-drawn sketch: agents hand drafts to me. If I say not yet, it goes back to them. If I say go, it is done.">
         <g>
-          <path pathLength="1" d="M176 57 A76 76 0 0 1 225 115 M229 103 L225 115 L217 105"/>
-          <path pathLength="1" style="--k:.45s" d="M219 160 A76 76 0 0 1 170 201 M183 204 L170 201 L180 192"/>
-          <path pathLength="1" style="--k:.9s" d="M124 199 A76 76 0 0 1 124 57 M111 55 L124 57 L115 67"/>
-          <path pathLength="1" style="--k:1.5s" d="M236 153 C256 149 286 157 310 150 M240 160 C262 157 288 163 306 158"/>
+          <path pathLength="1" d="M30 110 L80 108 L82 150 L28 152 Z"/>
+          <path pathLength="1" style="--k:.3s" d="M54 108 L55 94 M55 94 m-4.5 -4 a4.5 4.5 0 1 0 9 0 a4.5 4.5 0 1 0 -9 0 M28 128 L20 129 M82 126 L90 125 M43 122 L43 130 M65 121 L65 129 M42 140 C49 144 59 144 67 139"/>
+          <path pathLength="1" style="--k:1s" d="M92 86 C118 52 165 50 187 80 M187 80 L175 77 M187 80 L187 67"/>
+          <path pathLength="1" style="--k:1.7s" d="M205 89 C216 88 222 97 221 106 C220 116 212 122 204 121 C195 120 189 112 190 104 C191 95 197 89 207 89 M190 100 C192 88 200 82 208 85 C214 81 222 88 221 99"/>
+          <path pathLength="1" style="--k:2.1s" d="M199 103 L199 106 M211 102 L211 105 M199 112 C203 115 208 115 211 111 M205 121 L204 162 M204 136 L187 151 M204 135 L223 147 M204 162 L192 188 M204 162 L217 188"/>
+          <path pathLength="1" class="r" style="--k:3s" d="M186 176 C160 208 118 208 96 178 M96 178 L108 182 M96 178 L96 192"/>
+          <path pathLength="1" class="g" style="--k:3.9s" d="M234 128 C256 124 276 129 298 124 M298 124 L287 117 M298 124 L288 133"/>
+          <path pathLength="1" class="g" style="--k:4.5s; stroke-width: 3.2" d="M306 96 L315 108 L334 82"/>
         </g>
-        <text x="150" y="36" text-anchor="middle" style="--k:.1s">agents prepare</text>
-        <text x="236" y="144" style="--k:.6s">I review</text>
-        <text x="147" y="236" text-anchor="middle" style="--k:1.05s">then it goes out</text>
+        <text x="52" y="190" text-anchor="middle" style="--k:.7s">agents</text>
+        <text x="140" y="44" text-anchor="middle" style="--k:1.4s">drafts</text>
+        <text x="205" y="216" text-anchor="middle" style="--k:2.6s">me</text>
+        <text class="r" x="142" y="234" text-anchor="middle" style="--k:3.4s">not yet</text>
+        <text class="g" x="318" y="152" text-anchor="middle" style="--k:4.8s">go</text>
       </svg>
     </div>
   </section>

@@ -1,1 +1,249 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"/><link rel="icon" href="/favicon.ico?v=2"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="theme-color" media="(prefers-color-scheme: dark)" content="black"/><link rel="apple-touch-icon" href="/favicon.ico"/><script src="https://kit.fontawesome.com/47ebcfa049.js" crossorigin="anonymous"></script><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet"/><title>Knut Johnsen | Portfolio</title><meta name="title" content="Knut Johnsen | Portfolio"/><meta name="description" content="Knut Christian Johnsen, front-end developer based in Bergen, Norway."/><meta property="og:type" content="website"/><meta property="og:url" content="https://knutcode.github.io/"/><meta property="og:title" content="Knut Johnsen | Portfolio"/><meta property="og:description" content="Knut Christian Johnsen, front-end developer based in Bergen, Norway."/><meta property="og:image" content="https://i.imgur.com/QCRGMOE.png"/><meta property="twitter:card" content="summary_large_image"/><meta property="twitter:url" content="https://knutcode.github.io/"/><meta property="twitter:title" content="Knut Johnsen | Portfolio"/><meta property="twitter:description" content="Knut Christian Johnsen, front-end developer based in Bergen, Norway."/><meta property="twitter:image" content="https://i.imgur.com/QCRGMOE.png"/><script defer="defer" src="/static/js/main.ce56d70b.js"></script><link href="/static/css/main.4d2ea638.css" rel="stylesheet"></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Knut Johnsen</title>
+<meta name="description" content="Knut Johnsen works in Customer Success at Quantfolio in Bergen, with AI agents and automations kept human-in-the-loop.">
+<meta property="og:title" content="Knut Johnsen">
+<meta property="og:description" content="Customer Success at Quantfolio, Bergen. Human-in-the-loop AI.">
+<meta property="og:image" content="https://knutcode.github.io/img/knut.jpg">
+<meta name="theme-color" content="#E9EDEC" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0F1825" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --fog: #E9EDEC;      /* Bergen overcast: the page */
+  --ink: #142033;      /* fjord at dusk: text */
+  --slate: #56667A;    /* secondary text */
+  --rain: #BFCBD3;     /* rules and the loop */
+  --paper: #F6F8F7;    /* raised surfaces */
+  --green: #1E8042;    /* Skynet green: only for "approved" */
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --fog:#0F1825; --ink:#E4EAEC; --slate:#8E9DAC; --rain:#2B3B4E; --paper:#16212F; --green:#77CD97; }
+}
+* { box-sizing: border-box; margin: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  background: var(--fog); color: var(--ink);
+  font: 400 1.0625rem/1.6 "Schibsted Grotesk", system-ui, sans-serif;
+  font-feature-settings: "ss01";
+}
+a { color: inherit; text-decoration-color: var(--rain); text-underline-offset: .2em; text-decoration-thickness: 2px; }
+a:hover { text-decoration-color: var(--green); }
+:focus-visible { outline: 3px solid var(--green); outline-offset: 3px; border-radius: 2px; }
+
+.wrap { max-width: 68rem; margin: 0 auto; padding: 0 clamp(1.25rem, 4vw, 3rem); }
+
+/* Hero: name on the left, the loop on the right */
+.hero {
+  display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  align-items: center; gap: clamp(1.5rem, 5vw, 4rem);
+  min-height: min(100svh, 44rem); padding-block: 3rem;
+}
+.hero h1 {
+  font-weight: 900; font-size: clamp(3.4rem, 9.5vw, 7.25rem);
+  line-height: .88; letter-spacing: -.045em;
+}
+.hero h1 span { display: block; }
+.hero p { margin-top: 1.75rem; max-width: 34ch; font-size: clamp(1.15rem, 1.8vw, 1.35rem); line-height: 1.45; color: var(--slate); }
+.hero p strong { color: var(--ink); font-weight: 600; }
+
+.loop { width: 100%; max-width: 30rem; justify-self: end; }
+.stage { position: relative; }
+.face { position: absolute; left: calc(24 / 440 * 100%); top: calc(154 / 400 * 100%); width: calc(92 / 440 * 100%); height: auto; border-radius: 50%; z-index: 1; }
+.loop svg { width: 100%; height: auto; display: block; overflow: visible; }
+.loop figcaption { margin-top: .75rem; color: var(--slate); font-size: .95rem; text-align: center; }
+.ring { fill: none; stroke: var(--rain); stroke-width: 2; }
+.arc-label { fill: var(--slate); font-size: 13px; font-weight: 500; }
+.node-label { fill: var(--ink); font-size: 14px; font-weight: 700; }
+.skynet { fill: var(--green); }
+.skynet-text { fill: var(--fog); font-size: 12px; font-weight: 800; letter-spacing: .01em; }
+.halo { fill: none; stroke: var(--green); stroke-width: 3; opacity: 0; transition: opacity .25s; }
+.halo.on { opacity: 1; }
+.dot { stroke: var(--ink); stroke-width: 2; fill: var(--fog); transition: fill .3s, stroke .3s; }
+.dot.ok { fill: var(--green); stroke: var(--green); }
+
+/* Sections: heading in a gutter, content beside it */
+section.row {
+  display: grid; grid-template-columns: 13rem minmax(0, 1fr); gap: 1rem 3rem;
+  padding-block: 3rem; border-top: 2px solid var(--rain);
+}
+section.row h2 { font-size: 1.05rem; font-weight: 800; letter-spacing: -.01em; padding-top: .2rem; }
+.body { max-width: 40rem; }
+.body p + p { margin-top: 1rem; }
+.lead { font-size: 1.3rem; line-height: 1.45; font-weight: 500; letter-spacing: -.01em; }
+
+.tools { display: flex; flex-wrap: wrap; gap: .5rem; list-style: none; padding: 0; }
+.tools li { padding: .35rem .8rem; border: 2px solid var(--rain); border-radius: 999px; font-weight: 500; }
+.tools li.sky { background: var(--green); border-color: var(--green); color: var(--fog); font-weight: 700; }
+.note { margin-top: 1rem; color: var(--slate); }
+
+.projects { list-style: none; padding: 0; }
+.projects li { display: grid; grid-template-columns: 12rem minmax(0, 1fr) auto; gap: .25rem 1.5rem; padding-block: .8rem; border-bottom: 1px solid var(--rain); align-items: baseline; }
+.projects li:first-child { padding-top: 0; }
+.projects b { font-weight: 700; }
+.projects span { color: var(--slate); font-size: .95rem; }
+.projects nav { display: flex; gap: 1rem; font-size: .95rem; white-space: nowrap; }
+
+.plain { list-style: none; padding: 0; }
+.plain li + li { margin-top: .5rem; }
+
+.contact { display: grid; grid-template-columns: repeat(2, minmax(0, max-content)); gap: .6rem 2.5rem; font-size: 1.15rem; font-weight: 500; }
+.contact a { font-weight: 600; }
+.contact dt { color: var(--slate); font-weight: 400; }
+
+footer { padding-block: 2rem 3rem; color: var(--slate); font-size: .9rem; border-top: 2px solid var(--rain); }
+
+@media (max-width: 52rem) {
+  .hero { grid-template-columns: 1fr; min-height: auto; padding-top: 3rem; }
+  .loop { justify-self: center; max-width: 24rem; }
+  section.row { grid-template-columns: 1fr; padding-block: 2.25rem; }
+  .projects li { grid-template-columns: 1fr; }
+  .contact { grid-template-columns: 1fr; gap: .1rem; }
+  .contact dd { margin-bottom: .6rem; }
+}
+</style>
+</head>
+<body>
+<main class="wrap">
+
+  <header class="hero">
+    <div>
+      <h1><span>Knut</span><span>Johnsen</span></h1>
+      <p><strong>Customer Success at <a href="https://www.quantfol.io/">Quantfolio</a></strong> in Bergen. I build the tools and workflows that help our team support banks and wealth managers.</p>
+    </div>
+
+    <figure class="loop">
+      <div class="stage">
+      <img class="face" src="img/knut.jpg" alt="" width="92" height="92">
+      <svg viewBox="0 0 440 400" role="img" aria-labelledby="loop-title">
+        <title id="loop-title">Work moves round a loop: agents in Skynet prepare it, Knut reviews each piece, and only then does it go out.</title>
+        <circle class="ring" cx="220" cy="200" r="150"/>
+        <text class="arc-label" x="220" y="30" text-anchor="middle">agents prepare</text>
+        <text class="arc-label" x="220" y="382" text-anchor="middle">reviewed, then sent</text>
+        <g id="dots"></g>
+        <circle cx="70" cy="200" r="50" fill="var(--fog)"/>
+        <circle class="halo" id="halo" cx="70" cy="200" r="53"/>
+        <text class="node-label" x="70" y="275" text-anchor="middle">me</text>
+        <rect class="skynet" x="326" y="184" width="88" height="32" rx="16"/>
+        <text class="skynet-text" x="370" y="204.5" text-anchor="middle">Skynet</text>
+      </svg>
+      </div>
+      <figcaption>Human in the loop, literally.</figcaption>
+    </figure>
+  </header>
+
+  <section class="row" id="work">
+    <h2>How I work</h2>
+    <div class="body">
+      <p class="lead">I use Skynet as the harness for my AI agents and automations, set up around how our team works.</p>
+      <p>They take care of repetitive groundwork, which frees up my time for customers, priorities and decisions.</p>
+      <p>The setup is human-in-the-loop: I stay in charge, results get checked, and I automate the routine work where it pays off.</p>
+    </div>
+  </section>
+
+  <section class="row" id="tools">
+    <h2>What I work with</h2>
+    <div class="body">
+      <ul class="tools">
+        <li class="sky">Skynet</li>
+        <li>Claude</li>
+        <li>Claude Code</li>
+        <li>MCP</li>
+        <li>Git and GitHub</li>
+        <li>Notion</li>
+        <li>Slack</li>
+        <li>Microsoft 365</li>
+        <li>Figma</li>
+      </ul>
+      <p class="note">Skynet is the macOS app where I run my AI agents, each one with its own area of work.</p>
+    </div>
+  </section>
+
+  <section class="row" id="projects">
+    <h2>Where I started</h2>
+    <div class="body">
+      <p class="note" style="margin:0 0 1.25rem">Frontend projects from 2022, built while I learned JavaScript and React.</p>
+      <ul class="projects">
+        <li><b>Movie Watchlist</b><span>Search films and keep a watchlist, using the OMDb API.</span><nav><a href="https://knutcode.github.io/movie-watchlist/">Open</a><a href="https://github.com/knutcode/movie-watchlist">Code</a></nav></li>
+        <li><b>Quizzical</b><span>A quiz from a chosen category, scored on your answers.</span><nav><a href="https://knutcode.github.io/quizzical/">Open</a><a href="https://github.com/knutcode/quizzical">Code</a></nav></li>
+        <li><b>Color scheme generator</b><span>Colour schemes from your own picks, using TheColorAPI.</span><nav><a href="https://knutcode.github.io/color-scheme-generator/">Open</a><a href="https://github.com/knutcode/color-scheme-generator">Code</a></nav></li>
+        <li><b>Tenzies</b><span>A quick dice game, with confetti.</span><nav><a href="https://knutcode.github.io/tenzies-game/">Open</a><a href="https://github.com/knutcode/tenzies-game">Code</a></nav></li>
+        <li><b>PokeAPI</b><span>A random Pokémon and its details, in plain JavaScript.</span><nav><a href="https://knutcode.github.io/kodehode/pokemon-api/">Open</a><a href="https://github.com/knutcode/kodehode/tree/main/pokemon-api">Code</a></nav></li>
+        <li><b>To-do list</b><span>Daily tasks, saved in your browser.</span><nav><a href="https://knutcode.github.io/kodehode/todo-assignment/">Open</a><a href="https://github.com/knutcode/kodehode/tree/main/todo-assignment">Code</a></nav></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="row" id="courses">
+    <h2>Completed courses</h2>
+    <ul class="body plain">
+      <li><a href="https://scrimba.com/certificate/uM7P24tG/gfrontend">The Frontend Developer Career Path</a>, Scrimba</li>
+      <li><a href="https://nsm.muniolms.com/no/pdf/diploma/9273b3cf-b6ac-47d3-9bea-06aedeac6117.pdf">NSM grunnprinsipper for IKT-sikkerhet</a>, Norwegian National Security Authority</li>
+    </ul>
+  </section>
+
+  <section class="row" id="contact">
+    <h2>Get in touch</h2>
+    <dl class="body contact">
+      <dt>Email</dt><dd><a href="mailto:knut.c.johnsen@gmail.com">knut.c.johnsen@gmail.com</a></dd>
+      <dt>Phone</dt><dd><a href="tel:+4747276493">+47 472 76 493</a></dd>
+      <dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/knut-c-johnsen/">knut-c-johnsen</a></dd>
+      <dt>GitHub</dt><dd><a href="https://github.com/knutcode">knutcode</a></dd>
+    </dl>
+  </section>
+
+  <footer>Knut Johnsen, Bergen, 2026</footer>
+</main>
+
+<script>
+(() => {
+  const NS = 'http://www.w3.org/2000/svg';
+  const cx = 220, cy = 200, r = 150, N = 5, SPEED = 0.07, HOLD = 1100;
+  const g = document.getElementById('dots'), halo = document.getElementById('halo');
+  // s: 0 at Skynet (right), 0.5 at me (left) over the top, back along the bottom.
+  const pos = s => [cx + r * Math.cos(2 * Math.PI * s), cy - r * Math.sin(2 * Math.PI * s)];
+  const dots = Array.from({ length: N }, (_, i) => {
+    const el = document.createElementNS(NS, 'circle');
+    el.setAttribute('r', 9); el.setAttribute('class', 'dot');
+    g.appendChild(el);
+    return { el, s: 0.06 + i / N, hold: 0, ok: false };
+  });
+  const draw = d => {
+    const [x, y] = pos(d.s);
+    d.el.setAttribute('cx', x.toFixed(1)); d.el.setAttribute('cy', y.toFixed(1));
+    d.el.classList.toggle('ok', d.ok);
+  };
+  const still = matchMedia('(prefers-reduced-motion: reduce)');
+  const settle = () => dots.forEach(d => { d.ok = d.s > 0.44; draw(d); });
+  if (still.matches) return settle();
+  settle();
+
+  let last = performance.now();
+  const tick = now => {
+    const dt = Math.min(now - last, 50) / 1000; last = now;
+    let holding = false;
+    for (const d of dots) {
+      if (d.hold > 0) { d.hold -= dt * 1000; holding = true; if (d.hold <= 0) d.ok = true; }
+      else {
+        const before = d.s;
+        d.s += SPEED * dt;
+        if (before < 0.44 && d.s >= 0.44 && !d.ok) { d.s = 0.44; d.hold = HOLD; holding = true; }
+        if (d.s >= 1) { d.s -= 1; d.ok = false; }
+      }
+      draw(d);
+    }
+    halo.classList.toggle('on', holding);
+    requestAnimationFrame(tick);
+  };
+  requestAnimationFrame(tick);
+})();
+</script>
+</body>
+</html>

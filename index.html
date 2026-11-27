@@ -4,10 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Knut Johnsen</title>
-<meta name="description" content="I'm Knut Johnsen. I work in Customer Success at Quantfolio in Bergen. AI agents do the groundwork, I make the calls.">
+<meta name="description" content="Knut Johnsen works in Customer Success at Quantfolio in Bergen.">
 <meta property="og:title" content="Knut Johnsen">
-<meta property="og:description" content="Agents do the groundwork. I make the calls.">
-<meta property="og:image" content="https://knutcode.github.io/img/knut.jpg">
+<meta property="og:description" content="Customer Success at Quantfolio in Bergen.">
+<meta property="og:image" content="https://knutcode.github.io/img/card.png">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#F3F4F6">
 <link rel="icon" href="favicon.ico">
 <script>document.documentElement.classList.add('js')</script>
@@ -89,7 +90,7 @@ body.go .ch { animation: show 1ms calc(var(--i) * 26ms) both; }
 .edit del svg { left: -.04em; top: 14%; width: calc(100% + .08em); height: 86%; }
 .bar svg.ink.red path { stroke-width: 1.5px; }
 svg.ink.red path { stroke: var(--red); stroke-width: clamp(1.7px, .16vw + 1.1px, 3.3px); }
-body.reviewed .seen svg.scribble.mark path { animation-duration: 1.4s; animation-timing-function: linear; }
+body.reviewed .seen svg.scribble.mark path { animation-duration: 1.7s; animation-timing-function: linear; }
 svg.ink.green path, .doodle .green { stroke: var(--green); }
 .edit ins { position: absolute; left: .04em; bottom: 74%; font-size: .86em; line-height: 1; rotate: -2.2deg; transform-origin: left bottom; white-space: nowrap; }
 
@@ -130,9 +131,10 @@ svg.ink.green path, .doodle .green { stroke: var(--green); }
 
 /* ---------- doodles along the edge of the page ---------- */
 .doodle { position: absolute; overflow: visible; pointer-events: none; mix-blend-mode: multiply; height: auto; display: none; }
+.doodle, svg.scribble { filter: url(#wobble); }
 .doodle path { fill: none; stroke: var(--pen); stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1 2; }
 .doodle .red { stroke: var(--red); }
-.doodle text { font-family: "Reenie Beanie", cursive; font-size: 26px; fill: var(--pen); }
+.doodle text { font-family: "Reenie Beanie", cursive; font-size: 36px; fill: var(--pen); }
 html.js .doodle.mark text { opacity: 0; }
 body.reviewed .seen .doodle.mark text { animation: show .35s calc(var(--delay) + var(--k, 0s) * 1.25) both; }
 .sun { right: 0; top: 2.75rem; width: 6rem; rotate: -8deg; }
@@ -229,6 +231,10 @@ footer button:hover { background: var(--hl); color: var(--print); }
     <feTurbulence type="fractalNoise" baseFrequency=".03" numOctaves="2" seed="4" result="n"/>
     <feDisplacementMap in="SourceGraphic" in2="n" scale="1.8"/>
   </filter>
+  <filter id="wobble" x="-15%" y="-15%" width="130%" height="130%">
+    <feTurbulence type="fractalNoise" baseFrequency=".045" numOctaves="2" seed="11" result="n"/>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="4.5"/>
+  </filter>
 </svg>
 
 <div class="sheet">
@@ -248,7 +254,7 @@ footer button:hover { background: var(--hl); color: var(--print); }
         <span class="line type">Knut Johnsen</span>
         <span class="line type"><span class="edit"><ins class="mark pen" style="--d:.8s">works in Customer Success</ins><del class="mark" style="--d:0s">is an AI visionary<svg class="ink red scribble mark" style="--d:0s" viewBox="0 0 300 40"><path pathLength="1" d="M0 20 L300 20"/></svg></del></span>.</span>
         <span class="line type">His agents <span class="edit"><ins class="mark pen" style="--d:2.5s">do the groundwork</ins><del class="mark" style="--d:1.7s">run everything<svg class="ink red scribble mark" style="--d:1.7s" viewBox="0 0 300 40"><path pathLength="1" d="M0 20 L300 20"/></svg></del></span>.</span>
-        <span class="line add"><span class="ring"><ins class="mark pen" style="--d:3.4s">He makes the calls.</ins><svg class="ink loop mark" style="--d:4.2s" viewBox="0 0 300 100" preserveAspectRatio="none"><path pathLength="1" d="M62 24 C128 3 256 3 287 40 C312 80 196 100 112 95 C40 92 -8 72 8 44 C16 30 36 30 76 20"/></svg></span><svg class="doodle cat mark" style="--d:7.4s" viewBox="0 0 120 140" aria-hidden="true"><path pathLength="1" d="M30 46 C27 28 33 15 38 10 L49 29 C57 25 67 26 74 30 L89 9 C93 21 95 35 90 47 C97 63 84 77 60 78 C35 79 23 63 30 46"/><path pathLength="1" style="--k:.6s" d="M47 44 L47 51 M71 43 L72 50 M56 56 L63 56 L59.5 60 Z M59.5 60 C58 66 52 66 49 62 M59.5 60 C61 66 67 66 70 62"/><path pathLength="1" style="--k:1s" d="M40 57 L18 52 M40 61 L19 65 M80 56 L102 50 M80 60 L103 63"/><path pathLength="1" style="--k:1.3s" d="M41 76 C27 92 30 113 45 115 L80 114 C95 110 95 90 80 75 M52 115 L52 100 M68 114 L69 101 M90 106 C112 106 116 86 104 77"/><text x="60" y="137" text-anchor="middle" style="--k:1.9s">cat</text></svg></span>
+        <span class="line add"><span class="ring"><ins class="mark pen" style="--d:3.4s">He makes the calls.</ins><svg class="ink loop mark" style="--d:4.2s" viewBox="0 0 300 100" preserveAspectRatio="none"><path pathLength="1" d="M62 24 C128 3 256 3 287 40 C312 80 196 100 112 95 C40 92 -8 72 8 44 C16 30 36 30 76 20"/></svg></span><svg class="doodle cat mark" style="--d:7.4s" viewBox="0 0 120 146" aria-hidden="true"><path pathLength="1" d="M33 47 C27 60 36 77 58 79 C82 81 96 66 91 48 C89 38 82 31 71 29 C60 26 46 27 37 34"/><path pathLength="1" style="--k:.5s" d="M31 44 C29 30 33 17 37 9 C42 16 46 23 51 31 M72 33 C77 24 83 15 90 7 C94 19 95 31 92 43"/><path pathLength="1" style="--k:.9s" d="M46 45 C45 48 46 51 47 53 M71 44 C73 46 73 50 71 52 M56 58 C59 57 62 57 64 58 C62 61 61 62 60 63 C59 61 57 60 56 58 M60 63 C59 69 52 70 49 65 M60 63 C62 69 69 69 72 64"/><path pathLength="1" style="--k:1.3s" d="M41 59 C33 56 25 54 15 53 M41 63 C33 65 26 67 18 71 M80 58 C88 55 96 53 106 50 M80 62 C88 63 97 65 105 69"/><path pathLength="1" style="--k:1.6s" d="M43 77 C30 88 27 106 36 114 C44 119 70 118 82 114 C95 108 93 88 79 77 M51 116 C50 110 50 104 52 98 M67 116 C68 110 68 105 66 99"/><path pathLength="1" style="--k:2s" d="M89 108 C101 111 112 104 111 93 C110 85 104 82 100 86"/><text x="62" y="143" text-anchor="middle" style="--k:2.5s">meow</text></svg></span>
       </span>
     </h1>
 
@@ -264,7 +270,7 @@ footer button:hover { background: var(--hl); color: var(--print); }
       <span class="tape mark" style="--d:6.9s"></span>
       <img src="img/knut.jpg" alt="Portrait of Knut Johnsen" width="480" height="480">
       <figcaption class="mark pen" style="--d:7.05s">me</figcaption>
-      <svg class="doodle cat mark" style="--d:7.4s" viewBox="0 0 120 140" aria-hidden="true"><path pathLength="1" d="M30 46 C27 28 33 15 38 10 L49 29 C57 25 67 26 74 30 L89 9 C93 21 95 35 90 47 C97 63 84 77 60 78 C35 79 23 63 30 46"/><path pathLength="1" style="--k:.6s" d="M47 44 L47 51 M71 43 L72 50 M56 56 L63 56 L59.5 60 Z M59.5 60 C58 66 52 66 49 62 M59.5 60 C61 66 67 66 70 62"/><path pathLength="1" style="--k:1s" d="M40 57 L18 52 M40 61 L19 65 M80 56 L102 50 M80 60 L103 63"/><path pathLength="1" style="--k:1.3s" d="M41 76 C27 92 30 113 45 115 L80 114 C95 110 95 90 80 75 M52 115 L52 100 M68 114 L69 101 M90 106 C112 106 116 86 104 77"/><text x="60" y="137" text-anchor="middle" style="--k:1.9s">cat</text></svg>
+      <svg class="doodle cat mark" style="--d:7.4s" viewBox="0 0 120 146" aria-hidden="true"><path pathLength="1" d="M33 47 C27 60 36 77 58 79 C82 81 96 66 91 48 C89 38 82 31 71 29 C60 26 46 27 37 34"/><path pathLength="1" style="--k:.5s" d="M31 44 C29 30 33 17 37 9 C42 16 46 23 51 31 M72 33 C77 24 83 15 90 7 C94 19 95 31 92 43"/><path pathLength="1" style="--k:.9s" d="M46 45 C45 48 46 51 47 53 M71 44 C73 46 73 50 71 52 M56 58 C59 57 62 57 64 58 C62 61 61 62 60 63 C59 61 57 60 56 58 M60 63 C59 69 52 70 49 65 M60 63 C62 69 69 69 72 64"/><path pathLength="1" style="--k:1.3s" d="M41 59 C33 56 25 54 15 53 M41 63 C33 65 26 67 18 71 M80 58 C88 55 96 53 106 50 M80 62 C88 63 97 65 105 69"/><path pathLength="1" style="--k:1.6s" d="M43 77 C30 88 27 106 36 114 C44 119 70 118 82 114 C95 108 93 88 79 77 M51 116 C50 110 50 104 52 98 M67 116 C68 110 68 105 66 99"/><path pathLength="1" style="--k:2s" d="M89 108 C101 111 112 104 111 93 C110 85 104 82 100 86"/><text x="62" y="143" text-anchor="middle" style="--k:2.5s">meow</text></svg>
     </figure>
   </header>
 
@@ -386,9 +392,18 @@ footer button:hover { background: var(--hl); color: var(--print); }
     if (!w || !h) return;
     let s = seed * 9973 + 71;
     const r = () => (s = s * 16807 % 2147483647) / 2147483647;
-    const pitch = Math.max(8, h * .46), pts = [];
-    for (let x = -pitch * .15, up = false; x < w + pitch * .2; x += pitch * .5, up = !up)
-      pts.push([x + (up ? pitch * .3 : 0) + (r() - .5) * pitch * .28, h * (up ? -.3 + .2 * r() : .98 + .2 * r())]);
+    const base = Math.max(8, h * .5), pts = [];
+    const tilt = (r() - .5) * h * .22;
+    const zig = (from, to, loose) => {
+      const dir = to > from ? 1 : -1;
+      for (let x = from, up = r() > .5; dir * (to - x) > 0; up = !up) {
+        const y = up ? -.34 + .34 * r() : .82 + .4 * r();
+        pts.push([x + (r() - .5) * base * .5, h * y + tilt * (x / w - .5) * 2]);
+        x += dir * base * loose * (.28 + .5 * r());
+      }
+    };
+    zig(-base * .2, w + base * .15, 1);          // across
+    zig(w - base * .3, w * (.25 + .3 * r()), 1.7); // and part of the way back, looser
     let d = `M${pts[0][0].toFixed(1)} ${pts[0][1].toFixed(1)}`;
     for (let i = 1; i < pts.length - 1; i++)
       d += ` Q${pts[i][0].toFixed(1)} ${pts[i][1].toFixed(1)} ${((pts[i][0] + pts[i + 1][0]) / 2).toFixed(1)} ${((pts[i][1] + pts[i + 1][1]) / 2).toFixed(1)}`;

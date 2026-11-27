@@ -157,6 +157,8 @@ html.js body:not(.reviewed) .tide, .tide.still { opacity: 0; }
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='60' viewBox='0 0 220 60'%3E%3Cpath d='M24 16 C32 10 40 11 48 16 M138 34 C147 28 156 29 164 35 M70 50 C78 45 85 45 92 50' fill='none' stroke='%231B3BD1' stroke-opacity='.45' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") repeat 0 30px / 220px 60px,
     linear-gradient(var(--sea), var(--sea)) no-repeat 0 25px / 100% 100%;
 }
+.water { animation: waves 9s linear infinite; }
+@keyframes waves { from { background-position: 0 0, 0 30px, 0 25px; } to { background-position: 160px 0, -220px 30px, 0 25px; } }
 .sipper { position: absolute; right: clamp(.75rem, 4vw, 4rem); bottom: 0; width: clamp(5rem, 8vw, 7.5rem); transform: translateY(calc((1 - min(1, var(--p) * 30)) * 115%)); transition: transform .5s; }
 .sipper svg { display: block; width: 100%; height: auto; overflow: visible; }
 .sipper path { fill: none; stroke: var(--pen); stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; }
@@ -243,6 +245,7 @@ footer button:hover { background: var(--hl); color: var(--print); }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
+  .water { animation: none; }
   *, *::before, *::after { animation-duration: 1ms !important; animation-delay: 0s !important; transition-duration: 1ms !important; }
 }
 </style>
@@ -391,7 +394,7 @@ footer button:hover { background: var(--hl); color: var(--print); }
 <div class="tide" aria-hidden="true">
   <div class="water"></div>
   <div class="sipper">
-    <p class="pen quip">"don't worry, there's plenty where that came from."</p>
+    <p class="pen quip">relax. your burger drank more than this.</p>
     <svg viewBox="0 0 120 132">
       <rect class="belly" x="40" y="63" width="42" height="45"/>
       <g filter="url(#wobble)">
